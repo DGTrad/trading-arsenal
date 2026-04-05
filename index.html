@@ -105,7 +105,7 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="hero-stat-value" id="toolCount">6</span>
+        <span class="hero-stat-value" id="toolCount">11</span>
         <span class="hero-stat-label">Herramientas</span>
       </div>
       <div class="hero-stat-divider"></div>
@@ -261,6 +261,101 @@
         <span class="tag">ROI</span>
       </div>
       <button class="card-open-btn" onclick="openTool('compound')">Abrir herramienta →</button>
+    </article>
+
+    <!-- Fibonacci Calculator -->
+    <article class="tool-card" data-category="calculadoras" data-tier="free">
+      <div class="card-accent" style="--accent:#f39c12"></div>
+      <div class="card-header">
+        <div class="card-icon" style="--icon-bg:rgba(243,156,18,0.12)">🔢</div>
+        <div class="card-title-group">
+          <h3 class="card-title">Calculadora de Fibonacci</h3>
+          <span class="card-badge badge-new">Nuevo</span>
+        </div>
+      </div>
+      <p class="card-desc">Calcula retrocesos y extensiones de Fibonacci automáticamente. Identifica la zona dorada y niveles de TP.</p>
+      <div class="card-tags">
+        <span class="tag">Fibonacci</span>
+        <span class="tag">Retrocesos</span>
+        <span class="tag">Extensiones</span>
+      </div>
+      <button class="card-open-btn" onclick="openTool('fibonacci')">Abrir herramienta →</button>
+    </article>
+
+    <!-- Margin Calculator -->
+    <article class="tool-card" data-category="calculadoras" data-tier="free">
+      <div class="card-accent" style="--accent:var(--blue)"></div>
+      <div class="card-header">
+        <div class="card-icon" style="--icon-bg:var(--glow-blue)">🏦</div>
+        <div class="card-title-group">
+          <h3 class="card-title">Calculadora de Margen</h3>
+          <span class="card-badge badge-new">Nuevo</span>
+        </div>
+      </div>
+      <p class="card-desc">Calcula margen requerido, margen libre y nivel de margen. Detecta riesgo de margin call antes de operar.</p>
+      <div class="card-tags">
+        <span class="tag">Margen</span>
+        <span class="tag">Apalancamiento</span>
+        <span class="tag">Margin Call</span>
+      </div>
+      <button class="card-open-btn" onclick="openTool('marginCalc')">Abrir herramienta →</button>
+    </article>
+
+    <!-- Drawdown Simulator -->
+    <article class="tool-card" data-category="analisis" data-tier="free">
+      <div class="card-accent" style="--accent:var(--red)"></div>
+      <div class="card-header">
+        <div class="card-icon" style="--icon-bg:rgba(231,76,60,0.12)">📉</div>
+        <div class="card-title-group">
+          <h3 class="card-title">Simulador de Drawdown</h3>
+          <span class="card-badge badge-new">Nuevo</span>
+        </div>
+      </div>
+      <p class="card-desc">Simula rachas de pérdidas consecutivas y descubre cuánto necesitas ganar para recuperarte. Gestiona tu riesgo.</p>
+      <div class="card-tags">
+        <span class="tag">Drawdown</span>
+        <span class="tag">Recuperación</span>
+        <span class="tag">Risk Mgmt</span>
+      </div>
+      <button class="card-open-btn" onclick="openTool('drawdown')">Abrir herramienta →</button>
+    </article>
+
+    <!-- Sessions Clock -->
+    <article class="tool-card" data-category="analisis" data-tier="free">
+      <div class="card-accent" style="--accent:var(--green)"></div>
+      <div class="card-header">
+        <div class="card-icon" style="--icon-bg:var(--glow-green)">🕐</div>
+        <div class="card-title-group">
+          <h3 class="card-title">Sesiones de Mercado</h3>
+          <span class="card-badge badge-new">Nuevo</span>
+        </div>
+      </div>
+      <p class="card-desc">Mapa en tiempo real de las sesiones Sídney, Tokio, Londres y NY. Solapamientos y pares óptimos por sesión.</p>
+      <div class="card-tags">
+        <span class="tag">Sesiones</span>
+        <span class="tag">Volatilidad</span>
+        <span class="tag">Horarios</span>
+      </div>
+      <button class="card-open-btn" onclick="openTool('sessions')">Abrir herramienta →</button>
+    </article>
+
+    <!-- Candle Quiz -->
+    <article class="tool-card" data-category="educacion" data-tier="free">
+      <div class="card-accent" style="--accent:var(--purple)"></div>
+      <div class="card-header">
+        <div class="card-icon" style="--icon-bg:var(--glow-purple)">🧠</div>
+        <div class="card-title-group">
+          <h3 class="card-title">Quiz de Patrones de Velas</h3>
+          <span class="card-badge badge-new">Nuevo</span>
+        </div>
+      </div>
+      <p class="card-desc">Pon a prueba tus conocimientos identificando patrones de velas japonesas. 8 preguntas con puntuación final.</p>
+      <div class="card-tags">
+        <span class="tag">Quiz</span>
+        <span class="tag">Candlesticks</span>
+        <span class="tag">Aprendizaje</span>
+      </div>
+      <button class="card-open-btn" onclick="openTool('candleQuiz')">Abrir herramienta →</button>
     </article>
 
   </div>
