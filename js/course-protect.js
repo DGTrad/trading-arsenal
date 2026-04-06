@@ -16,7 +16,7 @@
   Para protección robusta necesitarías un backend con login real.
 */
 
-const COURSE_ACCESS_CODE = 'TRADING2026PRO';  // <-- CAMBIA ESTE CÓDIGO
+const COURSE_ACCESS_CODE = 'CURSOS2026PRO';  // <-- CAMBIA ESTE CÓDIGO
 
 function checkCourseAccess(courseId) {
   const savedCode = localStorage.getItem('course-access-' + courseId);
