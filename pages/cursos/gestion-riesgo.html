@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Curso de gestión de riesgo para trading: position sizing, drawdown, correlaciones, psicología y supervivencia en mercados.">
+<title>Curso: Gestión de Riesgo Profesional — Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/main.css">
+<script src="../../js/course-protect.js"></script>
+<script>if(!checkCourseAccess('gestion-riesgo'))throw'';</script>
+<style>
+.course-layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - var(--nav-height));position:relative;z-index:10}
+.course-sidebar{position:sticky;top:var(--nav-height);height:calc(100vh - var(--nav-height));background:var(--bg-2);border-right:1px solid var(--border-1);overflow-y:auto;padding:20px 0;scrollbar-width:thin}
+.sb-header{padding:0 16px 16px;border-bottom:1px solid var(--border-1);margin-bottom:8px}.sb-title{font-size:14px;font-weight:700;margin-bottom:4px}.sb-progress-text{font-size:11px;color:var(--text-3)}.sb-bar{width:100%;height:5px;background:var(--bg-5);border-radius:3px;margin-top:6px}.sb-fill{height:100%;background:var(--gold);border-radius:3px;transition:width .4s}.sb-nav{padding:0 6px}
+.sb-link{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;font-size:12px;color:var(--text-3);cursor:pointer;transition:all .2s;border:none;background:none;width:100%;text-align:left;font-family:var(--font-display)}.sb-link:hover{background:var(--bg-3);color:var(--text-2)}.sb-link.active{background:rgba(212,168,67,0.08);color:var(--gold);font-weight:600}.sb-link.done{color:var(--green)}
+.sb-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;font-family:var(--font-mono);background:var(--bg-5);flex-shrink:0}.sb-link.active .sb-num{background:var(--gold);color:var(--bg-0)}.sb-link.done .sb-num{background:var(--green);color:var(--bg-0)}
+.course-main{padding:36px 44px;max-width:820px}
+.lesson-tag{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-weight:700;margin-bottom:6px}.lesson-title{font-size:clamp(26px,3.5vw,36px);font-weight:900;letter-spacing:-1.5px;margin-bottom:6px;line-height:1.15}.lesson-sub{font-size:15px;color:var(--text-2);font-weight:300;margin-bottom:30px}
+.cb{margin-bottom:28px}.cb h3{font-size:19px;font-weight:700;margin-bottom:10px}.cb p{font-size:15px;color:var(--text-2);line-height:1.8;margin-bottom:10px}.cb strong{color:var(--text-1)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}.info-grid-3{grid-template-columns:1fr 1fr 1fr}.info-grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.info-card{background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px;padding:18px;text-align:center;transition:all .3s}.info-card:hover{border-color:var(--border-2);transform:translateY(-2px)}.info-icon{font-size:30px;margin-bottom:6px}.info-title{font-size:15px;font-weight:700;margin-bottom:4px}.info-desc{font-size:12px;color:var(--text-3);line-height:1.5}
+.vbox{background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;padding:22px;margin:18px 0;position:relative;overflow:hidden}.vbox::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}.vbox-tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);font-weight:700;margin-bottom:10px}.vbox p{font-size:13px;color:var(--text-3);margin-top:10px;text-align:center}
+.cbox{background:rgba(212,168,67,0.05);border:1px solid rgba(212,168,67,0.15);border-left:4px solid var(--gold);border-radius:10px;padding:18px;margin:18px 0}.cbox-label{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}.cbox p{font-size:14px;color:var(--text-2);line-height:1.7;margin:0}
+.ebox{background:rgba(46,204,113,0.04);border:1px solid rgba(46,204,113,0.12);border-left:4px solid var(--green);border-radius:10px;padding:18px;margin:18px 0}.ebox-label{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}.ebox p{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:6px}.ebox p:last-child{margin:0}
+.wbox{background:rgba(231,76,60,0.04);border:1px solid rgba(231,76,60,0.12);border-left:4px solid var(--red);border-radius:10px;padding:18px;margin:18px 0}.wbox-label{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}.wbox p{font-size:14px;color:var(--text-2);line-height:1.7;margin:0}
+.flow{display:flex;flex-direction:column;margin:18px 0}.flow-step{display:flex;gap:14px;padding:12px 0}.flow-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;font-family:var(--font-mono);position:relative}.flow-dot::after{content:'';position:absolute;top:36px;left:50%;width:2px;height:calc(100%);background:var(--border-2);transform:translateX(-50%)}.flow-step:last-child .flow-dot::after{display:none}.fd-gold{background:rgba(212,168,67,0.12);color:var(--gold);border:2px solid rgba(212,168,67,0.25)}.fd-green{background:rgba(46,204,113,0.12);color:var(--green);border:2px solid rgba(46,204,113,0.25)}.fd-red{background:rgba(231,76,60,0.12);color:var(--red);border:2px solid rgba(231,76,60,0.25)}.fd-blue{background:rgba(52,152,219,0.12);color:var(--blue);border:2px solid rgba(52,152,219,0.25)}.flow-text h4{font-size:14px;font-weight:700;margin-bottom:2px}.flow-text p{font-size:13px;color:var(--text-3);margin:0;line-height:1.5}
+.ctable{width:100%;border-collapse:collapse;margin:14px 0}.ctable th{text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);border-bottom:2px solid var(--border-2);font-weight:600}.ctable td{padding:8px 12px;font-size:13px;color:var(--text-2);border-bottom:1px solid var(--border-1)}
+.quiz-box{background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;padding:22px;margin:24px 0}.quiz-q{font-size:15px;font-weight:700;margin-bottom:14px}.quiz-opts{display:flex;flex-direction:column;gap:6px}.qo{padding:11px 14px;background:var(--bg-2);border:2px solid var(--border-2);border-radius:8px;color:var(--text-2);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;text-align:left;font-family:var(--font-display)}.qo:hover{border-color:var(--border-2);background:var(--bg-4);color:var(--text-1)}.qo.ok{border-color:var(--green);background:rgba(46,204,113,0.06);color:var(--green)}.qo.no{border-color:var(--red);background:rgba(231,76,60,0.06);color:var(--red)}.quiz-fb{margin-top:10px;font-size:13px;font-weight:600}
+.lesson-nav{display:flex;justify-content:space-between;margin-top:36px;padding-top:20px;border-top:1px solid var(--border-1)}.ln-btn{padding:11px 26px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font-display);border:none}.ln-prev{background:var(--bg-5);color:var(--text-2)}.ln-prev:hover{background:var(--border-3)}.ln-next{background:var(--gold);color:var(--bg-0)}.ln-next:hover{background:var(--gold-bright)}.ln-done{background:var(--green);color:var(--bg-0)}
+.mob-btn{display:none;position:fixed;bottom:18px;right:18px;z-index:200;width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--bg-0);border:none;font-size:18px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+@media(max-width:768px){.course-layout{grid-template-columns:1fr}.course-sidebar{position:fixed;left:-280px;top:var(--nav-height);z-index:150;width:260px;transition:left .3s;box-shadow:0 20px 60px rgba(0,0,0,.4)}.course-sidebar.open{left:0}.mob-btn{display:flex;align-items:center;justify-content:center}.course-main{padding:24px 16px}.info-grid,.info-grid-3,.info-grid-4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-icon">◆</span><span class="logo-text">Trading Arsenal</span></a><div class="nav-links"><a href="../../index.html" class="nav-link">Herramientas</a><a href="../cursos.html" class="nav-link active">Cursos</a><a href="../brokers.html" class="nav-link">Brokers</a><a href="../recursos.html" class="nav-link">Recursos</a><a href="../sobre.html" class="nav-link">Sobre</a></div><div class="nav-actions"><a href="../premium.html" class="btn-premium"><span class="premium-star">★</span> Premium</a></div></div></nav>
+<div class="course-layout">
+<aside class="course-sidebar" id="sidebar"><div class="sb-header"><div class="sb-title">🛡️ Gestión de Riesgo</div><div class="sb-progress-text" id="progText">0/10</div><div class="sb-bar"><div class="sb-fill" id="progFill" style="width:0%"></div></div></div><div class="sb-nav" id="sbNav"></div></aside>
+<main class="course-main" id="mainArea"></main>
+</div>
+<button class="mob-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<script>
+const L=[
+{id:1,t:'¿Por qué el Riesgo es lo Primero?',s:'La diferencia entre traders que sobreviven y los que no',c:`
+<div class="cb"><p>El 90% de los traders pierden dinero. No porque no sepan analizar, sino porque <strong>no gestionan su riesgo</strong>. Puedes acertar solo el 40% de tus operaciones y ser muy rentable — si tu gestión de riesgo es sólida.</p></div>
+<div class="info-grid info-grid-3">
+<div class="info-card" style="border-top:3px solid var(--red)"><div class="info-icon">💀</div><div class="info-title">Sin gestión</div><div class="info-desc">5% riesgo/op → 10 pérdidas = -40%. Casi imposible recuperar.</div></div>
+<div class="info-card" style="border-top:3px solid var(--gold)"><div class="info-icon">⚠️</div><div class="info-title">Gestión básica</div><div class="info-desc">2% riesgo/op → 10 pérdidas = -18%. Difícil pero recuperable.</div></div>
+<div class="info-card" style="border-top:3px solid var(--green)"><div class="info-icon">🛡️</div><div class="info-title">Gestión pro</div><div class="info-desc">1% riesgo/op → 10 pérdidas = -9.6%. Manejable y sostenible.</div></div>
+</div>
+<div class="cbox"><div class="cbox-label">💡 La verdad incómoda</div><p>Tu estrategia es lo MENOS importante. La gestión de riesgo es lo que te mantiene vivo. Un trader con estrategia mediocre y riesgo excelente gana dinero. Un trader con estrategia brillante y riesgo nulo quiebra.</p></div>
+<div class="vbox"><div class="vbox-tag">El efecto asimétrico de las pérdidas</div>
+<table class="ctable"><tr><th>Pérdida</th><th>Ganancia para recuperar</th><th>Dificultad</th></tr>
+<tr><td>-10%</td><td>+11.1%</td><td style="color:var(--green)">Fácil</td></tr>
+<tr><td>-20%</td><td>+25%</td><td style="color:var(--green)">Manejable</td></tr>
+<tr><td>-30%</td><td>+42.8%</td><td style="color:var(--gold)">Difícil</td></tr>
+<tr><td>-50%</td><td>+100%</td><td style="color:var(--red)">Muy difícil</td></tr>
+<tr><td>-70%</td><td>+233%</td><td style="color:var(--red)">Casi imposible</td></tr>
+<tr><td>-90%</td><td>+900%</td><td style="color:var(--red)">Imposible</td></tr></table>
+<p>Perder el 50% requiere ganar el 100% para recuperar. La asimetría destruye cuentas.</p></div>
+`,q:{q:'Si pierdes el 50% de tu cuenta, ¿cuánto necesitas ganar para recuperar?',o:['+50%','+75%','+100%','+200%'],a:2}},
+
+{id:2,t:'La Regla del 1-2%',s:'El pilar fundamental del position sizing',c:`
+<div class="cb"><p>La regla más importante del trading: <strong>nunca arriesgues más del 1-2% de tu capital en una sola operación</strong>. Esto no es una sugerencia — es una ley de supervivencia.</p></div>
+<div class="info-grid">
+<div class="info-card" style="border-top:3px solid var(--green)"><div class="info-icon">🟢</div><div class="info-title">Conservador: 0.5-1%</div><div class="info-desc">Para principiantes y cuentas pequeñas. Máxima protección.</div></div>
+<div class="info-card" style="border-top:3px solid var(--gold)"><div class="info-icon">🟡</div><div class="info-title">Estándar: 1-2%</div><div class="info-desc">El sweet spot para la mayoría de traders. Buen equilibrio crecimiento/protección.</div></div>
+</div>
+<div class="ebox"><div class="ebox-label">📌 Ejemplo concreto</div><p><strong>Cuenta: $10.000 | Riesgo: 1% = $100</strong><br>Si tu SL está a 50 pips en EUR/USD (valor pip $10/lote):<br>Tamaño = $100 ÷ (50 × $10) = <strong>0.20 lotes</strong><br><br>Si tu SL está a 20 pips:<br>Tamaño = $100 ÷ (20 × $10) = <strong>0.50 lotes</strong><br><br>El SL más cercano → lote más grande. El SL más lejano → lote más pequeño. El riesgo en $ siempre es el mismo: $100.</p></div>
+<div class="cbox"><div class="cbox-label">🔑 Fórmula universal</div><p><strong>Lotes = (Capital × %Riesgo) ÷ (Pips SL × Valor pip por lote)</strong><br><br>Esta fórmula adapta tu tamaño automáticamente a cada operación. Nunca uses un tamaño fijo de lote.</p></div>
+`,q:{q:'Con $10.000 y 1% de riesgo, ¿cuánto dinero arriesgas máximo?',o:['$10','$50','$100','$1.000'],a:2}},
+
+{id:3,t:'Ratio Riesgo/Beneficio',s:'La matemática que te hace rentable',c:`
+<div class="cb"><p>El R:R es la relación entre lo que arriesgas (distancia al SL) y lo que esperas ganar (distancia al TP). Es el factor que más impacta tu rentabilidad a largo plazo.</p></div>
+<div class="vbox"><div class="vbox-tag">Win Rate necesario según R:R</div>
+<table class="ctable"><tr><th>R:R</th><th>Win Rate mínimo</th><th>Veredicto</th></tr>
+<tr><td>1:1</td><td>50%</td><td style="color:var(--gold)">Necesitas acertar la mitad</td></tr>
+<tr><td>1:1.5</td><td>40%</td><td style="color:var(--green)">Aceptable</td></tr>
+<tr><td>1:2</td><td>33%</td><td style="color:var(--green)">Ideal — puedes fallar 2 de cada 3</td></tr>
+<tr><td>1:3</td><td>25%</td><td style="color:var(--green)">Excelente — fallas 3 de cada 4 y ganas</td></tr></table></div>
+<div class="cbox"><div class="cbox-label">💡 La revelación</div><p>Con R:R de <strong>1:2</strong>, solo necesitas acertar el <strong>33%</strong> de tus operaciones para ser rentable. Puedes fallar 2 de cada 3 operaciones y aún ganar dinero. Esto cambia completamente la presión psicológica.</p></div>
+<div class="ebox"><div class="ebox-label">📌 Ejemplo con números</div><p>10 operaciones con R:R 1:2, riesgo $100:<br>• 4 ganadoras × $200 = <strong style="color:var(--green)">+$800</strong><br>• 6 perdedoras × $100 = <strong style="color:var(--red)">-$600</strong><br>• Resultado: <strong style="color:var(--green)">+$200</strong> (solo acertaste 40%)</p></div>
+<div class="wbox"><div class="wbox-label">⚠️ Nunca operes con R:R < 1:1</div><p>Si arriesgas más de lo que puedes ganar, las matemáticas están en tu contra. Necesitarías un win rate >50% para ser rentable, y eso es extremadamente difícil de mantener.</p></div>
+`,q:{q:'Con R:R 1:2, ¿qué win rate necesitas para ser rentable?',o:['50%','75%','33%','10%'],a:2}},
+
+{id:4,t:'Stop Loss: Dónde y Por Qué',s:'El escudo que protege tu capital',c:`
+<div class="cb"><p>El Stop Loss no es opcional. Es tu seguro contra desastres. <strong>Cada operación debe tener un SL definido ANTES de entrar</strong>.</p></div>
+<div class="info-grid">
+<div class="info-card" style="border-top:3px solid var(--green)"><div class="info-icon">✅</div><div class="info-title">SL Técnico</div><div class="info-desc">Basado en estructura: debajo de soporte, encima de resistencia, detrás de un swing</div></div>
+<div class="info-card" style="border-top:3px solid var(--red)"><div class="info-icon">❌</div><div class="info-title">SL Arbitrario</div><div class="info-desc">"Pongo 30 pips porque sí". No tiene lógica técnica. El mercado no respeta tus pips fijos.</div></div>
+</div>
+<div class="flow">
+<div class="flow-step"><div class="flow-dot fd-gold">1</div><div class="flow-text"><h4>Identifica la estructura</h4><p>Busca el último swing low (para compras) o swing high (para ventas)</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-gold">2</div><div class="flow-text"><h4>Coloca el SL detrás</h4><p>Unos pips por debajo del swing low (compras) o encima del swing high (ventas)</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-green">3</div><div class="flow-text"><h4>Calcula el tamaño</h4><p>Con la distancia al SL, aplica la fórmula de position sizing</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-blue">4</div><div class="flow-text"><h4>Verifica el R:R</h4><p>¿El TP potencial da un R:R ≥ 1:1.5? Si no, descarta la operación</p></div></div>
+</div>
+<div class="wbox"><div class="wbox-label">⚠️ Errores fatales con el SL</div><p><strong>Mover el SL para evitar que te salte</strong> = destruir tu gestión de riesgo.<br><strong>No poner SL</strong> = una sola operación puede destruir meses de trabajo.<br><strong>SL demasiado ajustado</strong> = te salta por ruido normal del mercado.</p></div>
+`,q:{q:'¿Dónde debe colocarse un Stop Loss?',o:['Siempre a 30 pips','Basado en estructura técnica (swings)','Donde el broker sugiera','No es necesario poner SL'],a:1}},
+
+{id:5,t:'Drawdown y Recuperación',s:'Entender las rachas de pérdidas',c:`
+<div class="cb"><p>El drawdown es la <strong>caída máxima desde un pico de capital</strong>. Todas las estrategias rentables tienen drawdowns. La pregunta es: ¿puedes sobrevivir al tuyo?</p></div>
+<div class="info-grid info-grid-4">
+<div class="info-card" style="border-top:3px solid var(--green)"><div class="info-title">&lt;10%</div><div class="info-desc">Normal. Sigue operando con confianza.</div></div>
+<div class="info-card" style="border-top:3px solid var(--gold)"><div class="info-title">10-20%</div><div class="info-desc">Precaución. Revisa tu estrategia.</div></div>
+<div class="info-card" style="border-top:3px solid var(--orange)"><div class="info-title">20-30%</div><div class="info-desc">Alerta. Reduce tamaño 50%.</div></div>
+<div class="info-card" style="border-top:3px solid var(--red)"><div class="info-title">&gt;30%</div><div class="info-desc">Crítico. Para. Vuelve a demo.</div></div>
+</div>
+<div class="cbox"><div class="cbox-label">💡 Plan de acción por niveles</div><p><strong>DD 5%:</strong> Normal. No cambies nada.<br><strong>DD 10%:</strong> Revisa tu diario. ¿Sigues tu plan?<br><strong>DD 15%:</strong> Reduce riesgo a 0.5% por operación.<br><strong>DD 20%:</strong> Opera solo los mejores setups (A+).<br><strong>DD 25%+:</strong> Para completamente. Analiza. Vuelve a demo 2 semanas.</p></div>
+<div class="ebox"><div class="ebox-label">📌 Dato clave</div><p>Con 1% de riesgo por operación, necesitas <strong>30 pérdidas consecutivas</strong> para tener un drawdown del 26%. Eso es casi imposible con cualquier estrategia decente. Por eso el 1% es tan poderoso.</p></div>
+`,q:{q:'¿Qué debes hacer con un drawdown del 20%?',o:['Duplicar el riesgo para recuperar','Seguir normal','Reducir tamaño y operar solo A+ setups','Cerrar la cuenta'],a:2}},
+
+{id:6,t:'Correlaciones',s:'El riesgo oculto que pocos ven',c:`
+<div class="cb"><p>Si abres 3 operaciones en EUR/USD, GBP/USD y AUD/USD al mismo tiempo, <strong>no estás diversificando — estás triplicando tu riesgo</strong>. Los tres pares están altamente correlacionados (todos contra USD).</p></div>
+<div class="vbox"><div class="vbox-tag">Correlaciones comunes</div>
+<table class="ctable"><tr><th>Par A</th><th>Par B</th><th>Correlación</th><th>Implicación</th></tr>
+<tr><td>EUR/USD</td><td>GBP/USD</td><td style="color:var(--green)">+0.85</td><td>Se mueven juntos. No operes ambos.</td></tr>
+<tr><td>EUR/USD</td><td>USD/CHF</td><td style="color:var(--red)">-0.90</td><td>Se mueven opuestos. Comprar ambos = hedging.</td></tr>
+<tr><td>XAU/USD</td><td>USD</td><td style="color:var(--red)">-0.70</td><td>Oro sube cuando USD baja.</td></tr>
+<tr><td>S&P 500</td><td>NASDAQ</td><td style="color:var(--green)">+0.95</td><td>Casi idénticos. No operes ambos.</td></tr></table></div>
+<div class="cbox"><div class="cbox-label">💡 Regla de exposición</div><p><strong>Máximo 2-3 posiciones correlacionadas abiertas</strong> al mismo tiempo. Si tienes EUR/USD largo y GBP/USD largo, tu riesgo real es 2x. Calcula siempre tu exposición total por divisa.</p></div>
+`,q:{q:'Si tienes EUR/USD y GBP/USD largo, ¿cuánto riesgo real tienes?',o:['1x (diversificado)','Casi 2x (correlacionados)','0 (se anulan)','3x'],a:1}},
+
+{id:7,t:'Reglas de Pausa',s:'Cuándo dejar de operar',c:`
+<div class="cb"><p>Saber cuándo <strong>NO operar</strong> es tan importante como saber cuándo operar. Las reglas de pausa son tu protección contra el tilt emocional.</p></div>
+<div class="flow">
+<div class="flow-step"><div class="flow-dot fd-red">⏸</div><div class="flow-text"><h4>3 pérdidas consecutivas → Para el día</h4><p>Tu juicio está comprometido. Vuelve mañana con mente fresca.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-red">⏸</div><div class="flow-text"><h4>-3% en un día → Para la semana</h4><p>Algo va mal. Revisa tu diario antes de volver.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-red">⏸</div><div class="flow-text"><h4>-5% en una semana → Reduce tamaño 50%</h4><p>Opera con la mitad de tu tamaño habitual hasta recuperar confianza.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-red">⏸</div><div class="flow-text"><h4>-10% en un mes → Vuelve a demo</h4><p>Algo fundamental está fallando. Testea en demo hasta encontrar el problema.</p></div></div>
+</div>
+<div class="cbox"><div class="cbox-label">💡 El trading de venganza</div><p>Después de una pérdida, el instinto te dice "necesito recuperar". Esto lleva a operar con más riesgo, sin plan, y en peores setups. El resultado: más pérdidas. Las reglas de pausa <strong>rompen este ciclo</strong>.</p></div>
+`,q:{q:'¿Qué hacer tras 3 pérdidas consecutivas?',o:['Duplicar el tamaño','Parar el día','Cambiar de par','Quitar el stop loss'],a:1}},
+
+{id:8,t:'Diario de Trading',s:'Tu herramienta de mejora más poderosa',c:`
+<div class="cb"><p>El diario de trading es donde conviertes experiencia en aprendizaje. Sin diario, cometes los mismos errores una y otra vez. <strong>Todo trader profesional lleva un diario</strong>.</p></div>
+<div class="vbox"><div class="vbox-tag">Qué registrar en cada operación</div>
+<table class="ctable"><tr><th>Campo</th><th>Ejemplo</th></tr>
+<tr><td>Fecha/hora</td><td>05/04/2026, 10:30 CET</td></tr>
+<tr><td>Par</td><td>EUR/USD</td></tr>
+<tr><td>Dirección</td><td>Long</td></tr>
+<tr><td>Entry / SL / TP</td><td>1.0850 / 1.0800 / 1.0950</td></tr>
+<tr><td>Tamaño</td><td>0.20 lotes</td></tr>
+<tr><td>R:R</td><td>1:2</td></tr>
+<tr><td>Razón de entrada</td><td>Rebote en soporte + EMA 50 + RSI 38</td></tr>
+<tr><td>Resultado</td><td>+$200 / TP alcanzado</td></tr>
+<tr><td>¿Seguí mi plan?</td><td>Sí / No (explicar)</td></tr>
+<tr><td>Emociones</td><td>Confiado, sin ansiedad</td></tr>
+<tr><td>Lección</td><td>La confluencia triple funciona bien en H4</td></tr></table></div>
+<div class="cbox"><div class="cbox-label">💡 La métrica oculta</div><p>La pregunta más importante no es "¿gané o perdí?" sino <strong>"¿seguí mi plan?"</strong>. Una pérdida siguiendo tu plan es un buen trade. Una ganancia rompiendo tus reglas es un mal trade.</p></div>
+`,q:{q:'¿Cuál es la pregunta más importante del diario?',o:['¿Cuánto gané?','¿Qué par operé?','¿Seguí mi plan?','¿A qué hora entré?'],a:2}},
+
+{id:9,t:'Psicología y Emociones',s:'Controla tu mente, controla tu trading',c:`
+<div class="cb"><p>Los mercados amplifican tus emociones. El miedo, la codicia, la frustración y la euforia son las causas reales de la mayoría de pérdidas. El análisis técnico es fácil. <strong>El control emocional es lo difícil</strong>.</p></div>
+<div class="info-grid">
+<div class="info-card" style="border-top:3px solid var(--red)"><div class="info-icon">😰</div><div class="info-title">Miedo</div><div class="info-desc">No entras en buenos setups. Cierras ganadores demasiado pronto.</div></div>
+<div class="info-card" style="border-top:3px solid var(--orange)"><div class="info-icon">🤑</div><div class="info-title">Codicia</div><div class="info-desc">Operas demasiado. Arriesgas más de lo debido. No tomas beneficios.</div></div>
+<div class="info-card" style="border-top:3px solid var(--red)"><div class="info-icon">😤</div><div class="info-title">Venganza</div><div class="info-desc">Operas para recuperar pérdidas. Sin plan, con más riesgo.</div></div>
+<div class="info-card" style="border-top:3px solid var(--gold)"><div class="info-icon">🎉</div><div class="info-title">Euforia</div><div class="info-desc">Tras una racha ganadora te crees invencible. Subes el riesgo. Y llega la corrección.</div></div>
+</div>
+<div class="ebox"><div class="ebox-label">📌 Antídotos prácticos</div><p>✅ <strong>Reglas escritas</strong> — Si no está en tu plan, no lo hagas<br>✅ <strong>Tamaño fijo de riesgo</strong> — No subas tras ganar ni bajes tras perder<br>✅ <strong>Pausas obligatorias</strong> — Tras 3 pérdidas, para<br>✅ <strong>Diario de emociones</strong> — Registra cómo te sentías en cada trade<br>✅ <strong>Rutina pre-trading</strong> — 5 minutos de preparación mental antes de abrir la plataforma</p></div>
+`,q:{q:'¿Qué es el trading de venganza?',o:['Operar mejor tras una pérdida','Operar sin plan para recuperar pérdidas','Una estrategia de reversión','Copiar trades de otros'],a:1}},
+
+{id:10,t:'Tu Framework Completo de Riesgo',s:'Uniendo todo en un sistema coherente',c:`
+<div class="cb"><h3>El framework de 7 reglas</h3><p>Este es el sistema completo que debes implementar. Imprímelo y ponlo junto a tu pantalla.</p></div>
+<div class="flow">
+<div class="flow-step"><div class="flow-dot fd-gold">1</div><div class="flow-text"><h4>Riesgo máximo 1-2% por operación</h4><p>Nunca más. Sin excepciones. Sin importar la confianza.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-gold">2</div><div class="flow-text"><h4>R:R mínimo 1:1.5 — ideal 1:2+</h4><p>Si el setup no da R:R suficiente, descártalo.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-blue">3</div><div class="flow-text"><h4>SL técnico siempre</h4><p>Basado en estructura. Nunca arbitrario. Nunca lo muevas.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-blue">4</div><div class="flow-text"><h4>Máximo 3 posiciones abiertas</h4><p>Controla correlaciones. No más de 2 pares correlacionados.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-red">5</div><div class="flow-text"><h4>3 pérdidas seguidas = para el día</h4><p>Protege tu capital y tu mente.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-red">6</div><div class="flow-text"><h4>DD 20% = vuelve a demo</h4><p>Algo falla. Arréglalo antes de seguir.</p></div></div>
+<div class="flow-step"><div class="flow-dot fd-green">7</div><div class="flow-text"><h4>Diario de CADA operación</h4><p>Sin excusas. Es tu herramienta de mejora #1.</p></div></div>
+</div>
+<div class="cbox"><div class="cbox-label">🎓 Lección final</div><p>La gestión de riesgo no es sexy. No es emocionante. No da likes en redes. Pero es la <strong>única razón</strong> por la que los traders profesionales siguen en el mercado después de 10, 20 o 30 años. Domina esto y el resto vendrá solo.</p></div>
+<div class="ebox"><div class="ebox-label">🎯 Siguiente paso</div><p>Usa nuestro <a href="../../index.html" style="color:var(--gold)">Simulador de Drawdown</a> y la <a href="../../index.html" style="color:var(--gold)">Calculadora de Posición</a> para practicar estos conceptos con números reales.</p></div>
+`,q:{q:'¿Cuántas posiciones correlacionadas puedes tener abiertas?',o:['Ilimitadas','Máximo 2','Máximo 5','Solo 1'],a:1}}
+];
+let cur=0,done=new Set();try{const s=localStorage.getItem('c-gr');if(s)done=new Set(JSON.parse(s))}catch(e){}
+function renderSB(){const n=document.getElementById('sbNav');n.innerHTML=L.map((l,i)=>`<button class="sb-link ${i===cur?'active':''} ${done.has(i)?'done':''}" onclick="go(${i})"><span class="sb-num">${done.has(i)?'✓':l.id}</span><span>${l.t}</span></button>`).join('');document.getElementById('progText').textContent=done.size+'/'+L.length;document.getElementById('progFill').style.width=(done.size/L.length*100)+'%'}
+function render(){const l=L[cur],m=document.getElementById('mainArea');let qh='';if(l.q)qh=`<div class="quiz-box"><div class="quiz-q">🧠 ${l.q.q}</div><div class="quiz-opts">${l.q.o.map((o,i)=>`<button class="qo" onclick="chk(${i},${l.q.a})">${o}</button>`).join('')}</div><div class="quiz-fb" id="qfb"></div></div>`;m.innerHTML=`<div class="lesson-tag">Lección ${l.id} de ${L.length}</div><h1 class="lesson-title">${l.t}</h1><p class="lesson-sub">${l.s}</p>${l.c}${qh}<div class="lesson-nav">${cur>0?`<button class="ln-btn ln-prev" onclick="go(${cur-1})">← Anterior</button>`:'<div></div>'}${cur<L.length-1?`<button class="ln-btn ln-next" onclick="cmpNext()">Completar y seguir →</button>`:`<button class="ln-btn ln-done" onclick="finish()">🎓 Completar curso</button>`}</div>`;m.scrollTo(0,0);window.scrollTo(0,0);renderSB();document.getElementById('sidebar').classList.remove('open');qAns=false}
+let qAns=false;function chk(s,c){if(qAns)return;qAns=true;document.querySelectorAll('.qo').forEach((b,i)=>{if(i===c)b.classList.add('ok');else if(i===s&&s!==c)b.classList.add('no');b.style.cursor='default'});document.getElementById('qfb').innerHTML=s===c?'<span style="color:var(--green)">✅ ¡Correcto!</span>':'<span style="color:var(--red)">❌ Incorrecto</span>'}
+function go(i){cur=i;render()}function cmpNext(){done.add(cur);save();go(cur+1)}function save(){try{localStorage.setItem('c-gr',JSON.stringify([...done]))}catch(e){}}
+function finish(){done.add(cur);save();document.getElementById('mainArea').innerHTML=`<div style="text-align:center;padding:60px 20px"><div style="font-size:72px;margin-bottom:16px">🛡️</div><h1 style="font-size:30px;font-weight:900;margin-bottom:10px">¡Curso Completado!</h1><p style="font-size:16px;color:var(--text-2)">Ahora tienes un framework de gestión de riesgo profesional</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px"><a href="../../index.html" class="ln-btn ln-next" style="text-decoration:none;display:inline-block">Herramientas →</a><a href="../cursos.html" class="ln-btn ln-prev" style="text-decoration:none;display:inline-block">Más cursos</a></div></div>`;renderSB()}
+render();
+</script>
+</body>
+</html>
