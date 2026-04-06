@@ -118,21 +118,21 @@
       <div class="rc-desc">Crea prompts profesionales paso a paso para usar con cualquier IA. Análisis técnico, fundamental, gestión de riesgo y más. Con plantillas listas para usar.</div>
       <button class="rc-btn">Usar herramienta ↓</button>
     </div>
-    <div class="resource-card" style="--rc-accent:var(--green);--rc-glow:var(--glow-green)">
+    <div class="resource-card" style="--rc-accent:var(--green);--rc-glow:var(--glow-green)" onclick="document.getElementById('checklistApp').scrollIntoView({behavior:'smooth'})">
       <div class="rc-header">
         <div class="rc-icon">📋</div>
-        <div><div class="rc-title">Checklist Pre-Operación</div><span class="rc-badge badge-soon">Próximamente</span></div>
+        <div><div class="rc-title">Checklist Pre-Operación</div><span class="rc-badge badge-new">Activo</span></div>
       </div>
       <div class="rc-desc">Lista de verificación GO/NO-GO antes de abrir cada operación. Confirma estructura, confluencias, riesgo y timing.</div>
-      <button class="rc-btn" disabled style="opacity:0.5">Próximamente</button>
+      <button class="rc-btn">Usar herramienta ↓</button>
     </div>
-    <div class="resource-card" style="--rc-accent:var(--blue);--rc-glow:var(--glow-blue)">
+    <div class="resource-card" style="--rc-accent:var(--blue);--rc-glow:var(--glow-blue)" onclick="document.getElementById('cheatSheet').scrollIntoView({behavior:'smooth'})">
       <div class="rc-header">
         <div class="rc-icon">📊</div>
-        <div><div class="rc-title">Cheat Sheet de Indicadores</div><span class="rc-badge badge-soon">Próximamente</span></div>
+        <div><div class="rc-title">Cheat Sheet de Indicadores</div><span class="rc-badge badge-new">Activo</span></div>
       </div>
       <div class="rc-desc">Referencia rápida de RSI, MACD, Bandas de Bollinger, EMAs y más. Configuraciones óptimas y señales clave.</div>
-      <button class="rc-btn" disabled style="opacity:0.5">Próximamente</button>
+      <button class="rc-btn">Ver referencia ↓</button>
     </div>
   </div>
 
@@ -176,15 +176,65 @@
           <div class="pg-field"><label>Instrumento / Par</label>
             <select id="pg-instrument">
               <option value="">Selecciona...</option>
-              <option value="EUR/USD">EUR/USD</option>
-              <option value="GBP/USD">GBP/USD</option>
-              <option value="USD/JPY">USD/JPY</option>
-              <option value="XAU/USD">XAU/USD (Oro)</option>
-              <option value="WTI">WTI (Petróleo)</option>
-              <option value="S&P 500">S&P 500</option>
-              <option value="DAX">DAX 40</option>
-              <option value="NASDAQ">NASDAQ 100</option>
-              <option value="BTC/USD">BTC/USD</option>
+              <optgroup label="Forex — Majors">
+                <option value="EUR/USD">EUR/USD</option>
+                <option value="GBP/USD">GBP/USD</option>
+                <option value="USD/JPY">USD/JPY</option>
+                <option value="USD/CHF">USD/CHF</option>
+                <option value="AUD/USD">AUD/USD</option>
+                <option value="NZD/USD">NZD/USD</option>
+                <option value="USD/CAD">USD/CAD</option>
+              </optgroup>
+              <optgroup label="Forex — Crosses">
+                <option value="EUR/GBP">EUR/GBP</option>
+                <option value="EUR/JPY">EUR/JPY</option>
+                <option value="GBP/JPY">GBP/JPY</option>
+                <option value="EUR/AUD">EUR/AUD</option>
+                <option value="GBP/AUD">GBP/AUD</option>
+                <option value="AUD/JPY">AUD/JPY</option>
+                <option value="CHF/JPY">CHF/JPY</option>
+                <option value="EUR/CAD">EUR/CAD</option>
+                <option value="GBP/CAD">GBP/CAD</option>
+                <option value="EUR/NZD">EUR/NZD</option>
+              </optgroup>
+              <optgroup label="Metales">
+                <option value="XAU/USD">XAU/USD (Oro)</option>
+                <option value="XAG/USD">XAG/USD (Plata)</option>
+                <option value="XPT/USD">XPT/USD (Platino)</option>
+              </optgroup>
+              <optgroup label="Energía">
+                <option value="WTI">WTI (Petróleo crudo)</option>
+                <option value="Brent">Brent</option>
+                <option value="Gas Natural">Gas Natural</option>
+              </optgroup>
+              <optgroup label="Índices">
+                <option value="S&P 500">S&P 500 (US500)</option>
+                <option value="NASDAQ 100">NASDAQ 100 (US100)</option>
+                <option value="Dow Jones">Dow Jones (US30)</option>
+                <option value="DAX 40">DAX 40 (GER40)</option>
+                <option value="FTSE 100">FTSE 100 (UK100)</option>
+                <option value="Nikkei 225">Nikkei 225 (JP225)</option>
+                <option value="IBEX 35">IBEX 35 (ESP35)</option>
+                <option value="CAC 40">CAC 40 (FRA40)</option>
+                <option value="Euro Stoxx 50">Euro Stoxx 50</option>
+              </optgroup>
+              <optgroup label="Crypto">
+                <option value="BTC/USD">BTC/USD (Bitcoin)</option>
+                <option value="ETH/USD">ETH/USD (Ethereum)</option>
+                <option value="SOL/USD">SOL/USD (Solana)</option>
+                <option value="XRP/USD">XRP/USD (Ripple)</option>
+                <option value="BNB/USD">BNB/USD (Binance)</option>
+                <option value="ADA/USD">ADA/USD (Cardano)</option>
+              </optgroup>
+              <optgroup label="Acciones">
+                <option value="Apple (AAPL)">Apple (AAPL)</option>
+                <option value="Tesla (TSLA)">Tesla (TSLA)</option>
+                <option value="NVIDIA (NVDA)">NVIDIA (NVDA)</option>
+                <option value="Microsoft (MSFT)">Microsoft (MSFT)</option>
+                <option value="Amazon (AMZN)">Amazon (AMZN)</option>
+                <option value="Meta (META)">Meta (META)</option>
+                <option value="Google (GOOGL)">Google (GOOGL)</option>
+              </optgroup>
             </select>
           </div>
           <div class="pg-field"><label>Temporalidad principal</label>
@@ -348,5 +398,292 @@ document.getElementById('promptText').textContent=T[type]||'';goToStep(4)}
 
 window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>40)});
 </script>
+
+<!-- ========== CHECKLIST PRE-OPERACIÓN ========== -->
+<div class="app-section" id="checklistApp" style="max-width:1200px;margin:48px auto 0;padding:0 24px;position:relative;z-index:10">
+  <div class="app-header">
+    <div class="app-header-icon" style="background:linear-gradient(135deg,rgba(46,204,113,0.12),rgba(46,204,113,0.04));border-color:rgba(46,204,113,0.2)">📋</div>
+    <div class="app-header-text">
+      <h2>Checklist Pre-Operación</h2>
+      <p>Verifica cada punto antes de abrir una operación. Si alguno es NO → no operes.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--bg-3);border:1px solid var(--border-1);border-radius:16px;overflow:hidden">
+    <!-- Header with score -->
+    <div style="padding:20px 24px;border-bottom:1px solid var(--border-1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div>
+        <span style="font-family:var(--font-mono);font-size:24px;font-weight:700" id="clScore">0</span>
+        <span style="font-size:14px;color:var(--text-3)"> / <span id="clTotal">27</span> verificados</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div style="width:200px;height:8px;background:var(--bg-5);border-radius:4px;overflow:hidden"><div id="clBar" style="height:100%;background:var(--red);border-radius:4px;transition:all .4s;width:0%"></div></div>
+        <span id="clVerdict" style="font-size:13px;font-weight:700;color:var(--red)">NO-GO</span>
+      </div>
+      <button onclick="resetChecklist()" style="padding:8px 16px;background:var(--bg-5);border:1px solid var(--border-2);border-radius:6px;color:var(--text-3);font-size:12px;cursor:pointer;font-family:var(--font-display)">🔄 Reset</button>
+    </div>
+
+    <!-- Sections -->
+    <div style="padding:24px" id="checklistBody">
+    </div>
+  </div>
+</div>
+
+<!-- ========== CHEAT SHEET DE INDICADORES ========== -->
+<div class="app-section" id="cheatSheet" style="max-width:1200px;margin:48px auto 0;padding:0 24px 80px;position:relative;z-index:10">
+  <div class="app-header">
+    <div class="app-header-icon" style="background:linear-gradient(135deg,rgba(52,152,219,0.12),rgba(52,152,219,0.04));border-color:rgba(52,152,219,0.2)">📊</div>
+    <div class="app-header-text">
+      <h2>Cheat Sheet de Indicadores</h2>
+      <p>Referencia rápida de configuraciones, señales y uso práctico de cada indicador.</p>
+    </div>
+  </div>
+
+  <div id="cheatBody" style="display:flex;flex-direction:column;gap:16px"></div>
+</div>
+
+<script>
+// ===== CHECKLIST =====
+const checkSections = [
+  { title: '📈 Estructura de Mercado', color: 'var(--gold)', items: [
+    '¿He identificado la tendencia en el timeframe mayor (D1/W1)?',
+    '¿La dirección de mi trade va a favor de la tendencia mayor?',
+    '¿He trazado los soportes y resistencias clave?',
+    '¿El precio está en una zona de interés (S/R, supply/demand)?',
+    '¿He verificado si hay cambio de polaridad en el nivel?'
+  ]},
+  { title: '🔍 Confluencias', color: 'var(--blue)', items: [
+    '¿Tengo al menos 2 confluencias alineadas?',
+    '¿La EMA 50 o 200 confirma la dirección?',
+    '¿Hay coincidencia con nivel de Fibonacci (38.2-61.8%)?',
+    '¿El patrón de velas confirma en la zona? (Hammer, Engulfing...)',
+    '¿Hay coincidencia con número redondo psicológico?'
+  ]},
+  { title: '📊 Indicadores', color: 'var(--purple)', items: [
+    '¿El RSI confirma? (no en sobrecompra para compras / no en sobreventa para ventas)',
+    '¿El MACD apoya la dirección del trade?',
+    '¿Hay divergencia que apoye o contradiga mi setup?',
+    '¿El volumen confirma el movimiento?'
+  ]},
+  { title: '🛡️ Gestión de Riesgo', color: 'var(--green)', items: [
+    '¿Mi riesgo es ≤ 2% del capital?',
+    '¿He calculado el tamaño de posición correcto?',
+    '¿Mi Stop Loss está en un nivel técnico lógico?',
+    '¿Mi ratio R:R es mínimo 1:1.5?',
+    '¿Tengo SL y TP definidos ANTES de entrar?',
+    '¿No excedo el máximo de posiciones abiertas?',
+    '¿He verificado correlaciones con otras posiciones abiertas?'
+  ]},
+  { title: '⏰ Timing y Contexto', color: 'var(--orange)', items: [
+    '¿Estoy operando en sesión activa (Londres/NY)?',
+    '¿No hay noticias de alto impacto en las próximas 30 min?',
+    '¿El spread actual es aceptable?',
+    '¿Estoy en un estado emocional estable?',
+    '¿No estoy operando por venganza tras una pérdida?',
+    '¿No he alcanzado mi límite de pérdidas del día?'
+  ]}
+];
+
+let totalItems = 0;
+checkSections.forEach(s => totalItems += s.items.length);
+
+function renderChecklist() {
+  const body = document.getElementById('checklistBody');
+  document.getElementById('clTotal').textContent = totalItems;
+  let html = '';
+  let idx = 0;
+  checkSections.forEach(s => {
+    html += `<div style="margin-bottom:24px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:${s.color}">${s.title}</div>`;
+    s.items.forEach(item => {
+      html += `<div class="cl-item" onclick="toggleCL(this)" data-idx="${idx}" style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;margin:5px 0;cursor:pointer;transition:all .2s;font-size:13px;color:var(--text-2)">
+        <div class="cl-box" style="width:22px;height:22px;border:2px solid var(--border-2);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:11px"></div>
+        <span>${item}</span>
+      </div>`;
+      idx++;
+    });
+    html += '</div>';
+  });
+  body.innerHTML = html;
+}
+
+function toggleCL(el) {
+  el.classList.toggle('checked');
+  const box = el.querySelector('.cl-box');
+  if (el.classList.contains('checked')) {
+    box.style.background = 'var(--green)';
+    box.style.borderColor = 'var(--green)';
+    box.style.color = 'var(--bg-0)';
+    box.textContent = '✓';
+    el.style.borderColor = 'rgba(46,204,113,0.2)';
+    el.style.background = 'rgba(46,204,113,0.03)';
+  } else {
+    box.style.background = '';
+    box.style.borderColor = '';
+    box.style.color = '';
+    box.textContent = '';
+    el.style.borderColor = '';
+    el.style.background = '';
+  }
+  updateScore();
+}
+
+function updateScore() {
+  const checked = document.querySelectorAll('.cl-item.checked').length;
+  const pct = (checked / totalItems * 100);
+  document.getElementById('clScore').textContent = checked;
+  const bar = document.getElementById('clBar');
+  bar.style.width = pct + '%';
+  const verdict = document.getElementById('clVerdict');
+  if (pct >= 85) { bar.style.background = 'var(--green)'; verdict.textContent = '✅ GO'; verdict.style.color = 'var(--green)'; }
+  else if (pct >= 60) { bar.style.background = 'var(--gold)'; verdict.textContent = '⚠️ REVISAR'; verdict.style.color = 'var(--gold)'; }
+  else { bar.style.background = 'var(--red)'; verdict.textContent = '❌ NO-GO'; verdict.style.color = 'var(--red)'; }
+}
+
+function resetChecklist() {
+  document.querySelectorAll('.cl-item').forEach(el => {
+    el.classList.remove('checked');
+    const box = el.querySelector('.cl-box');
+    box.style.background = ''; box.style.borderColor = ''; box.style.color = ''; box.textContent = '';
+    el.style.borderColor = ''; el.style.background = '';
+  });
+  updateScore();
+}
+
+renderChecklist();
+
+// ===== CHEAT SHEET =====
+const indicators = [
+  { name:'RSI', full:'Relative Strength Index', icon:'📈', color:'var(--purple)', type:'Oscilador',
+    config:'Período: 14 (estándar)', range:'0 — 100',
+    signals:[
+      {s:'Sobrecompra',d:'RSI > 70. Posible corrección bajista. No vender ciegamente en tendencia alcista.',c:'var(--red)'},
+      {s:'Sobreventa',d:'RSI < 30. Posible rebote alcista. No comprar ciegamente en tendencia bajista.',c:'var(--green)'},
+      {s:'Divergencia alcista',d:'Precio hace nuevos mínimos, RSI hace mínimos más altos → posible reversión alcista.',c:'var(--green)'},
+      {s:'Divergencia bajista',d:'Precio hace nuevos máximos, RSI hace máximos más bajos → posible reversión bajista.',c:'var(--red)'}
+    ],
+    tips:'En tendencia alcista, el RSI se mueve entre 40-80. En bajista, entre 20-60. Las divergencias son más fiables que las zonas de sobrecompra/sobreventa.'
+  },
+  { name:'MACD', full:'Moving Average Convergence Divergence', icon:'📊', color:'var(--blue)', type:'Tendencia + Momentum',
+    config:'Línea MACD: EMA 12 − EMA 26 | Signal: EMA 9 del MACD', range:'Sin límite (oscila sobre 0)',
+    signals:[
+      {s:'Cruce alcista',d:'Línea MACD cruza por encima de Signal → señal de compra.',c:'var(--green)'},
+      {s:'Cruce bajista',d:'Línea MACD cruza por debajo de Signal → señal de venta.',c:'var(--red)'},
+      {s:'Cruce línea cero',d:'MACD cruza de negativo a positivo (o viceversa) → confirma cambio de tendencia.',c:'var(--gold)'},
+      {s:'Histograma creciente',d:'Momentum aumentando en la dirección actual.',c:'var(--green)'}
+    ],
+    tips:'Combina con RSI: MACD para dirección, RSI para timing de entrada. El histograma muestra la fuerza del momentum.'
+  },
+  { name:'Medias Móviles', full:'EMA / SMA', icon:'〰️', color:'var(--gold)', type:'Tendencia',
+    config:'EMA 20 (corto) | EMA 50 (medio) | EMA 200 (largo)', range:'Sigue al precio',
+    signals:[
+      {s:'Precio > EMA 200',d:'Tendencia alcista de largo plazo. Buscar compras.',c:'var(--green)'},
+      {s:'Precio < EMA 200',d:'Tendencia bajista de largo plazo. Buscar ventas.',c:'var(--red)'},
+      {s:'Golden Cross',d:'EMA 50 cruza por encima de EMA 200 → señal alcista fuerte.',c:'var(--green)'},
+      {s:'Death Cross',d:'EMA 50 cruza por debajo de EMA 200 → señal bajista fuerte.',c:'var(--red)'},
+      {s:'Rebote en EMA',d:'Precio retrocede a EMA 50/200 y rebota → entrada a favor de tendencia.',c:'var(--gold)'}
+    ],
+    tips:'Las EMAs son indicadores retrasados. Úsalas para confirmar tendencia, no como señal única. La EMA 200 es la más respetada institucionalmente.'
+  },
+  { name:'Bandas de Bollinger', full:'Bollinger Bands', icon:'📐', color:'var(--cyan)', type:'Volatilidad',
+    config:'Período: 20 | Desviación: 2', range:'Dinámico (se adapta a volatilidad)',
+    signals:[
+      {s:'Precio toca banda superior',d:'Posible sobreextensión alcista. No necesariamente venta — puede indicar fuerza.',c:'var(--red)'},
+      {s:'Precio toca banda inferior',d:'Posible sobreextensión bajista. Buscar rebote solo con confirmación.',c:'var(--green)'},
+      {s:'Squeeze (bandas se estrechan)',d:'Baja volatilidad → movimiento explosivo inminente. No indica dirección.',c:'var(--gold)'},
+      {s:'Expansión',d:'Alta volatilidad. Posible inicio o continuación de tendencia fuerte.',c:'var(--blue)'}
+    ],
+    tips:'En tendencia fuerte, el precio "camina" sobre la banda. El squeeze es la señal más potente: prepárate para un breakout.'
+  },
+  { name:'Stochastic', full:'Stochastic Oscillator', icon:'🔄', color:'var(--orange)', type:'Oscilador / Momentum',
+    config:'%K: 14 | %D: 3 | Suavizado: 3', range:'0 — 100',
+    signals:[
+      {s:'Sobrecompra',d:'Stochastic > 80. En rango, buscar ventas. En tendencia, esperar confirmación.',c:'var(--red)'},
+      {s:'Sobreventa',d:'Stochastic < 20. En rango, buscar compras. En tendencia, puede mantenerse.',c:'var(--green)'},
+      {s:'Cruce %K/%D alcista',d:'%K cruza por encima de %D en zona de sobreventa → señal de compra.',c:'var(--green)'},
+      {s:'Cruce %K/%D bajista',d:'%K cruza por debajo de %D en zona de sobrecompra → señal de venta.',c:'var(--red)'}
+    ],
+    tips:'Más útil en mercados laterales/rango. En tendencia fuerte, puede dar señales falsas. Combina con S/R para filtrar.'
+  },
+  { name:'ADX', full:'Average Directional Index', icon:'💪', color:'var(--green)', type:'Fuerza de tendencia',
+    config:'Período: 14', range:'0 — 100',
+    signals:[
+      {s:'ADX < 20',d:'Mercado sin tendencia / lateral. No usar estrategias de tendencia.',c:'var(--text-3)'},
+      {s:'ADX 20-40',d:'Tendencia moderada. Se puede operar a favor con precaución.',c:'var(--gold)'},
+      {s:'ADX > 40',d:'Tendencia fuerte. Ideal para estrategias de tendencia.',c:'var(--green)'},
+      {s:'ADX > 60',d:'Tendencia extrema. Posible agotamiento pronto. No entrar tarde.',c:'var(--orange)'}
+    ],
+    tips:'ADX NO indica dirección, solo fuerza. Usa +DI/-DI o el precio para la dirección. Es el filtro perfecto: solo opera tendencia cuando ADX > 20.'
+  },
+  { name:'Fibonacci', full:'Retrocesos y Extensiones', icon:'🔢', color:'var(--gold)', type:'Niveles de precio',
+    config:'Niveles: 23.6%, 38.2%, 50%, 61.8%, 78.6% | Extensiones: 127.2%, 161.8%', range:'Depende del swing',
+    signals:[
+      {s:'Retroceso 38.2%',d:'Retroceso superficial. Indica tendencia muy fuerte.',c:'var(--green)'},
+      {s:'Retroceso 50%',d:'Zona de equilibrio. Nivel psicológico importante.',c:'var(--gold)'},
+      {s:'Retroceso 61.8%',d:'Zona dorada. El nivel más respetado estadísticamente. Ideal para entradas.',c:'var(--gold)'},
+      {s:'Extensión 127.2%',d:'Primer objetivo de Take Profit en extensión.',c:'var(--blue)'},
+      {s:'Extensión 161.8%',d:'Segundo objetivo de Take Profit. Nivel fuerte para tomar beneficios.',c:'var(--blue)'}
+    ],
+    tips:'No es un indicador sino una herramienta de precio. La zona 50-61.8% ("zona dorada") es donde buscar entradas. Combina con S/R horizontal para máxima confluencia.'
+  },
+  { name:'ATR', full:'Average True Range', icon:'📏', color:'var(--red)', type:'Volatilidad',
+    config:'Período: 14', range:'Valor en pips/puntos (siempre positivo)',
+    signals:[
+      {s:'ATR alto',d:'Alta volatilidad. Ampliar SL para no ser sacado por ruido. Reducir tamaño de posición.',c:'var(--orange)'},
+      {s:'ATR bajo',d:'Baja volatilidad. SL más ajustado posible. Posible breakout inminente.',c:'var(--green)'},
+      {s:'SL basado en ATR',d:'SL = 1.5x ATR desde entrada. Se adapta automáticamente a la volatilidad actual.',c:'var(--gold)'}
+    ],
+    tips:'Usa ATR para calcular SL dinámico en vez de pips fijos. SL = 1.5 × ATR(14) es una regla profesional. También útil para filtrar: no operar si ATR es extremadamente alto.'
+  }
+];
+
+function renderCheatSheet() {
+  const body = document.getElementById('cheatBody');
+  body.innerHTML = indicators.map(ind => `
+    <div style="background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;overflow:hidden;transition:all .3s" class="cs-card">
+      <div style="padding:20px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between" onclick="this.parentElement.classList.toggle('cs-open')">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(255,255,255,0.03);border:1px solid var(--border-1)">${ind.icon}</div>
+          <div>
+            <div style="font-size:17px;font-weight:800">${ind.name}</div>
+            <div style="font-size:11px;color:var(--text-3);font-family:var(--font-mono)">${ind.full}</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="padding:4px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:rgba(255,255,255,0.04);color:var(--text-3)">${ind.type}</span>
+          <span class="cs-arrow" style="color:var(--text-3);transition:transform .3s;font-size:14px">▼</span>
+        </div>
+      </div>
+      <div class="cs-body" style="display:none;padding:0 24px 24px;border-top:1px solid var(--border-1)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0">
+          <div style="background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;padding:12px">
+            <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:4px">Configuración</div>
+            <div style="font-size:13px;color:var(--text-2)">${ind.config}</div>
+          </div>
+          <div style="background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;padding:12px">
+            <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:4px">Rango</div>
+            <div style="font-size:13px;color:var(--text-2)">${ind.range}</div>
+          </div>
+        </div>
+        <div style="font-size:13px;font-weight:700;margin:16px 0 8px;color:${ind.color}">Señales clave</div>
+        ${ind.signals.map(sg => `<div style="display:flex;gap:10px;padding:10px 12px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;margin:5px 0;font-size:13px">
+          <span style="color:${sg.c};font-weight:700;white-space:nowrap;min-width:120px">${sg.s}</span>
+          <span style="color:var(--text-2)">${sg.d}</span>
+        </div>`).join('')}
+        <div style="margin-top:14px;padding:14px;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.12);border-left:3px solid var(--gold);border-radius:8px">
+          <div style="font-size:10px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">💡 Tip profesional</div>
+          <div style="font-size:13px;color:var(--text-2);line-height:1.6">${ind.tips}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// CSS for cheat sheet toggle
+document.head.insertAdjacentHTML('beforeend','<style>.cs-card.cs-open .cs-body{display:block!important}.cs-card.cs-open .cs-arrow{transform:rotate(180deg)}</style>');
+
+renderCheatSheet();
+</script>
+
 </body>
 </html>
