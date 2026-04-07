@@ -36,7 +36,8 @@ function adsenseBlock(size = 'horizontal') {
   const s = sizes[size] || sizes.horizontal;
   
   return `<div class="ad-block ad-adsense" style="width:${s.w};max-width:100%;min-height:${s.h};display:flex;align-items:center;justify-content:center;background:var(--bg-3);border:1px dashed var(--border-2);border-radius:8px;margin:24px auto;color:var(--text-3);font-size:12px;font-family:var(--font-mono);text-align:center;padding:20px">
-    <!-- ADSENSE_PLACEHOLDER: reemplaza este div con el código de Google AdSense -->
+    <!-- ADSENSE_PLACEHOLDER: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5268245879284058"
+     crossorigin="anonymous"></script> -->
     <div>
       <div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;color:var(--text-3)">Publicidad</div>
       <div style="font-size:10px;color:var(--text-4)">${s.label} — AdSense</div>
