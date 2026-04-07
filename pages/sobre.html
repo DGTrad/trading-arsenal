@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Nosotros — Trading Arsenal</title>
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.page-hero { padding: calc(var(--nav-height) + 50px) 24px 40px; text-align:center; position:relative; z-index:10; }
+.page-title { font-size: clamp(28px,5vw,48px); font-weight:900; letter-spacing:-2px; margin-bottom:10px; }
+.page-content {
+  max-width:700px; margin:0 auto; padding:0 24px 80px; position:relative; z-index:10;
+  font-size:15px; color:var(--text-2); line-height:1.8;
+}
+.page-content h2 { font-size:22px; color:var(--text-1); font-weight:700; margin:32px 0 12px; }
+.page-content p { margin-bottom:16px; }
+.values-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+.value-card {
+  background:var(--bg-3); border:1px solid var(--border-1); border-radius:var(--radius-sm);
+  padding:20px; text-align:center;
+}
+.value-icon { font-size:28px; margin-bottom:8px; }
+.value-name { font-size:14px; font-weight:700; color:var(--text-1); }
+@media(max-width:600px) { .values-grid { grid-template-columns:1fr; } }
+</style>
+<script src="../js/theme-toggle.js"></script>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div>
+<div class="ambient-glow glow-2"></div>
+<div class="noise-overlay"></div>
+<nav class="nav scrolled">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">◆</span><span class="logo-text">Trading Arsenal</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Herramientas</a>
+      <a href="cursos.html" class="nav-link">Cursos</a>
+      <a href="brokers.html" class="nav-link">Brokers</a>
+      <a href="recursos.html" class="nav-link">Recursos</a>
+      <a href="sobre.html" class="nav-link active">Sobre</a>
+    </div>
+    <div class="nav-actions">
+      <a href="premium.html" class="btn-premium"><span class="premium-star">★</span> Premium</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1 class="page-title">Sobre <span class="text-gold">Trading Arsenal</span></h1>
+</header>
+
+<section class="page-content">
+  <p>Trading Arsenal nace de la necesidad de tener herramientas profesionales, accesibles y en español para traders que se toman en serio los mercados.</p>
+
+  <h2>Nuestra Misión</h2>
+  <p>Proporcionar a cada trader las herramientas, la educación y los recursos necesarios para operar con ventaja estadística y gestión de riesgo profesional.</p>
+
+  <h2>Nuestros Valores</h2>
+  <div class="values-grid">
+    <div class="value-card"><div class="value-icon">📐</div><div class="value-name">Precisión</div></div>
+    <div class="value-card"><div class="value-icon">🔓</div><div class="value-name">Transparencia</div></div>
+    <div class="value-card"><div class="value-icon">🎓</div><div class="value-name">Educación</div></div>
+    <div class="value-card"><div class="value-icon">🛡️</div><div class="value-name">Gestión de riesgo</div></div>
+  </div>
+
+  <h2>Contacto</h2>
+  <p>¿Tienes preguntas, sugerencias o quieres colaborar? Escríbenos a <strong>contacto@tudominio.com</strong></p>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Trading Arsenal.</p></div></div></footer>
+</body>
+</html>
