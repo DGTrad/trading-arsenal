@@ -69,7 +69,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'xm',
-    enabled: true,
+    enabled: false,
     name: 'XM',
     affiliateUrl: 'https://affs.click/Eh1V5',           // ← PON AQUÍ tu enlace único
     featured: true,
