@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cursos prácticos de trading: patrones de velas, análisis técnico, gestión de riesgo y estrategias rentables.">
+<title>Cursos de Trading — Trading Arsenal</title>
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.page-hero { padding: calc(var(--nav-height) + 50px) 24px 40px; text-align:center; position:relative; z-index:10; }
+.page-title { font-size: clamp(28px,5vw,48px); font-weight:900; letter-spacing:-2px; margin-bottom:10px; }
+.page-subtitle { font-size:16px; color:var(--text-2); font-weight:300; max-width:600px; margin:0 auto; }
+.courses-container { max-width:var(--max-width); margin:0 auto; padding:0 24px 80px; position:relative; z-index:10; }
+.courses-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:20px; }
+.course-card {
+  background:var(--bg-3); border:1px solid var(--border-1); border-radius:var(--radius-md);
+  overflow:hidden; transition:all .3s;
+}
+.course-card:hover { border-color:var(--border-2); transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.course-img {
+  height:180px; background:var(--bg-5);
+  display:flex; align-items:center; justify-content:center;
+  font-size:48px; border-bottom:1px solid var(--border-1);
+}
+.course-body { padding:24px; }
+.course-level {
+  display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:1.5px; padding:3px 10px; border-radius:4px; margin-bottom:10px;
+}
+.level-beginner { background:rgba(46,204,113,.12); color:var(--green); }
+.level-intermediate { background:rgba(52,152,219,.12); color:var(--blue); }
+.level-advanced { background:rgba(212,168,67,.12); color:var(--gold); }
+.course-title { font-size:18px; font-weight:700; margin-bottom:8px; }
+.course-desc { font-size:13px; color:var(--text-2); line-height:1.6; margin-bottom:16px; }
+.course-meta { display:flex; gap:16px; margin-bottom:18px; }
+.course-meta-item { font-size:12px; color:var(--text-3); }
+.course-price {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:16px; border-top:1px solid var(--border-1);
+}
+.course-price-tag { font-family:var(--font-mono); font-size:24px; font-weight:700; }
+.course-price-tag.free { color:var(--green); }
+.course-price-tag.paid { color:var(--gold); }
+.course-btn {
+  padding:10px 24px; border-radius:var(--radius-sm); font-size:13px; font-weight:700;
+  border:none; transition:all .2s; cursor:pointer;
+}
+.course-btn-free { background:var(--green); color:var(--bg-0); }
+.course-btn-paid { background:var(--gold); color:var(--bg-0); }
+.course-btn:hover { transform:translateY(-1px); }
+@media(max-width:768px) { .courses-grid { grid-template-columns:1fr; } }
+</style>
+<script src="../js/theme-toggle.js"></script>
+<script src="../js/ads.js"></script>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div>
+<div class="ambient-glow glow-2"></div>
+<div class="noise-overlay"></div>
+
+<nav class="nav scrolled">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="analisis.html" class="nav-link">Análisis</a>
+      <a href="mercados.html" class="nav-link">Mercados</a>
+      <a href="cursos.html" class="nav-link active">Cursos</a>
+      <a href="brokers.html" class="nav-link">Brokers</a>
+      <a href="recursos.html" class="nav-link">Recursos</a>
+      <a href="herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+    
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1 class="page-title">Cursos <span class="text-gold">Gratuitos</span></h1>
+  <p class="page-subtitle">Todos nuestros cursos son 100% gratuitos. Aprende desde cero o perfecciona tu operativa con cursos prácticos e interactivos.</p>
+</header>
+
+<section class="courses-container">
+
+  <!-- BLOQUE PUBLICIDAD -->
+  <div data-ad="affiliate" data-variant="xm"></div>
+
+  <div class="courses-grid">
+
+    <div class="course-card">
+      <div class="course-img">📊</div>
+      <div class="course-body">
+        <span class="course-level level-beginner">Principiante</span>
+        <h3 class="course-title">Fundamentos del Análisis Técnico</h3>
+        <p class="course-desc">Aprende a leer gráficos, identificar tendencias, soportes, resistencias y los indicadores más usados.</p>
+        <div class="course-meta">
+          <span class="course-meta-item">📚 12 lecciones</span>
+          <span class="course-meta-item">⏱ ~4 horas</span>
+        </div>
+        <div class="course-price">
+          <span class="course-price-tag free">Gratis</span>
+          <button class="course-btn course-btn-free" onclick="window.location.href='cursos/analisis-tecnico.html'">Empezar →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-img">🕯️</div>
+      <div class="course-body">
+        <span class="course-level level-intermediate">Intermedio</span>
+        <h3 class="course-title">Patrones de Velas Japonesas</h3>
+        <p class="course-desc">Domina los 20 patrones más rentables. Ejercicios prácticos con gráficos reales y quiz interactivo.</p>
+        <div class="course-meta">
+          <span class="course-meta-item">📚 18 lecciones</span>
+          <span class="course-meta-item">⏱ ~6 horas</span>
+        </div>
+        <div class="course-price">
+          <span class="course-price-tag free">Gratis</span>
+          <button class="course-btn course-btn-free" onclick="window.location.href='cursos/patrones-velas.html'">Empezar →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-img">🛡️</div>
+      <div class="course-body">
+        <span class="course-level level-intermediate">Intermedio</span>
+        <h3 class="course-title">Gestión de Riesgo Profesional</h3>
+        <p class="course-desc">Position sizing, drawdown control, correlaciones y cómo sobrevivir a largo plazo en los mercados.</p>
+        <div class="course-meta">
+          <span class="course-meta-item">📚 10 lecciones</span>
+          <span class="course-meta-item">⏱ ~3 horas</span>
+        </div>
+        <div class="course-price">
+          <span class="course-price-tag free">Gratis</span>
+          <button class="course-btn course-btn-free" onclick="window.location.href='cursos/gestion-riesgo.html'">Empezar →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-img">⚡</div>
+      <div class="course-body">
+        <span class="course-level level-advanced">Avanzado</span>
+        <h3 class="course-title">Estrategias de Trading Completas</h3>
+        <p class="course-desc">3 estrategias probadas con reglas claras de entrada, salida, gestión y backtesting detallado.</p>
+        <div class="course-meta">
+          <span class="course-meta-item">📚 10 lecciones</span>
+          <span class="course-meta-item">⏱ ~8 horas</span>
+        </div>
+        <div class="course-price">
+          <span class="course-price-tag free">Gratis</span>
+          <button class="course-btn course-btn-free" onclick="window.location.href='cursos/estrategias-trading.html'">Empezar →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner"><div class="footer-bottom">
+    <p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p>
+  </div></div>
+</footer>
+</body>
+</html>
