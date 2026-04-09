@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brokers recomendados para trading: Exness, XM, Pepperstone, IC Markets, FP Markets, Vantage, FXPro, AvaTrade. Comparativa completa.">
+<title>Brokers Recomendados — Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.page-hero{padding:calc(var(--nav-height) + 50px) 24px 32px;text-align:center;position:relative;z-index:10}
+.page-title{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-2px;margin-bottom:8px}
+.page-subtitle{font-size:16px;color:var(--text-2);font-weight:300;max-width:700px;margin:0 auto 20px}
+.disclosure-bar{max-width:800px;margin:0 auto;padding:14px 20px;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.15);border-radius:10px;font-size:12px;color:var(--text-3);line-height:1.6}
+.disclosure-bar strong{color:var(--gold)}
+.bc{max-width:1200px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:10}
+.compare-section{margin:40px 0}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sh h2{font-size:22px;font-weight:800;letter-spacing:-0.5px}
+.compare-table{width:100%;border-collapse:collapse;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;overflow:hidden;font-size:13px}
+.compare-table th{text-align:left;padding:14px 16px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);background:var(--bg-4);border-bottom:1px solid var(--border-2);font-weight:700;white-space:nowrap}
+.compare-table td{padding:14px 16px;border-bottom:1px solid var(--border-1);color:var(--text-2);white-space:nowrap}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:var(--bg-4)}
+.ct-broker{font-weight:700;color:var(--text-1);font-size:14px}
+.ct-star{color:var(--gold)}
+.compare-wrap{overflow-x:auto;scrollbar-width:thin}
+.brokers-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:24px}
+.broker-card{background:var(--bg-3);border:1px solid var(--border-1);border-radius:16px;overflow:hidden;transition:all .3s;position:relative}
+.broker-card:hover{border-color:var(--border-2);transform:translateY(-2px)}
+.broker-card.featured{border-color:rgba(212,168,67,0.3)}
+.broker-card.featured::before{content:'★ TOP CHOICE';position:absolute;top:16px;right:16px;padding:5px 14px;background:var(--gold);color:var(--bg-0);border-radius:20px;font-size:10px;font-weight:800;letter-spacing:1.5px;z-index:2}
+.bc-inner{display:grid;grid-template-columns:200px 1fr 220px;gap:0}
+.bc-left{padding:28px 24px;background:var(--bg-2);border-right:1px solid var(--border-1);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.bc-logo{width:100px;height:100px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin-bottom:14px;font-family:var(--font-display)}
+.bc-name{font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.bc-rating{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--gold);margin-bottom:4px}
+.bc-tagline{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.bc-mid{padding:24px 28px}
+.bc-desc{font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:16px}
+.bc-features{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.bc-feat{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2)}
+.bc-feat::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.bc-right{padding:24px;background:var(--bg-2);border-left:1px solid var(--border-1);display:flex;flex-direction:column;justify-content:center;gap:10px}
+.bc-stat{text-align:center;padding:10px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:8px}
+.bc-stat-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:2px}
+.bc-stat-value{font-family:var(--font-mono);font-size:14px;font-weight:700;color:var(--text-1)}
+.bc-stat-value.green{color:var(--green)}
+.bc-btn{display:block;padding:12px;background:var(--gold);color:var(--bg-0);border-radius:8px;text-align:center;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;margin-top:4px}
+.bc-btn:hover{background:var(--gold-bright);transform:translateY(-1px)}
+.bc-btn-secondary{display:block;padding:10px;background:transparent;color:var(--text-2);border:1px solid var(--border-2);border-radius:8px;text-align:center;font-weight:600;font-size:12px;text-decoration:none;transition:all .2s}
+.bc-btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.info-section{background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;padding:28px;margin:40px 0}
+.info-title{font-size:20px;font-weight:800;margin-bottom:16px;letter-spacing:-0.5px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.info-card{padding:20px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:10px}
+.info-icon{font-size:28px;margin-bottom:10px}
+.info-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.info-card p{font-size:13px;color:var(--text-3);line-height:1.6;margin:0}
+.faq-section{margin-top:40px}
+.faq-item{background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;transition:background .2s}
+.faq-q:hover{background:var(--bg-4)}
+.faq-arrow{color:var(--text-3);transition:transform .3s;font-size:12px}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 22px 20px;font-size:13px;color:var(--text-2);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.final-disclaimer{text-align:center;font-size:11px;color:var(--text-4);max-width:800px;margin:40px auto 0;line-height:1.7;padding:20px;border:1px solid var(--border-1);border-radius:10px}
+@media(max-width:900px){.bc-inner{grid-template-columns:1fr}.bc-left{border-right:none;border-bottom:1px solid var(--border-1);padding:20px}.bc-right{border-left:none;border-top:1px solid var(--border-1)}.bc-features{grid-template-columns:1fr}}
+@media(max-width:600px){.bc-logo{width:80px;height:80px;font-size:24px}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../index.html" class="nav-logo"><img src="../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="analisis.html" class="nav-link">Análisis</a>
+      <a href="mercados.html" class="nav-link">Mercados</a>
+      <a href="cursos.html" class="nav-link">Cursos</a>
+      <a href="brokers.html" class="nav-link active">Brokers</a>
+      <a href="recursos.html" class="nav-link">Recursos</a>
+      <a href="herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+
+</div></nav>
+<header class="page-hero">
+<h1 class="page-title">Brokers <span class="text-gold">Recomendados</span></h1>
+<p class="page-subtitle">Los 8 mejores brokers de Forex y CFDs según ForexTester y otras fuentes especializadas. Todos regulados con condiciones competitivas.</p>
+<div class="disclosure-bar"><strong>⚠️ Aviso de afiliación:</strong> Los enlaces son de afiliados. Si te registras a través de ellos, Zona Trading Pro puede recibir comisión sin coste adicional para ti. Solo recomendamos brokers regulados.</div>
+</header>
+<section class="bc">
+<div class="compare-section">
+<div class="sh"><h2>⚡ Comparativa Rápida</h2></div>
+<div class="compare-wrap">
+<table class="compare-table">
+<tr><th>Broker</th><th>Regulación</th><th>Spread EUR/USD</th><th>Depósito Mín</th><th>Apalancamiento</th><th>Plataformas</th><th>Valoración</th></tr>
+<tr><td class="ct-broker">Exness</td><td>FCA, CySEC, FSCA</td><td>0.0 pips</td><td>$10</td><td>Ilimitado</td><td>MT4, MT5</td><td class="ct-star">★★★★★</td></tr>
+<tr><td class="ct-broker">XM</td><td>CySEC, ASIC, FSC</td><td>0.1 pips</td><td>$5</td><td>1:1000</td><td>MT4, MT5</td><td class="ct-star">★★★★★</td></tr>
+<tr><td class="ct-broker">Pepperstone</td><td>FCA, ASIC, CySEC</td><td>0.0 pips</td><td>$0</td><td>1:500</td><td>MT4, MT5, cTrader</td><td class="ct-star">★★★★★</td></tr>
+<tr><td class="ct-broker">IC Markets</td><td>ASIC, CySEC, FSA</td><td>0.0 pips</td><td>$200</td><td>1:500</td><td>MT4, MT5, cTrader</td><td class="ct-star">★★★★★</td></tr>
+<tr><td class="ct-broker">FP Markets</td><td>ASIC, CySEC</td><td>0.0 pips</td><td>$100</td><td>1:500</td><td>MT4, MT5, cTrader</td><td class="ct-star">★★★★☆</td></tr>
+<tr><td class="ct-broker">Vantage</td><td>ASIC, FCA, FSCA</td><td>0.0 pips</td><td>$50</td><td>1:500</td><td>MT4, MT5, ProTrader</td><td class="ct-star">★★★★☆</td></tr>
+<tr><td class="ct-broker">FXPro</td><td>FCA, CySEC, FSCA</td><td>0.0 pips</td><td>$100</td><td>1:500</td><td>MT4, MT5, cTrader</td><td class="ct-star">★★★★☆</td></tr>
+<tr><td class="ct-broker">AvaTrade</td><td>CBI, ASIC, FSCA</td><td>0.9 pips</td><td>$100</td><td>1:400</td><td>MT4, MT5, AvaGo</td><td class="ct-star">★★★★☆</td></tr>
+</table>
+</div>
+</div>
+<div class="sh"><h2>🏆 Análisis Detallado</h2></div>
+<div class="brokers-grid">
+
+<div class="broker-card featured">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#0a0a0f">EX</div><div class="bc-name">Exness</div><div class="bc-rating">★★★★★ 4.9/5</div><div class="bc-tagline">Mejores spreads · Top CPA</div></div>
+<div class="bc-mid"><p class="bc-desc">Exness destaca por ofrecer los spreads más bajos del mercado (desde 0.0 pips), retiros instantáneos 24/7 y apalancamiento ilimitado. Regulado por FCA, CySEC y FSCA. Su programa de afiliados paga hasta $1,850 por cliente referido y hasta 40% revenue share lifetime.</p>
+<div class="bc-features"><div class="bc-feat">Spreads desde 0.0 pips</div><div class="bc-feat">Retiros instantáneos 24/7</div><div class="bc-feat">Apalancamiento ilimitado</div><div class="bc-feat">Sin requotes ni slippage</div><div class="bc-feat">MT4, MT5 y app móvil</div><div class="bc-feat">Protección saldo negativo</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$10</div></div><a href="https://www.exness.com/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.exness.com/about/" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card featured">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:white">XM</div><div class="bc-name">XM</div><div class="bc-rating">★★★★★ 4.9/5</div><div class="bc-tagline">Mejor para principiantes</div></div>
+<div class="bc-mid"><p class="bc-desc">XM es uno de los brokers más establecidos con +15M de clientes en 190+ países. Regulado por CySEC, ASIC y FSC. Plataforma ideal para principiantes con material educativo en español. Programa de afiliados con CPA hasta $1,000 + 10% sub-affiliate, pagos diarios automáticos.</p>
+<div class="bc-features"><div class="bc-feat">Cuenta desde $5</div><div class="bc-feat">Sin comisiones de depósito</div><div class="bc-feat">Spreads desde 0.1 pips</div><div class="bc-feat">Bonus de bienvenida</div><div class="bc-feat">Soporte 24/5 español</div><div class="bc-feat">+1.000 instrumentos</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.1 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$5</div></div><a href="https://www.xm.com/es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.xm.com/es/about-us" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#dc2626,#ef4444);color:white">PP</div><div class="bc-name">Pepperstone</div><div class="bc-rating">★★★★★ 4.8/5</div><div class="bc-tagline">Mejor para swing trading</div></div>
+<div class="bc-mid"><p class="bc-desc">Broker australiano premiado con +15 años. Regulado por FCA, ASIC, CySEC y DFSA (Tier-1). Ejecución de 30ms y atención al cliente excelente. Ideal para swing e intraday. Hasta 50% revenue share y CPA personalizado.</p>
+<div class="bc-features"><div class="bc-feat">Sin depósito mínimo</div><div class="bc-feat">Ejecución 30ms promedio</div><div class="bc-feat">MT4, MT5 y cTrader</div><div class="bc-feat">+1.200 instrumentos</div><div class="bc-feat">Regulación Tier-1</div><div class="bc-feat">Copy trading incluido</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$0</div></div><a href="https://pepperstone.com/es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://pepperstone.com/es/about-us/" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#059669,#10b981);color:white">IC</div><div class="bc-name">IC Markets</div><div class="bc-rating">★★★★★ 4.8/5</div><div class="bc-tagline">Mejor para scalping y EAs</div></div>
+<div class="bc-mid"><p class="bc-desc">Top ECN broker global, favorito de scalpers y traders algorítmicos por su ejecución sub-40ms y liquidez institucional. Regulado por ASIC, CySEC y FSA Seychelles. CPA hasta $1,000 + 50% rev share.</p>
+<div class="bc-features"><div class="bc-feat">Ejecución Raw ECN</div><div class="bc-feat">Permite scalping y EAs</div><div class="bc-feat">Liquidez institucional</div><div class="bc-feat">VPS gratuito</div><div class="bc-feat">MT4, MT5 y cTrader</div><div class="bc-feat">Spread promedio 0.1 pips</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$200</div></div><a href="https://www.icmarkets.com/global/es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.icmarkets.com/global/es/about-us" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#7c3aed,#a855f7);color:white">FP</div><div class="bc-name">FP Markets</div><div class="bc-rating">★★★★☆ 4.6/5</div><div class="bc-tagline">Mejor relación calidad/precio</div></div>
+<div class="bc-mid"><p class="bc-desc">Broker australiano con 18+ años. Regulado por ASIC y CySEC. Tecnología institucional a precios retail con +10.000 instrumentos: forex, acciones reales, índices, commodities y crypto. CPA hasta $800 + 43% rev share.</p>
+<div class="bc-features"><div class="bc-feat">+10.000 instrumentos</div><div class="bc-feat">Spread desde 0.0 pips</div><div class="bc-feat">Cuenta Raw ECN</div><div class="bc-feat">Acciones CFDs reales</div><div class="bc-feat">Soporte 24/7</div><div class="bc-feat">IRESS disponible</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$100</div></div><a href="https://www.fpmarkets.com/es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.fpmarkets.com/es/about-us/" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#0f172a,#1e293b);color:white">VT</div><div class="bc-name">Vantage</div><div class="bc-rating">★★★★☆ 4.5/5</div><div class="bc-tagline">Award-winning multi-asset</div></div>
+<div class="bc-mid"><p class="bc-desc">Broker multi-activo con +15 años, premiado y regulado por ASIC, FCA y FSCA. Excelente para institucionales y retail. Su programa ofrece hasta $1,200 CPA y plataforma CellXpert para tracking avanzado y conversiones móviles.</p>
+<div class="bc-features"><div class="bc-feat">+1.000 instrumentos</div><div class="bc-feat">Plataforma propia ProTrader</div><div class="bc-feat">Cuenta RAW ECN</div><div class="bc-feat">Copy trading social</div><div class="bc-feat">Educación gratuita</div><div class="bc-feat">App móvil premiada</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$50</div></div><a href="https://www.vantagemarkets.com/es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.vantagemarkets.com/es/about-vantage/" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#1e40af,#3b82f6);color:white">FX</div><div class="bc-name">FXPro</div><div class="bc-rating">★★★★☆ 4.5/5</div><div class="bc-tagline">Broker veterano premiado</div></div>
+<div class="bc-mid"><p class="bc-desc">FXPro lleva +15 años operando con regulación de FCA, CySEC, FSCA y SCB. +90 premios internacionales. Ejecución NDD garantizada. Programa de afiliados con CPA hasta $1,100 y rev share del 5%.</p>
+<div class="bc-features"><div class="bc-feat">+90 premios internacionales</div><div class="bc-feat">Ejecución NDD garantizada</div><div class="bc-feat">cTrader, MT4, MT5</div><div class="bc-feat">+2.100 instrumentos</div><div class="bc-feat">Spreads desde 0.0 pips</div><div class="bc-feat">Soporte 19 idiomas</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value green">0.0 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$100</div></div><a href="https://www.fxpro.es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.fxpro.es/about-fxpro" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+<div class="broker-card">
+<div class="bc-inner">
+<div class="bc-left"><div class="bc-logo" style="background:linear-gradient(135deg,#0891b2,#06b6d4);color:white">AV</div><div class="bc-name">AvaTrade</div><div class="bc-rating">★★★★☆ 4.5/5</div><div class="bc-tagline">+70.000 partners afiliados</div></div>
+<div class="bc-mid"><p class="bc-desc">Broker irlandés con +15 años, regulado en 9 jurisdicciones. Plataforma propia AvaTradeGo intuitiva ideal para principiantes. AvaPartner ha pagado +$400M en comisiones a +70.000 afiliados con modelos CPA, RevShare e Híbrido.</p>
+<div class="bc-features"><div class="bc-feat">Plataforma propia fácil</div><div class="bc-feat">Academia de trading gratis</div><div class="bc-feat">Opciones vanilla únicas</div><div class="bc-feat">Protección saldo negativo</div><div class="bc-feat">9 regulaciones globales</div><div class="bc-feat">+1.250 instrumentos</div></div></div>
+<div class="bc-right"><div class="bc-stat"><div class="bc-stat-label">Spread EUR/USD</div><div class="bc-stat-value">0.9 pips</div></div><div class="bc-stat"><div class="bc-stat-label">Depósito mínimo</div><div class="bc-stat-value">$100</div></div><a href="https://www.avatrade.es/" target="_blank" rel="noopener" class="bc-btn">Abrir cuenta →</a><a href="https://www.avatrade.es/sobre-avatrade" target="_blank" rel="noopener" class="bc-btn-secondary">Más información</a></div>
+</div></div>
+
+</div>
+
+<div class="info-section">
+<div class="info-title">🎯 ¿Cómo Elegir el Broker Adecuado?</div>
+<div class="info-grid">
+<div class="info-card"><div class="info-icon">🛡️</div><h3>1. Regulación</h3><p>Solo brokers regulados por autoridades Tier-1 (FCA, ASIC, CySEC). Protege tu capital.</p></div>
+<div class="info-card"><div class="info-icon">💰</div><h3>2. Costos</h3><p>Compara spreads, comisiones y swap. Para scalping busca spreads bajos.</p></div>
+<div class="info-card"><div class="info-icon">⚡</div><h3>3. Ejecución</h3><p>Ejecución rápida sin requotes. Brokers ECN/STP son los más transparentes.</p></div>
+<div class="info-card"><div class="info-icon">🖥️</div><h3>4. Plataforma</h3><p>MT4/MT5 son el estándar. cTrader excelente para ECN.</p></div>
+<div class="info-card"><div class="info-icon">💳</div><h3>5. Depósitos/Retiros</h3><p>Verifica métodos, tiempos y comisiones. Retiros rápidos = buen broker.</p></div>
+<div class="info-card"><div class="info-icon">🌐</div><h3>6. Soporte</h3><p>Soporte en español 24/5 mínimo. Pruébalo antes de depositar.</p></div>
+</div>
+</div>
+
+<div class="faq-section">
+<div class="sh"><h2>❓ Preguntas Frecuentes</h2></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><span>¿Cuál es el mejor broker para principiantes?</span><span class="faq-arrow">▼</span></div><div class="faq-a">Para principiantes recomendamos <strong>XM</strong> o <strong>AvaTrade</strong>. XM permite empezar con $5 y tiene material educativo en español. AvaTrade tiene plataforma propia más intuitiva. Ambos bien regulados.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><span>¿Cuál es el mejor broker para scalping?</span><span class="faq-arrow">▼</span></div><div class="faq-a"><strong>IC Markets</strong> y <strong>Pepperstone</strong> son los mejores. Ejecución ECN real con spreads 0.0 pips, latencia ultra baja y sin restricciones para EAs. IC Markets ofrece VPS gratuito.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><span>¿Es seguro depositar dinero en estos brokers?</span><span class="faq-arrow">▼</span></div><div class="faq-a">Sí, todos los listados están regulados Tier-1. Las regulaciones obligan a separar fondos de clientes del capital del broker, protegen en caso de quiebra y exigen auditorías. <strong>Tu dinero está seguro con el broker, pero el trading conlleva riesgo de pérdida.</strong></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><span>¿Puedo tener cuenta en varios brokers?</span><span class="faq-arrow">▼</span></div><div class="faq-a">Totalmente recomendable. Muchos profesionales usan 2-3 brokers: uno para scalping (ECN), otro para swing, otro como backup. También diversifica el riesgo.</div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q"><span>¿Por qué confiar en estas recomendaciones?</span><span class="faq-arrow">▼</span></div><div class="faq-a">Todos cumplen 3 criterios: <strong>(1)</strong> Regulación Tier-1, <strong>(2)</strong> Mínimo 10 años sin escándalos, <strong>(3)</strong> Condiciones competitivas reales. Aunque ganamos comisión por afiliados, solo recomendamos brokers que realmente probamos.</div></div>
+</div>
+
+<div class="final-disclaimer">
+⚠️ <strong>Aviso de riesgo:</strong> El trading de CFDs y Forex implica alto riesgo y puede no ser adecuado para todos los inversores. Los productos apalancados pueden generar pérdidas que superen su depósito. Asegúrese de entender los riesgos.<br><br>
+<strong>Aviso de afiliación:</strong> Esta página contiene enlaces de afiliados. Zona Trading Pro puede recibir compensación cuando te registras a través de ellos, sin coste adicional. Las recomendaciones se basan en evaluaciones objetivas.
+</div>
+
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom">
+<p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p>
+</div></div></footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>40)});</script>
+</body>
+</html>
