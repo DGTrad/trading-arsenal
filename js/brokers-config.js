@@ -29,7 +29,7 @@
 const BROKERS_CONFIG = [
   {
     id: 'exness',
-    enabled: true,                                    // ← Cambia a false para ocultar
+    enabled: false,                                    // ← Cambia a false para ocultar
     name: 'Exness',
     affiliateUrl: 'https://www.exness.com/',          // ← PON AQUÍ tu enlace único
     featured: true,                                   // ← Destaca con "★ TOP CHOICE"
@@ -71,7 +71,7 @@ const BROKERS_CONFIG = [
     id: 'xm',
     enabled: true,
     name: 'XM',
-    affiliateUrl: 'https://www.xm.com/es/',           // ← PON AQUÍ tu enlace único
+    affiliateUrl: 'https://affs.click/Eh1V5',           // ← PON AQUÍ tu enlace único
     featured: true,
     
     logo: 'XM',
@@ -100,7 +100,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'pepperstone',
-    enabled: true,
+    enabled: false,
     name: 'Pepperstone',
     affiliateUrl: 'https://pepperstone.com/es/',      // ← PON AQUÍ tu enlace único
     featured: false,
@@ -131,7 +131,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'icmarkets',
-    enabled: true,
+    enabled: false,
     name: 'IC Markets',
     affiliateUrl: 'https://www.icmarkets.com/global/es/',  // ← PON AQUÍ tu enlace único
     featured: false,
@@ -162,7 +162,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'fpmarkets',
-    enabled: true,
+    enabled: false,
     name: 'FP Markets',
     affiliateUrl: 'https://www.fpmarkets.com/es/',    // ← PON AQUÍ tu enlace único
     featured: false,
@@ -193,7 +193,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'vantage',
-    enabled: true,
+    enabled: false,
     name: 'Vantage',
     affiliateUrl: 'https://www.vantagemarkets.com/es/',  // ← PON AQUÍ tu enlace único
     featured: false,
@@ -224,7 +224,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'fxpro',
-    enabled: true,
+    enabled: false,
     name: 'FXPro',
     affiliateUrl: 'https://www.fxpro.es/',            // ← PON AQUÍ tu enlace único
     featured: false,
@@ -255,7 +255,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'avatrade',
-    enabled: true,
+    enabled: false,
     name: 'AvaTrade',
     affiliateUrl: 'https://www.avatrade.es/',         // ← PON AQUÍ tu enlace único
     featured: false,
