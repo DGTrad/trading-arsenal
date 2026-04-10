@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aprende a leer el gráfico desnudo: estructura, velas, soportes, resistencias y confluencias. Sin indicadores.">
+<title>Price Action Puro — Curso Gratis | Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/main.css">
+<script src="../../js/brokers-config.js"></script>
+<script src="../../js/ads.js"></script>
+<style>
+.cp{padding:calc(var(--nav-height) + 50px) 24px 30px;text-align:center;position:relative;z-index:10}
+.cp-icon{font-size:48px;margin-bottom:12px}
+.cp-title{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-1.5px;margin-bottom:8px}
+.cp-desc{font-size:16px;color:var(--text-2);max-width:620px;margin:0 auto 14px}
+.cp-meta{display:inline-flex;gap:14px;font-size:12px;color:var(--text-3);padding:8px 18px;border:1px solid var(--border-2);border-radius:100px;flex-wrap:wrap}
+.cp-meta strong{color:var(--gold)}
+.cc{max-width:880px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:10}
+.lesson{background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:all .2s}
+.lesson:hover{border-color:var(--border-2)}
+.lesson-h{padding:22px 26px;cursor:pointer;display:flex;align-items:center;gap:16px;transition:background .2s}
+.lesson-h:hover{background:var(--bg-4)}
+.lesson-num{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--bg-0);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-family:var(--font-mono);font-size:14px}
+.lesson-title{flex:1;font-size:16px;font-weight:700;line-height:1.3}
+.lesson-arrow{color:var(--text-3);transition:transform .3s}
+.lesson.open .lesson-arrow{transform:rotate(180deg)}
+.lesson-body{display:none;padding:0 26px 28px 80px;font-size:14px;color:var(--text-2);line-height:1.85}
+.lesson.open .lesson-body{display:block;border-top:1px solid var(--border-1);padding-top:22px}
+.lesson-body p{margin-bottom:14px}
+.lesson-body strong{color:var(--text-1)}
+@media(max-width:640px){.lesson-body{padding-left:26px}.lesson-h{padding:18px}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../../index.html" class="nav-logo"><img src="../../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="../analisis.html" class="nav-link">Análisis</a>
+      <a href="../mercados.html" class="nav-link">Mercados</a>
+      <a href="../cursos.html" class="nav-link active">Cursos</a>
+      <a href="../brokers.html" class="nav-link">Brokers</a>
+      <a href="../recursos.html" class="nav-link">Recursos</a>
+      <a href="../herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+<button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></div></nav>
+
+<header class="cp">
+<div class="cp-icon">📊</div>
+<h1 class="cp-title">Price Action Puro</h1>
+<p class="cp-desc">Aprende a leer el gráfico desnudo: estructura, velas, soportes, resistencias y confluencias. Sin indicadores.</p>
+<div class="cp-meta"><span><strong>📚 8 lecciones</strong></span><span>⏱ ~4.8h</span><span>🎓 <strong>GRATIS</strong></span></div>
+</header>
+
+<section class="cc">
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">01</div><div class="lesson-title">Por qué price action es el método más limpio</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Los indicadores técnicos (RSI, MACD, estocástico) son matemáticamente derivados del precio. Esto significa que SIEMPRE van retrasados respecto al precio. El RSI te confirma una sobreventa después de que ya ha ocurrido. El MACD cruza después de que el movimiento ya empezó.</p>
+<p><strong>El precio es la única verdad.</strong> Todo lo demás es interpretación. Cuando aprendes a leer el precio directamente, estás conectado con la realidad del mercado en tiempo real, no con un retrato pintado 5 minutos tarde.</p>
+<p><strong>Las 3 ventajas brutales del price action:</strong></p>
+<p>1. <strong>Funciona en cualquier mercado y temporalidad.</strong> Forex, acciones, crypto, futuros. M5 o D1. Los principios son universales.</p>
+<p>2. <strong>Cero parálisis por análisis.</strong> Sin 8 indicadores contradictorios. Solo el precio. Decisión clara o no decisión.</p>
+<p>3. <strong>Te conecta con el "por qué" del mercado.</strong> Cada vela cuenta una historia: quién compró, quién vendió, quién perdió, quién ganó.</p>
+<p><strong>Los grandes traders de la historia (Livermore, Wyckoff, Schwartz) operaban con price action.</strong> No tenían indicadores. Solo el ticker. Y construyeron fortunas.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">02</div><div class="lesson-title">Estructura de mercado: HH, HL, LH, LL</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Esta es LA lección fundamental. Todo el price action se basa en entender la estructura de mercado. Hay solo 3 estados posibles en cualquier gráfico:</p>
+<p><strong>1. Tendencia alcista:</strong> Máximos crecientes (HH = Higher Highs) Y mínimos crecientes (HL = Higher Lows). El precio sube, retrocede sin perder el último mínimo, y vuelve a subir más alto.</p>
+<p><strong>2. Tendencia bajista:</strong> Máximos decrecientes (LH = Lower Highs) Y mínimos decrecientes (LL = Lower Lows). Espejo de lo anterior.</p>
+<p><strong>3. Rango (lateral):</strong> El precio oscila entre un máximo y un mínimo definidos. Sin nuevos HH ni nuevos LL.</p>
+<p><strong>La regla de oro:</strong> Solo operas en la dirección de la estructura. En tendencia alcista, solo compras en los retrocesos (HL). En tendencia bajista, solo vendes en los rebotes (LH). En rango, vendes en la resistencia y compras en el soporte.</p>
+<p><strong>Cómo identificar el cambio de tendencia:</strong> En una tendencia alcista, cuando el precio rompe el último HL, la estructura se rompe. Es la primera señal de cambio. Si después forma un LH y luego un nuevo LL, la tendencia ya es bajista.</p>
+<p><strong>Ejercicio:</strong> Abre un gráfico cualquiera. Dibuja a mano los HH, HL, LH, LL del último mes. Hazlo en 20 gráficos diferentes. En 2 semanas leerás estructura como un nativo.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">03</div><div class="lesson-title">Soportes y resistencias dinámicos</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Olvida lo que sabes sobre líneas horizontales perfectas. En price action real, los niveles son ZONAS, no líneas exactas. El precio respeta áreas, no píxeles.</p>
+<p><strong>Cómo identificar niveles que SÍ funcionan:</strong></p>
+<p>1. <strong>Reacciones múltiples:</strong> El precio ha tocado y rebotado al menos 2-3 veces de esa zona.</p>
+<p>2. <strong>Velas grandes desde la zona:</strong> Una vela de cuerpo grande saliendo de un nivel confirma fuerza institucional ahí.</p>
+<p>3. <strong>Antiguo techo se convierte en suelo (y viceversa):</strong> Es el principio de polaridad. Una resistencia rota se convierte en soporte cuando el precio vuelve.</p>
+<p><strong>Tipos de niveles más fuertes:</strong></p>
+<p>• <strong>Mensuales y semanales:</strong> Un máximo del mes pasado vale más que un máximo de hace 3 horas.<br/>
+• <strong>Niveles psicológicos:</strong> Números redondos como 1.1000, 4.500, 100.00. Las instituciones colocan órdenes ahí.<br/>
+• <strong>Máximos/mínimos de sesión:</strong> El alto de la sesión asiática es nivel para Londres. El alto de Londres es nivel para NY.</p>
+<p><strong>El error más común:</strong> Dibujar 20 líneas de soporte/resistencia en cada temporalidad. No. Máximo 3-4 niveles realmente importantes por temporalidad. Si hay más, no es información, es ruido.</p>
+<p><strong>La paradoja de los niveles:</strong> Cuanto más toques tiene un nivel, más fuerte parece, PERO más débil se vuelve antes de romperse. Cada toque consume liquidez. El cuarto o quinto toque suele ser el de la ruptura.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">04</div><div class="lesson-title">Las velas que importan: pin bars y rejection candles</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>De los 30+ patrones de velas que enseñan los libros, solo 4-5 son realmente útiles. Aquí los esenciales:</p>
+<p><strong>1. PIN BAR (Vela de rechazo).</strong> Una vela con cuerpo pequeño y mecha larga (al menos 2/3 del tamaño total). La mecha muestra dónde el precio intentó ir pero fue rechazado. Si la mecha está abajo, los compradores defendieron. Si está arriba, los vendedores defendieron.</p>
+<p><strong>Pin bar válida vs ruido:</strong> Una pin bar SOLO es válida en un nivel relevante. Una pin bar en el medio de la nada es ruido. En un soporte clave o tras un rechazo de tendencia, es oro.</p>
+<p><strong>2. ENGULFING (Envolvente).</strong> Una vela cuyo cuerpo envuelve completamente la vela anterior (en color opuesto). Indica un cambio de control. Un engulfing alcista en un soporte = los compradores tomaron el control violentamente.</p>
+<p><strong>3. INSIDE BAR (Vela interior).</strong> Una vela completamente dentro del rango de la anterior. Muestra compresión, indecisión. Después de una vela grande, una inside bar suele preceder a una continuación del movimiento.</p>
+<p><strong>4. DOJI EN NIVEL CLAVE.</strong> Vela con apertura y cierre casi iguales, mecha en ambas direcciones. Indica indecisión total. En un nivel importante, suele preceder reversiones.</p>
+<p><strong>Regla maestra:</strong> Una vela aislada no significa nada. Una vela en un nivel relevante con confluencia es una señal de alta probabilidad. Siempre busca el contexto.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">05</div><div class="lesson-title">Breakout vs falso breakout: la trampa del 70%</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Estadística brutal: el 70% de los breakouts en gráficos son falsos. Si entras en cada ruptura sin filtrarlas, estás operando un sistema con 30% de win rate. Devastador.</p>
+<p><strong>Por qué hay tantos falsos breakouts:</strong> Las instituciones necesitan liquidez para entrar en posición. ¿Dónde está la liquidez? Justo encima de máximos y debajo de mínimos (ahí están los stops de los traders retail). Las instituciones empujan el precio brevemente para activar esos stops, capturan la liquidez, y luego revierten.</p>
+<p><strong>Cómo distinguir un breakout real:</strong></p>
+<p>1. <strong>Cierre de vela fuera del nivel,</strong> no solo mecha. Si solo la mecha rompe pero el cierre vuelve dentro, es falso 9 de cada 10 veces.</p>
+<p>2. <strong>Volumen creciente.</strong> Un breakout sin volumen es sospechoso.</p>
+<p>3. <strong>Retest del nivel desde el otro lado.</strong> El precio rompe, retrocede al nivel roto (ahora actúa como soporte/resistencia inversa) y rebota. ESE es el momento de entrar, no la ruptura inicial.</p>
+<p><strong>La estrategia del retest:</strong> Nunca operes la ruptura inicial. Espera el retest. Si llega, entras con SL al otro lado del nivel. Si no llega, pierdes la operación pero evitas el 70% de falsos. Es matemáticamente superior.</p>
+<p><strong>Stop hunting:</strong> Aprende a identificar zonas donde el smart money cazará stops. Suelen ser justo encima de máximos recientes o debajo de mínimos recientes. Si ves al precio ir agresivamente hacia esas zonas y rebotar violentamente, es stop hunt. Operas en la dirección del rebote.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">06</div><div class="lesson-title">Confluencias: el secreto del éxito</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Una señal aislada vale poco. La magia del price action ocurre cuando MÚLTIPLES factores apuntan a la misma dirección en la misma zona. Eso se llama confluencia.</p>
+<p><strong>Tipos de confluencias que multiplican probabilidad:</strong></p>
+<p>1. <strong>Nivel histórico + retroceso de Fibonacci.</strong> Un soporte importante coincide con el 61.8% Fib del último impulso.</p>
+<p>2. <strong>Cambio de estructura + zona de oferta/demanda.</strong> El mercado rompe estructura bajista justo en una zona donde antes hubo demanda fuerte.</p>
+<p>3. <strong>Vela de rechazo + nivel + temporalidad superior.</strong> Pin bar en H1, en un nivel marcado en H4, en dirección de la tendencia D1.</p>
+<p>4. <strong>Tres temporalidades alineadas.</strong> D1 alcista, H4 alcista, H1 retrocediendo hacia soporte. Compras el rebote en H1 con SL ajustado.</p>
+<p><strong>La regla del 3:</strong> Solo operas cuando tienes al menos 3 confluencias. Si solo tienes 1-2, observas. Esto reduce drásticamente el número de operaciones, pero sube el win rate del 40% al 60-70%.</p>
+<p><strong>Calidad sobre cantidad:</strong> Un trader de price action experto puede operar solo 5-10 veces al mes, pero con un win rate del 65% y R:R 1:3. Eso es brutal: una expectativa positiva enorme con muy bajo estrés.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">07</div><div class="lesson-title">Múltiples temporalidades: el método top-down</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Operar una sola temporalidad es como conducir mirando solo el suelo del coche. Necesitas perspectiva. El método top-down es el estándar profesional.</p>
+<p><strong>Estructura de 3 temporalidades:</strong></p>
+<p><strong>1. Temporalidad de contexto (D1 o H4):</strong> Aquí defines la tendencia general. ¿Es alcista, bajista o lateral? ¿Cuáles son los niveles clave macro? Esta vista la revisas 1 vez al día.</p>
+<p><strong>2. Temporalidad de setup (H1 o M30):</strong> Aquí buscas las zonas de entrada. ¿Hay un retroceso a un nivel clave? ¿Hay una compresión? Esta vista la revisas cada 1-2 horas.</p>
+<p><strong>3. Temporalidad de ejecución (M15 o M5):</strong> Aquí afinas la entrada. Busca la vela de confirmación, el patrón de rechazo. Esta vista solo cuando ya hay setup en la temporalidad superior.</p>
+<p><strong>Regla absoluta:</strong> Las temporalidades superiores SIEMPRE mandan. Si D1 es bajista, no compras en H1 aunque parezca claro. Operas en la dirección del flujo macro.</p>
+<p><strong>Ejemplo práctico:</strong> D1 alcista en EUR/USD, retroceso a soporte H4 importante. Bajas a H1 y ves compresión. Bajas a M15 y aparece pin bar de rechazo en el soporte. Tres temporalidades alineadas + vela de confirmación = entrada de alta probabilidad.</p>
+<p><strong>Error común:</strong> Empezar por la temporalidad pequeña. Es como buscar tesoro sin mapa. Empieza siempre arriba y baja.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">08</div><div class="lesson-title">Cómo construir tu plan de price action</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Has aprendido los conceptos. Ahora hay que convertirlos en un plan operativo. Sin plan escrito, no hay trading, hay apuestas.</p>
+<p><strong>Estructura de un plan de price action profesional:</strong></p>
+<p><strong>1. Mercados que opero:</strong> Máximo 3-5. Conoces sus horarios, su volatilidad, sus particularidades. Especialización.</p>
+<p><strong>2. Temporalidades:</strong> Define tus 3 temporalidades (contexto/setup/ejecución).</p>
+<p><strong>3. Setups que opero:</strong> Define EXACTAMENTE qué buscas. Por ejemplo: "Pin bar en soporte H4 en tendencia alcista D1, con cierre de vela confirmando".</p>
+<p><strong>4. Reglas de entrada:</strong> "Entro al apertura de la vela siguiente a la pin bar."</p>
+<p><strong>5. Reglas de stop loss:</strong> "SL bajo el mínimo de la pin bar + 5 pips de buffer."</p>
+<p><strong>6. Reglas de take profit:</strong> "TP1 al 50% del rango anterior. TP2 al siguiente nivel de resistencia. Cierro 50% en TP1, muevo SL a breakeven, y dejo correr el resto."</p>
+<p><strong>7. Gestión de riesgo:</strong> "Máximo 1% por operación. Máximo 3% por día. Si pierdo 3% en un día, paro."</p>
+<p><strong>8. Horario:</strong> "Solo opero en sesión Londres y solapamiento Londres-NY."</p>
+<p><strong>El siguiente paso:</strong> Backtest tu plan en 200 operaciones históricas. Si tiene expectativa positiva, lo llevas a demo durante 2-3 meses. Si funciona, real con tamaño mínimo. Esto es lo que hacen los profesionales. Lo que no hacen es saltarse pasos.</p></div>
+</div>
+
+
+<div data-ad="affiliate" data-variant="exness"></div>
+
+<div style="text-align:center;padding:30px;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.15);border-radius:14px;margin-top:30px">
+<h3 style="font-size:20px;margin-bottom:8px">¿Quieres más cursos?</h3>
+<p style="font-size:14px;color:var(--text-2);margin-bottom:16px">Tenemos más cursos gratuitos esperándote.</p>
+<a href="../cursos.html" style="display:inline-block;padding:12px 28px;background:var(--gold);color:var(--bg-0);border-radius:100px;font-weight:700;text-decoration:none">Ver todos los cursos →</a>
+</div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p></div></div></footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>40)});</script>
+</body>
+</html>

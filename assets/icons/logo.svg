@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Gradiente dorado -->
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0c050"/>
+      <stop offset="50%" stop-color="#d4a843"/>
+      <stop offset="100%" stop-color="#8a6508"/>
+    </linearGradient>
+    <linearGradient id="candleGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#1a9c54"/>
+    </linearGradient>
+    <linearGradient id="candleRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e74c3c"/>
+      <stop offset="100%" stop-color="#a83023"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo circular con borde dorado -->
+  <circle cx="60" cy="60" r="56" fill="#0a0a0f" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Velas japonesas decorativas -->
+  <!-- Vela 1 (roja, izquierda) -->
+  <line x1="28" y1="42" x2="28" y2="78" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.6"/>
+  <rect x="25" y="52" width="6" height="20" fill="url(#candleRed)" opacity="0.9" rx="0.5"/>
+
+  <!-- Vela 2 (verde) -->
+  <line x1="40" y1="35" x2="40" y2="85" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.6"/>
+  <rect x="37" y="40" width="6" height="30" fill="url(#candleGreen)" opacity="0.9" rx="0.5"/>
+
+  <!-- Vela 3 (verde, más grande - el impulso alcista) -->
+  <line x1="52" y1="30" x2="52" y2="82" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.8"/>
+  <rect x="49" y="36" width="6" height="36" fill="url(#candleGreen)" rx="0.5" filter="url(#glow)"/>
+
+  <!-- Vela 4 (roja pequeña - retroceso) -->
+  <line x1="64" y1="35" x2="64" y2="75" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.6"/>
+  <rect x="61" y="40" width="6" height="18" fill="url(#candleRed)" opacity="0.9" rx="0.5"/>
+
+  <!-- Vela 5 (verde grande - continuación) -->
+  <line x1="76" y1="25" x2="76" y2="78" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.8"/>
+  <rect x="73" y="30" width="6" height="40" fill="url(#candleGreen)" rx="0.5" filter="url(#glow)"/>
+
+  <!-- Vela 6 -->
+  <line x1="88" y1="32" x2="88" y2="72" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.6"/>
+  <rect x="85" y="38" width="6" height="26" fill="url(#candleGreen)" opacity="0.9" rx="0.5"/>
+
+  <!-- Línea de tendencia alcista dorada -->
+  <path d="M 22 75 L 95 28" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7" fill="none"/>
+  <circle cx="95" cy="28" r="2" fill="url(#goldGrad)"/>
+
+  <!-- Letra Z estilizada (top layer, pero muy sutil) -->
+  <text x="60" y="105" font-family="Outfit, sans-serif" font-weight="900" font-size="14" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="1">ZTP</text>
+</svg>
