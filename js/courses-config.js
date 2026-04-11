@@ -68,7 +68,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'estrategias-trading',
-    status: 'active',
+    status: 'PRÓXIMAMENTE',
     icon: '⚡',
     level: 'advanced',
     levelLabel: 'Avanzado',
@@ -80,7 +80,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'psicologia-trading',
-    status: 'active',
+    status: 'PRÓXIMAMENTE',
     icon: '🧠',
     level: 'intermediate',
     levelLabel: 'Intermedio',
@@ -92,7 +92,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'price-action',
-    status: 'active',
+    status: 'PRÓXIMAMENTE',
     icon: '📊',
     level: 'intermediate',
     levelLabel: 'Intermedio',
@@ -104,7 +104,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'smart-money-concepts',
-    status: 'active',
+    status: 'PRÓXIMAMENTE',
     icon: '💎',
     level: 'advanced',
     levelLabel: 'Avanzado',
@@ -116,7 +116,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'trading-noticias',
-    status: 'active',
+    status: 'PRÓXIMAMENTE',
     icon: '📰',
     level: 'intermediate',
     levelLabel: 'Intermedio',
