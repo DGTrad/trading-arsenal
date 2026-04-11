@@ -31,7 +31,7 @@ const BROKERS_CONFIG = [
     id: 'exness',
     enabled: true,                                    // ← Cambia a false para ocultar
     name: 'Exness',
-    affiliateUrl: 'https://www.exness.com/',          // ← PON AQUÍ tu enlace único
+    affiliateUrl: 'https://one.exnessonelink.com/a/jh1tl7note',          // ← PON AQUÍ tu enlace único
     featured: true,                                   // ← Destaca con "★ TOP CHOICE"
     
     // Datos visuales
