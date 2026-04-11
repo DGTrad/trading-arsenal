@@ -71,7 +71,7 @@ const BROKERS_CONFIG = [
     id: 'xm',
     enabled: true,
     name: 'XM',
-    affiliateUrl: 'https://www.xm.com/es/',           // ← PON AQUÍ tu enlace único
+    affiliateUrl: 'https://clicks.pipaffiliates.com/c?c=1205801&l=es&p=0',           // ← PON AQUÍ tu enlace único
     featured: true,
     
     logo: 'XM',
