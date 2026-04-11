@@ -100,7 +100,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'pepperstone',
-    enabled: true,
+    enabled: false,
     name: 'Pepperstone',
     affiliateUrl: 'https://pepperstone.com/es/',      // ← PON AQUÍ tu enlace único
     featured: false,
@@ -131,7 +131,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'icmarkets',
-    enabled: true,
+    enabled: false,
     name: 'IC Markets',
     affiliateUrl: 'https://www.icmarkets.com/global/es/',  // ← PON AQUÍ tu enlace único
     featured: false,
@@ -162,7 +162,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'fpmarkets',
-    enabled: true,
+    enabled: false,
     name: 'FP Markets',
     affiliateUrl: 'https://www.fpmarkets.com/es/',    // ← PON AQUÍ tu enlace único
     featured: false,
@@ -193,7 +193,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'vantage',
-    enabled: true,
+    enabled: false,
     name: 'Vantage',
     affiliateUrl: 'https://www.vantagemarkets.com/es/',  // ← PON AQUÍ tu enlace único
     featured: false,
@@ -224,7 +224,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'fxpro',
-    enabled: true,
+    enabled: false,
     name: 'FXPro',
     affiliateUrl: 'https://www.fxpro.es/',            // ← PON AQUÍ tu enlace único
     featured: false,
@@ -255,7 +255,7 @@ const BROKERS_CONFIG = [
   
   {
     id: 'avatrade',
-    enabled: true,
+    enabled: false,
     name: 'AvaTrade',
     affiliateUrl: 'https://www.avatrade.es/',         // ← PON AQUÍ tu enlace único
     featured: false,
