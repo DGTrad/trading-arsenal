@@ -98,35 +98,6 @@ const BROKERS_CONFIG = [
     bannerColor: '#dc2626'
   },
   {
-    id: 'icmarkets',
-    enabled: false,
-    name: 'IC Markets',
-    affiliateUrl: 'https://www.icmarkets.com/global/es/',
-    featured: false,
-    logo: 'IC',
-    logoGradient: 'linear-gradient(135deg,#059669,#10b981)',
-    logoColor: 'white',
-    rating: '4.8/5',
-    stars: '★★★★★',
-    tagline: 'Mejor para scalping y EAs',
-    description: 'Top ECN broker global, favorito entre scalpers y traders algorítmicos por su ejecución sub-40ms y liquidez institucional profunda. Regulado por ASIC, CySEC y FSA Seychelles. Ofrece VPS gratuito para clientes activos, permite todo tipo de estilos de trading sin restricciones, y spreads promedio muy ajustados.',
-    regulation: 'ASIC, CySEC, FSA',
-    spread: '0.0 pips',
-    minDeposit: '$200',
-    leverage: '1:500',
-    platforms: 'MT4, MT5, cTrader',
-    features: [
-      'Ejecución Raw ECN',
-      'Permite scalping y EAs',
-      'Liquidez institucional',
-      'VPS gratuito',
-      'MT4, MT5 y cTrader',
-      'Spread promedio 0.1 pips'
-    ],
-    bannerTitle: 'Top ECN · Ideal para scalping',
-    bannerColor: '#10b981'
-  },
-  {
     id: 'fpmarkets',
     enabled: false,
     name: 'FP Markets',
