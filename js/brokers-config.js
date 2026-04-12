@@ -14,7 +14,7 @@ const BROKERS_CONFIG = [
     id: 'exness',
     enabled: true,
     name: 'Exness',
-    affiliateUrl: 'https://www.exness.com/',
+    affiliateUrl: 'https://one.exnessonelink.com/a/jh1tl7note',
     featured: true,
     logo: 'EX',
     logoGradient: 'linear-gradient(135deg,#fbbf24,#f59e0b)',
@@ -43,7 +43,7 @@ const BROKERS_CONFIG = [
     id: 'xm',
     enabled: true,
     name: 'XM',
-    affiliateUrl: 'https://www.xm.com/es/',
+    affiliateUrl: 'https://affs.click/mH2EQ',
     featured: true,
     logo: 'XM',
     logoGradient: 'linear-gradient(135deg,#1e3a8a,#3b82f6)',
@@ -70,7 +70,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'pepperstone',
-    enabled: true,
+    enabled: false,
     name: 'Pepperstone',
     affiliateUrl: 'https://pepperstone.com/es/',
     featured: false,
@@ -99,7 +99,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'icmarkets',
-    enabled: true,
+    enabled: false,
     name: 'IC Markets',
     affiliateUrl: 'https://www.icmarkets.com/global/es/',
     featured: false,
@@ -128,7 +128,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'fpmarkets',
-    enabled: true,
+    enabled: false,
     name: 'FP Markets',
     affiliateUrl: 'https://www.fpmarkets.com/es/',
     featured: false,
@@ -157,7 +157,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'vantage',
-    enabled: true,
+    enabled: false,
     name: 'Vantage',
     affiliateUrl: 'https://www.vantagemarkets.com/es/',
     featured: false,
@@ -186,7 +186,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'fxpro',
-    enabled: true,
+    enabled: false,
     name: 'FXPro',
     affiliateUrl: 'https://www.fxpro.es/',
     featured: false,
@@ -215,7 +215,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'avatrade',
-    enabled: true,
+    enabled: false,
     name: 'AvaTrade',
     affiliateUrl: 'https://www.avatrade.es/',
     featured: false,
