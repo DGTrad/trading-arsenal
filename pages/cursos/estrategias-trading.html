@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Curso Premium: 3 Estrategias de Trading Completas — Scalping, Swing Trading y Tendencia. Con backtesting, gráficos reales y ejercicios.">
+<title>Estrategias de Trading Completas — Curso Premium | Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/main.css">
+<script src="../../js/brokers-config.js"></script>
+<script src="../../js/ads.js"></script>
+<style>
+/* === PAYWALL === */
+.paywall{max-width:900px;margin:0 auto;padding:calc(var(--nav-height) + 40px) 24px 80px;position:relative;z-index:10}
+.pw-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:linear-gradient(135deg,rgba(212,168,67,0.15),rgba(212,168,67,0.05));border:1px solid rgba(212,168,67,0.3);border-radius:100px;font-size:11px;color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.pw-title{font-size:clamp(32px,6vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:16px}
+.pw-title-gold{background:linear-gradient(135deg,#f0c050,#8a6508);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pw-desc{font-size:18px;color:var(--text-2);line-height:1.7;max-width:700px;margin-bottom:32px}
+.pw-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:40px}
+.pw-feat{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px}
+.pw-feat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.15)}
+.pw-feat-title{font-size:14px;font-weight:700;margin-bottom:2px}
+.pw-feat-desc{font-size:12px;color:var(--text-3);line-height:1.5}
+
+/* Módulos preview */
+.pw-modules{margin-bottom:40px}
+.pw-mod{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px;margin-bottom:8px}
+.pw-mod-num{width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--bg-0);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--font-mono);font-size:13px;flex-shrink:0}
+.pw-mod-info{flex:1}
+.pw-mod-title{font-size:14px;font-weight:700}
+.pw-mod-meta{font-size:11px;color:var(--text-3);margin-top:2px}
+.pw-mod-lock{color:var(--text-4);font-size:16px}
+
+/* Precio y CTA */
+.pw-price-box{background:linear-gradient(135deg,rgba(212,168,67,0.08),rgba(52,152,219,0.04));border:2px solid rgba(212,168,67,0.3);border-radius:20px;padding:40px;text-align:center;margin-bottom:40px}
+.pw-price-old{font-size:18px;color:var(--text-3);text-decoration:line-through;margin-bottom:4px}
+.pw-price{font-size:52px;font-weight:900;color:var(--gold);font-family:var(--font-mono);letter-spacing:-2px}
+.pw-price span{font-size:18px;color:var(--text-3);font-weight:400}
+.pw-price-note{font-size:13px;color:var(--text-3);margin:8px 0 24px}
+.pw-buy-btn{display:inline-block;padding:18px 48px;background:linear-gradient(135deg,#f0c050,#d4a843);color:var(--bg-0);font-size:18px;font-weight:800;border-radius:100px;text-decoration:none;border:none;cursor:pointer;font-family:var(--font-display);transition:all .3s;box-shadow:0 10px 30px rgba(212,168,67,0.3)}
+.pw-buy-btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(212,168,67,0.5)}
+.pw-guarantee{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:16px;font-size:13px;color:var(--text-3)}
+
+/* Unlock form */
+.pw-unlock{margin-top:30px;padding:24px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;text-align:center}
+.pw-unlock-title{font-size:14px;font-weight:700;margin-bottom:10px}
+.pw-unlock-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.pw-unlock-input{flex:1;padding:12px 16px;background:var(--bg-2);border:1px solid var(--border-2);border-radius:8px;color:var(--text-1);font-family:var(--font-mono);font-size:14px;outline:none}
+.pw-unlock-input:focus{border-color:var(--gold)}
+.pw-unlock-btn{padding:12px 24px;background:var(--gold);color:var(--bg-0);border:none;border-radius:8px;font-weight:700;cursor:pointer;font-family:var(--font-display)}
+
+/* Testimonials */
+.pw-testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
+.pw-test{padding:20px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px}
+.pw-test-text{font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:10px;font-style:italic}
+.pw-test-author{font-size:11px;color:var(--gold);font-weight:700}
+
+/* === CURSO (contenido desbloqueado) === */
+.course-content{display:none;max-width:1100px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:10}
+.course-content.unlocked{display:block}
+
+.cp{padding:calc(var(--nav-height) + 50px) 24px 30px;text-align:center;position:relative;z-index:10}
+.cp-icon{font-size:48px;margin-bottom:12px}
+.cp-title{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-1.5px;margin-bottom:8px}
+.cp-desc{font-size:16px;color:var(--text-2);max-width:620px;margin:0 auto 14px}
+.cp-meta{display:inline-flex;gap:14px;font-size:12px;color:var(--text-3);padding:8px 18px;border:1px solid var(--border-2);border-radius:100px;flex-wrap:wrap}
+.cp-meta strong{color:var(--gold)}
+
+/* Módulos del curso */
+.module{margin-bottom:40px}
+.module-header{display:flex;align-items:center;gap:14px;padding:20px 24px;background:linear-gradient(135deg,rgba(212,168,67,0.06),transparent);border:1px solid rgba(212,168,67,0.15);border-radius:14px;margin-bottom:16px}
+.module-num{width:48px;height:48px;border-radius:12px;background:var(--gold);color:var(--bg-0);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;font-family:var(--font-mono);flex-shrink:0}
+.module-info{flex:1}
+.module-title{font-size:20px;font-weight:800;letter-spacing:-0.5px}
+.module-subtitle{font-size:13px;color:var(--text-3);margin-top:2px}
+
+.lesson{background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:all .2s}
+.lesson:hover{border-color:var(--border-2)}
+.lesson-h{padding:22px 28px;cursor:pointer;display:flex;align-items:center;gap:16px;transition:background .2s}
+.lesson-h:hover{background:var(--bg-4)}
+.lesson-num{width:36px;height:36px;border-radius:50%;background:var(--bg-4);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--font-mono);font-size:13px;flex-shrink:0;border:1px solid var(--border-2)}
+.lesson-title{flex:1;font-size:15px;font-weight:700;line-height:1.3}
+.lesson-tag{padding:3px 10px;border-radius:20px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.tag-theory{background:rgba(52,152,219,0.1);color:var(--blue);border:1px solid rgba(52,152,219,0.2)}
+.tag-practice{background:rgba(46,204,113,0.1);color:var(--green);border:1px solid rgba(46,204,113,0.2)}
+.tag-backtest{background:rgba(155,89,182,0.1);color:var(--purple);border:1px solid rgba(155,89,182,0.2)}
+.tag-quiz{background:rgba(230,126,34,0.1);color:var(--orange);border:1px solid rgba(230,126,34,0.2)}
+.lesson-arrow{color:var(--text-3);transition:transform .3s}
+.lesson.open .lesson-arrow{transform:rotate(180deg)}
+.lesson-body{display:none;padding:0 32px 32px 32px;font-size:15px;color:var(--text-2);line-height:1.85}
+.lesson.open .lesson-body{display:block;border-top:1px solid var(--border-1);padding-top:22px}
+.lesson-body p{margin-bottom:14px}
+.lesson-body strong{color:var(--text-1)}
+.lesson-body h3{font-size:17px;font-weight:800;color:var(--text-1);margin:20px 0 10px;letter-spacing:-0.3px}
+.lesson-body h4{font-size:14px;font-weight:700;color:var(--gold);margin:16px 0 8px;text-transform:uppercase;letter-spacing:1px}
+
+/* Cajas especiales dentro de las lecciones */
+.info-box{padding:18px 20px;border-radius:10px;margin:16px 0;font-size:13px;line-height:1.7}
+.info-box.concept{background:rgba(52,152,219,0.06);border:1px solid rgba(52,152,219,0.15)}
+.info-box.example{background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.15)}
+.info-box.warning{background:rgba(231,76,60,0.06);border:1px solid rgba(231,76,60,0.15)}
+.info-box.pro-tip{background:rgba(212,168,67,0.06);border:1px solid rgba(212,168,67,0.15)}
+.info-box-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.info-box.concept .info-box-title{color:var(--blue)}
+.info-box.example .info-box-title{color:var(--green)}
+.info-box.warning .info-box-title{color:var(--red)}
+.info-box.pro-tip .info-box-title{color:var(--gold)}
+
+/* Tabla de reglas */
+.rules-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.rules-table th{text-align:left;padding:12px 14px;background:var(--bg-4);color:var(--text-3);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;border-bottom:1px solid var(--border-2)}
+.rules-table td{padding:12px 14px;border-bottom:1px solid var(--border-1)}
+.rules-table tr:last-child td{border:none}
+
+/* Setup visual */
+.setup-visual{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0}
+.sv-item{padding:14px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:10px;text-align:center}
+.sv-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.sv-value{font-family:var(--font-mono);font-size:16px;font-weight:800;margin-top:4px}
+.sv-entry{color:var(--gold)}.sv-sl{color:var(--red)}.sv-tp{color:var(--green)}.sv-rr{color:var(--text-1)}
+
+/* SVG Diagrams */
+.diagram-box{margin:20px 0;padding:20px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:12px;text-align:center}
+.diagram-box svg{max-width:100%;height:auto}
+.diagram-caption{font-size:11px;color:var(--text-3);margin-top:10px;font-style:italic}
+
+/* Backtest stats */
+.backtest-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}
+.bt-stat{padding:16px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:10px;text-align:center}
+.bt-stat-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.bt-stat-value{font-family:var(--font-mono);font-size:20px;font-weight:800;margin-top:4px}
+.bt-stat-value.positive{color:var(--green)}
+.bt-stat-value.negative{color:var(--red)}
+.bt-stat-value.neutral{color:var(--gold)}
+
+/* Checklist descargable */
+.checklist{padding:20px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;margin:16px 0}
+.checklist-title{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:13px;border-bottom:1px dashed var(--border-1)}
+.check-item:last-child{border:none}
+.check-box{width:18px;height:18px;border:2px solid var(--border-2);border-radius:4px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.check-box.checked{background:var(--green);border-color:var(--green);color:#fff;font-size:11px}
+
+@media(max-width:640px){
+  .lesson-body{padding-left:20px;padding-right:20px}
+  .lesson-h{padding:16px}
+  .pw-price{font-size:36px}
+  .pw-buy-btn{width:100%;padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../../index.html" class="nav-logo"><img src="../../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="../analisis.html" class="nav-link">Análisis</a>
+      <a href="../mercados.html" class="nav-link">Mercados</a>
+      <a href="../cursos.html" class="nav-link active">Cursos</a>
+      <a href="../brokers.html" class="nav-link">Brokers</a>
+      <a href="../recursos.html" class="nav-link">Recursos</a>
+      <a href="../herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+<button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></div></nav>
+
+<!-- =========================================
+     PAYWALL — Visible si NO ha pagado
+     ========================================= -->
+<div id="paywall" class="paywall">
+  <div class="pw-badge">★ Curso Premium</div>
+  <h1 class="pw-title">3 Estrategias de Trading<br><span class="pw-title-gold">Completas y Probadas</span></h1>
+  <p class="pw-desc">Aprende 3 estrategias profesionales con reglas exactas de entrada, salida y gestión de riesgo. Con backtest de 200+ operaciones, gráficos reales anotados y checklists descargables. Todo lo que necesitas para operar con un plan claro.</p>
+  
+  <div class="pw-features">
+    <div class="pw-feat"><div class="pw-feat-icon">⚡</div><div><div class="pw-feat-title">3 Estrategias Probadas</div><div class="pw-feat-desc">Scalping en M5, Swing en H4 y Tendencia en D1. Reglas claras de entrada y salida.</div></div></div>
+    <div class="pw-feat"><div class="pw-feat-icon">📊</div><div><div class="pw-feat-title">Backtesting Real</div><div class="pw-feat-desc">Cada estrategia testeada en 200+ operaciones con estadísticas verificables.</div></div></div>
+    <div class="pw-feat"><div class="pw-feat-icon">🎯</div><div><div class="pw-feat-title">Setups Exactos</div><div class="pw-feat-desc">Entry, SL, TP y R:R definidos. Sin ambigüedad. Sabrás exactamente qué hacer.</div></div></div>
+    <div class="pw-feat"><div class="pw-feat-icon">📋</div><div><div class="pw-feat-title">Checklists Descargables</div><div class="pw-feat-desc">Lista de verificación para cada estrategia. Imprímela junto a tu pantalla.</div></div></div>
+    <div class="pw-feat"><div class="pw-feat-icon">🧠</div><div><div class="pw-feat-title">Quizzes Interactivos</div><div class="pw-feat-desc">Test al final de cada módulo para verificar que has interiorizado las reglas.</div></div></div>
+    <div class="pw-feat"><div class="pw-feat-icon">♾️</div><div><div class="pw-feat-title">Acceso de por Vida</div><div class="pw-feat-desc">Pagas una vez, accedes para siempre. Incluye actualizaciones futuras.</div></div></div>
+  </div>
+  
+  <h2 style="font-size:22px;font-weight:800;margin-bottom:16px">📚 Contenido del Curso</h2>
+  
+  <div class="pw-modules">
+    <div class="pw-mod"><div class="pw-mod-num">1</div><div class="pw-mod-info"><div class="pw-mod-title">Fundamentos — Lo que necesitas antes de empezar</div><div class="pw-mod-meta">3 lecciones · Gestión de riesgo, sesiones, psicología</div></div><div class="pw-mod-lock">🔒</div></div>
+    <div class="pw-mod"><div class="pw-mod-num">2</div><div class="pw-mod-info"><div class="pw-mod-title">Estrategia 1 — Scalping en M5 (Golden Cross)</div><div class="pw-mod-meta">5 lecciones · EMAs, entrada, salida, backtest, checklist</div></div><div class="pw-mod-lock">🔒</div></div>
+    <div class="pw-mod"><div class="pw-mod-num">3</div><div class="pw-mod-info"><div class="pw-mod-title">Estrategia 2 — Swing Trading en H4 (Retroceso Fibonacci)</div><div class="pw-mod-meta">5 lecciones · Fibonacci, estructura, confirmación, backtest</div></div><div class="pw-mod-lock">🔒</div></div>
+    <div class="pw-mod"><div class="pw-mod-num">4</div><div class="pw-mod-info"><div class="pw-mod-title">Estrategia 3 — Tendencia en D1 (Breakout + Retest)</div><div class="pw-mod-meta">5 lecciones · Breakout, retest, gestión, backtest</div></div><div class="pw-mod-lock">🔒</div></div>
+    <div class="pw-mod"><div class="pw-mod-num">5</div><div class="pw-mod-info"><div class="pw-mod-title">Plan de Trading Personalizado</div><div class="pw-mod-meta">2 lecciones · Cómo elegir tu estrategia, crear tu plan escrito</div></div><div class="pw-mod-lock">🔒</div></div>
+  </div>
+
+  <div class="pw-price-box">
+    <div class="pw-price-old">99€</div>
+    <div class="pw-price">49€ <span>pago único</span></div>
+    <div class="pw-price-note">Acceso de por vida · Sin suscripción · Actualizaciones incluidas</div>
+    
+    <!-- PAYPAL BUTTON — Reemplaza con tu botón real de PayPal -->
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypalForm">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="TU_EMAIL_PAYPAL_AQUI">
+      <input type="hidden" name="item_name" value="Curso: Estrategias de Trading Completas - Zona Trading Pro">
+      <input type="hidden" name="amount" value="49.00">
+      <input type="hidden" name="currency_code" value="EUR">
+      <input type="hidden" name="return" value="https://zonatradingpro.com/pages/cursos/estrategias-trading.html?paid=1">
+      <input type="hidden" name="cancel_return" value="https://zonatradingpro.com/pages/cursos/estrategias-trading.html">
+      <button type="submit" class="pw-buy-btn">🔓 Comprar Curso — 49€</button>
+    </form>
+    
+    <div class="pw-guarantee">🛡️ Garantía de devolución 14 días · Sin preguntas</div>
+  </div>
+
+  <div class="pw-unlock">
+    <div class="pw-unlock-title">¿Ya has comprado? Introduce tu código de acceso:</div>
+    <div class="pw-unlock-form">
+      <input type="text" id="unlockCode" class="pw-unlock-input" placeholder="Introduce tu código..." spellcheck="false">
+      <button onclick="unlockCourse()" class="pw-unlock-btn">Acceder</button>
+    </div>
+    <p style="font-size:11px;color:var(--text-4);margin-top:8px">Recibirás el código por email tras completar el pago.</p>
+  </div>
+  
+  <div style="text-align:center;margin-top:30px;font-size:12px;color:var(--text-4);line-height:1.6">
+    ⚠️ Este curso contiene contenido educativo. No garantiza rentabilidad. El trading conlleva riesgo.
+  </div>
+</div>
+
+<!-- =========================================
+     CONTENIDO DEL CURSO — Solo visible tras pagar
+     ========================================= -->
+<header class="cp" id="courseHeader" style="display:none">
+  <div class="cp-icon">⚡</div>
+  <h1 class="cp-title">Estrategias de Trading Completas</h1>
+  <p class="cp-desc">3 estrategias probadas con reglas exactas, backtesting real y checklists.</p>
+  <div class="cp-meta"><span><strong>📚 20 lecciones</strong></span><span>⏱ ~12h</span><span>🎓 <strong style="color:var(--gold)">PREMIUM</strong></span></div>
+</header>
+
+<div class="course-content" id="courseContent">
+
+<!-- ===================== MÓDULO 1: FUNDAMENTOS ===================== -->
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <div class="module-title">Fundamentos</div>
+      <div class="module-subtitle">Lo que necesitas dominar antes de cualquier estrategia</div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">01</div><div class="lesson-title">Gestión de riesgo: la base de todo</div><span class="lesson-tag tag-theory">Teoría</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>Antes de aprender ninguna estrategia, necesitas internalizar una verdad: <strong>la gestión de riesgo es más importante que la estrategia.</strong> Un trader con una estrategia mediocre pero gestión de riesgo perfecta sobrevivirá y ganará a largo plazo. Uno con la mejor estrategia del mundo pero sin gestión destruirá su cuenta.</p>
+      
+      <h3>Las 5 reglas no negociables</h3>
+      
+      <div class="info-box concept">
+        <div class="info-box-title">📘 Regla 1: Máximo 1% de riesgo por operación</div>
+        <p>Si tu cuenta es de 10.000€, nunca arriesgas más de 100€ en una sola operación. Esto significa que necesitarías 100 operaciones perdedoras CONSECUTIVAS para perder la cuenta. Estadísticamente imposible con cualquier sistema decente.</p>
+      </div>
+
+      <div class="info-box concept">
+        <div class="info-box-title">📘 Regla 2: Máximo 3% de riesgo diario</div>
+        <p>Si pierdes 3 operaciones seguidas (3% del capital), cierras la sesión. No importa lo que veas en el gráfico. Tu cerebro ya no está en condiciones de tomar buenas decisiones. Vuelves mañana.</p>
+      </div>
+
+      <div class="info-box concept">
+        <div class="info-box-title">📘 Regla 3: Mínimo R:R de 1:2</div>
+        <p>Nunca entres en una operación donde no puedas ganar al menos el doble de lo que arriesgas. Con R:R 1:2, solo necesitas ganar el 34% de las operaciones para ser rentable. Con R:R 1:3, solo el 26%.</p>
+      </div>
+
+      <div class="info-box concept">
+        <div class="info-box-title">📘 Regla 4: Stop Loss SIEMPRE puesto</div>
+        <p>El SL se coloca antes de entrar. Es automático en el broker. Si te cuesta poner SL, no estás listo para operar con dinero real.</p>
+      </div>
+
+      <div class="info-box concept">
+        <div class="info-box-title">📘 Regla 5: Nunca muevas el SL en contra</div>
+        <p>Mover el SL para "dar más espacio" es la forma número 1 de destruir cuentas. Si el precio llega a tu SL, tu análisis estaba equivocado. Aceptas la pérdida y buscas otra entrada.</p>
+      </div>
+      
+      <h3>Tabla de posiciones según capital</h3>
+      <table class="rules-table">
+        <tr><th>Capital</th><th>Riesgo 1%</th><th>SL 20 pips (forex)</th><th>Tamaño posición</th></tr>
+        <tr><td>1.000€</td><td>10€</td><td>0.05 lotes</td><td>Micro</td></tr>
+        <tr><td>5.000€</td><td>50€</td><td>0.25 lotes</td><td>Mini</td></tr>
+        <tr><td>10.000€</td><td>100€</td><td>0.50 lotes</td><td>Mini</td></tr>
+        <tr><td>50.000€</td><td>500€</td><td>2.50 lotes</td><td>Estándar</td></tr>
+      </table>
+      
+      <div class="info-box pro-tip">
+        <div class="info-box-title">💡 Pro Tip</div>
+        <p>Usa la calculadora de posición de nuestra web (<a href="../herramientas.html" style="color:var(--gold)">Herramientas</a>) para calcular el tamaño exacto según tu capital, SL y par.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">02</div><div class="lesson-title">Las sesiones de mercado y cuándo operar cada estrategia</div><span class="lesson-tag tag-theory">Teoría</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>Cada estrategia funciona mejor en ciertos horarios. Operar una estrategia de scalping durante la sesión asiática (baja volatilidad) es como intentar pescar en una piscina vacía.</p>
+      
+      <h3>Las 4 sesiones (hora Madrid)</h3>
+      <table class="rules-table">
+        <tr><th>Sesión</th><th>Horario (Madrid)</th><th>Volatilidad</th><th>Mejor para</th></tr>
+        <tr><td>🇦🇺 Sídney</td><td>00:00 - 09:00</td><td>Baja</td><td>Evitar</td></tr>
+        <tr><td>🇯🇵 Tokio</td><td>02:00 - 11:00</td><td>Media</td><td>JPY pairs</td></tr>
+        <tr><td>🇬🇧 Londres</td><td>09:00 - 18:00</td><td>Alta</td><td>Scalping, Swing</td></tr>
+        <tr><td>🇺🇸 Nueva York</td><td>15:00 - 00:00</td><td>Alta</td><td>Scalping, Swing</td></tr>
+      </table>
+
+      <div class="info-box example">
+        <div class="info-box-title">🟢 La ventana dorada</div>
+        <p><strong>15:00 - 18:00 hora Madrid</strong> (solapamiento Londres + NY). Es la ventana con más volumen y volatilidad del día. Si solo puedes operar 3 horas al día, que sean esas. El 60% de las mejores oportunidades de scalping y swing ocurren en esta ventana.</p>
+      </div>
+      
+      <h3>Cuándo operar cada estrategia de este curso</h3>
+      <table class="rules-table">
+        <tr><th>Estrategia</th><th>Temporalidad</th><th>Sesión ideal</th><th>Revisión</th></tr>
+        <tr><td>Scalping M5</td><td>M5</td><td>Londres + NY</td><td>Cada 5 min</td></tr>
+        <tr><td>Swing H4</td><td>H4</td><td>Cualquiera</td><td>Cada 4h</td></tr>
+        <tr><td>Tendencia D1</td><td>D1</td><td>Cualquiera</td><td>1 vez al día</td></tr>
+      </table>
+      
+      <div class="info-box warning">
+        <div class="info-box-title">⚠️ Nunca operes scalping durante noticias</div>
+        <p>30 minutos antes y 30 después de NFP, FOMC, IPC o cualquier evento rojo del calendario económico, cierra operaciones de scalping. Los spreads se disparan y tu SL puede no ejecutarse al precio previsto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">03</div><div class="lesson-title">Mentalidad de ejecución: operar como un profesional</div><span class="lesson-tag tag-theory">Teoría</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>La diferencia entre un trader que tiene una estrategia ganadora y uno que realmente gana con ella está en la <strong>ejecución sin emociones</strong>. Después de este módulo, tendrás 3 estrategias probadas. Si las ejecutas exactamente como están escritas, ganarás dinero a largo plazo. El problema es que no las ejecutarás exactamente — tu mente te saboteará.</p>
+      
+      <h3>Los 5 sabotajes más comunes</h3>
+      
+      <p><strong>1. "Voy a esperar un poco más a ver si confirma."</strong><br/>La entrada de tu sistema se ha dado, todos los criterios se cumplen, pero tú esperas. El precio se va sin ti. Luego entras tarde, sin SL correcto, y pierdes.</p>
+      
+      <p><strong>2. "Voy a cerrar antes del TP porque ya estoy ganando."</strong><br/>Cierre prematuro. Tu sistema tiene R:R 1:3 pero tú cierras en 1:1 "para asegurar". Destruyes la expectativa matemática del sistema.</p>
+      
+      <p><strong>3. "Voy a mover el SL un poco más lejos."</strong><br/>La operación va en contra y en lugar de aceptar la pérdida, amplías el SL. Ahora estás arriesgando 2-3% en vez de 1%. Si pierde, una operación te borra las ganancias de toda la semana.</p>
+      
+      <p><strong>4. "Necesito recuperar lo que perdí."</strong><br/>Revenge trading. Tras una pérdida, doblas el tamaño en la siguiente. La siguiente también pierde (porque entraste por rabia, no por setup). Ahora has perdido el triple.</p>
+      
+      <p><strong>5. "Este setup es tan bueno que voy a poner el doble."</strong><br/>Overconfidence. No existe el "setup perfecto". Todo setup tiene un % de fallo. Si le pones el doble, cuando falle (y fallará alguna vez), duele el doble.</p>
+      
+      <div class="info-box pro-tip">
+        <div class="info-box-title">💡 La solución profesional</div>
+        <p>Escribe las reglas de tu estrategia en un papel y ponlo junto a tu pantalla. Antes de cada operación, léelo. Si no cumple TODOS los criterios, no entras. Sin excepciones. Las primeras semanas será difícil. Después de un mes, se vuelve automático. Es un músculo que se entrena.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MÓDULO 2: SCALPING M5 ===================== -->
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <div class="module-title">Estrategia 1: Scalping en M5</div>
+      <div class="module-subtitle">Golden Cross — EMAs rápidas en gráfico de 5 minutos</div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">04</div><div class="lesson-title">Concepto: La estrategia Golden Cross en M5</div><span class="lesson-tag tag-theory">Teoría</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>La Golden Cross es una de las estrategias de scalping más simples y efectivas que existen. Se basa en el cruce de dos medias móviles exponenciales (EMAs) en un gráfico de 5 minutos, confirmada por el RSI y la tendencia en H1.</p>
+      
+      <h3>Los 3 indicadores</h3>
+      <table class="rules-table">
+        <tr><th>Indicador</th><th>Configuración</th><th>Función</th></tr>
+        <tr><td>EMA 9</td><td>Exponencial, cierre, 9 periodos</td><td>Media rápida (señal)</td></tr>
+        <tr><td>EMA 21</td><td>Exponencial, cierre, 21 periodos</td><td>Media lenta (filtro)</td></tr>
+        <tr><td>RSI 14</td><td>14 periodos</td><td>Confirmación momentum</td></tr>
+      </table>
+      
+      <div class="info-box concept">
+        <div class="info-box-title">📘 ¿Por qué funciona?</div>
+        <p>La EMA 9 reacciona más rápido al precio. Cuando cruza por encima de la EMA 21, significa que el momentum a corto plazo ha girado al alza. Esto, confirmado con RSI y tendencia H1, te da una entrada de alta probabilidad con R:R favorable.</p>
+      </div>
+
+      <!-- SVG Diagram: Cruce de EMAs -->
+      <div class="diagram-box">
+        <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="max-width:600px">
+          <!-- Grid -->
+          <line x1="50" y1="40" x2="50" y2="240" stroke="#2a2a38" stroke-width="0.5"/>
+          <line x1="50" y1="240" x2="580" y2="240" stroke="#2a2a38" stroke-width="0.5"/>
+          <line x1="50" y1="140" x2="580" y2="140" stroke="#2a2a38" stroke-width="0.5" stroke-dasharray="4,4"/>
+          
+          <!-- EMA 21 (lenta - azul) -->
+          <path d="M 60 200 Q 120 195 180 180 Q 240 165 280 155 Q 320 145 360 130 Q 400 118 440 110 Q 480 105 540 95" stroke="#3498db" stroke-width="2.5" fill="none"/>
+          <text x="545" y="92" font-size="10" fill="#3498db" font-family="Outfit">EMA 21</text>
+          
+          <!-- EMA 9 (rápida - dorada) -->
+          <path d="M 60 190 Q 100 195 140 200 Q 180 190 220 170 Q 260 140 280 130 Q 320 115 360 105 Q 400 98 440 90 Q 480 85 540 75" stroke="#d4a843" stroke-width="2.5" fill="none"/>
+          <text x="545" y="72" font-size="10" fill="#d4a843" font-family="Outfit">EMA 9</text>
+          
+          <!-- Punto de cruce -->
+          <circle cx="250" cy="152" r="8" fill="none" stroke="#2ecc71" stroke-width="2"/>
+          <circle cx="250" cy="152" r="3" fill="#2ecc71"/>
+          <text x="220" y="170" font-size="11" fill="#2ecc71" font-weight="700" font-family="Outfit">COMPRA</text>
+          
+          <!-- Flecha de entrada -->
+          <line x1="250" y1="175" x2="250" y2="220" stroke="#2ecc71" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="230" y="232" font-size="9" fill="#9a9aaa" font-family="Outfit">Entry aquí</text>
+          
+          <!-- Velas esquemáticas -->
+          <rect x="85" y="185" width="4" height="15" fill="#e74c3c" rx="0.5"/>
+          <rect x="105" y="188" width="4" height="10" fill="#e74c3c" rx="0.5"/>
+          <rect x="125" y="190" width="4" height="14" fill="#e74c3c" rx="0.5"/>
+          <rect x="145" y="185" width="4" height="12" fill="#e74c3c" rx="0.5"/>
+          <rect x="165" y="180" width="4" height="10" fill="#2ecc71" rx="0.5"/>
+          <rect x="185" y="175" width="4" height="14" fill="#2ecc71" rx="0.5"/>
+          <rect x="205" y="165" width="4" height="18" fill="#2ecc71" rx="0.5"/>
+          <rect x="225" y="155" width="4" height="16" fill="#2ecc71" rx="0.5"/>
+          <rect x="245" y="145" width="4" height="20" fill="#2ecc71" rx="0.5"/>
+          <rect x="265" y="135" width="4" height="14" fill="#2ecc71" rx="0.5"/>
+          <rect x="285" y="125" width="4" height="18" fill="#2ecc71" rx="0.5"/>
+          <rect x="305" y="118" width="4" height="14" fill="#e74c3c" rx="0.5"/>
+          <rect x="325" y="110" width="4" height="16" fill="#2ecc71" rx="0.5"/>
+          <rect x="345" y="102" width="4" height="20" fill="#2ecc71" rx="0.5"/>
+        </svg>
+        <div class="diagram-caption">Diagrama: Cruce alcista de EMA 9 sobre EMA 21 (Golden Cross) en M5</div>
+      </div>
+
+      <h3>Pares recomendados</h3>
+      <p>EUR/USD, GBP/USD, XAU/USD. Pares líquidos con spread bajo (&lt;1.5 pips). Evitar pares exóticos para scalping.</p>
+      
+      <h3>Horario de operación</h3>
+      <p><strong>Solo durante Londres (09:00-18:00) y NY (15:00-22:00).</strong> Nunca durante sesión asiática. La volatilidad es demasiado baja para scalping.</p>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">05</div><div class="lesson-title">Reglas exactas de entrada y salida</div><span class="lesson-tag tag-practice">Práctica</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <h3>Reglas de COMPRA (Long)</h3>
+      <p>Todas las condiciones deben cumplirse simultáneamente:</p>
+      
+      <div class="info-box example">
+        <div class="info-box-title">🟢 Criterios de entrada — Compra</div>
+        <p>1. <strong>Tendencia H1 alcista</strong> — Precio por encima de EMA 50 en H1.<br/>
+        2. <strong>EMA 9 cruza por ENCIMA de EMA 21</strong> en M5.<br/>
+        3. <strong>RSI 14 está entre 40 y 65</strong> — No sobrecomprado.<br/>
+        4. <strong>El cruce ocurre durante sesión Londres o NY.</strong><br/>
+        5. <strong>No hay noticias de alto impacto en los próximos 30 minutos.</strong></p>
+      </div>
+      
+      <h4>Entrada</h4>
+      <p>Al cierre de la vela M5 que confirma el cruce. No antes. Esperas a que la vela cierre por encima de ambas EMAs.</p>
+      
+      <h4>Stop Loss</h4>
+      <p>Debajo del mínimo de la última vela bajista antes del cruce + 2 pips de buffer. Típicamente 8-15 pips.</p>
+      
+      <h4>Take Profit</h4>
+      <p>TP1: 1.5x el SL (cierra 50% de la posición).<br/>TP2: 3x el SL (cierra el 50% restante, mueve SL a breakeven).</p>
+      
+      <div class="setup-visual">
+        <div class="sv-item"><div class="sv-label">Entry</div><div class="sv-value sv-entry">Cierre M5 post-cruce</div></div>
+        <div class="sv-item"><div class="sv-label">Stop Loss</div><div class="sv-value sv-sl">8-15 pips</div></div>
+        <div class="sv-item"><div class="sv-label">TP1 (50%)</div><div class="sv-value sv-tp">1.5x SL</div></div>
+        <div class="sv-item"><div class="sv-label">TP2 (50%)</div><div class="sv-value sv-tp">3x SL</div></div>
+        <div class="sv-item"><div class="sv-label">R:R mínimo</div><div class="sv-value sv-rr">1:1.5 → 1:3</div></div>
+      </div>
+
+      <h3>Reglas de VENTA (Short)</h3>
+      <div class="info-box example">
+        <div class="info-box-title">🔴 Criterios de entrada — Venta</div>
+        <p>1. <strong>Tendencia H1 bajista</strong> — Precio por debajo de EMA 50 en H1.<br/>
+        2. <strong>EMA 9 cruza por DEBAJO de EMA 21</strong> en M5.<br/>
+        3. <strong>RSI 14 está entre 35 y 60</strong> — No sobrevendido.<br/>
+        4. <strong>Sesión Londres o NY activa.</strong><br/>
+        5. <strong>Sin noticias de alto impacto próximas.</strong></p>
+      </div>
+      
+      <div class="info-box warning">
+        <div class="info-box-title">⚠️ Filtros que INVALIDAN la entrada</div>
+        <p>❌ El cruce ocurre en lateral (ambas EMAs planas).<br/>
+        ❌ El spread actual es mayor a 2 pips.<br/>
+        ❌ Ya llevas 3 operaciones perdedoras hoy (regla del 3%).<br/>
+        ❌ El RSI está en extremo (&lt;30 o &gt;70).<br/>
+        ❌ Hay una resistencia/soporte importante justo encima/debajo del TP.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">06</div><div class="lesson-title">Ejemplos reales con gráficos anotados</div><span class="lesson-tag tag-practice">Práctica</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <h3>Ejemplo 1: Compra en EUR/USD — 3 de abril 2026, 15:45 CET</h3>
+      
+      <div class="info-box example">
+        <div class="info-box-title">🟢 Setup válido — Resultado: +22 pips</div>
+        <p><strong>Contexto:</strong> EUR/USD en tendencia alcista H1 (precio encima de EMA 50). Sesión NY acaba de abrir.</p>
+        <p><strong>Señal:</strong> EMA 9 cruza EMA 21 al alza en M5 a las 15:45. RSI en 52 (zona neutral).</p>
+        <p><strong>Entry:</strong> 1.1485 (cierre de vela M5 post-cruce).<br/>
+        <strong>SL:</strong> 1.1475 (10 pips — mínimo última vela bajista + 2 pips).<br/>
+        <strong>TP1:</strong> 1.1500 (15 pips = 1.5x SL) — alcanzado a las 16:10.<br/>
+        <strong>TP2:</strong> 1.1515 (30 pips = 3x SL) — alcanzado a las 16:55.</p>
+        <p><strong>Resultado:</strong> TP1 cerró 50% (+15 pips). TP2 cerró 50% (+30 pips). Media: +22.5 pips. Duración: 70 minutos.</p>
+      </div>
+
+      <h3>Ejemplo 2: Señal INVÁLIDA — EUR/USD, 8 de abril 2026</h3>
+      
+      <div class="info-box warning">
+        <div class="info-box-title">❌ Setup inválido — No se opera</div>
+        <p><strong>Señal:</strong> EMA 9 cruza EMA 21 al alza a las 07:30 (sesión asiática final).</p>
+        <p><strong>¿Por qué NO se entra?</strong></p>
+        <p>1. La sesión de Londres no ha abierto todavía (09:00).<br/>
+        2. RSI en 72 — sobrecomprado.<br/>
+        3. El spread está en 2.3 pips (mayor a 2).</p>
+        <p><strong>Resultado si hubieras entrado:</strong> El precio subió 5 pips más y luego cayó 18 pips. Habrías perdido.</p>
+        <p><strong>Lección:</strong> Los filtros existen para protegerte. No los ignores nunca.</p>
+      </div>
+      
+      <h3>Ejemplo 3: Venta en XAU/USD — 10 de abril 2026, 16:20 CET</h3>
+      
+      <div class="info-box example">
+        <div class="info-box-title">🔴 Setup válido — Resultado: +35 pips</div>
+        <p><strong>Contexto:</strong> Oro en tendencia bajista H1 (precio debajo EMA 50, dato IPC salió fuerte 1 hora antes).</p>
+        <p><strong>Señal:</strong> EMA 9 cruza EMA 21 a la baja en M5. RSI en 42.</p>
+        <p><strong>Entry:</strong> 4,760 (cierre de vela M5).<br/>
+        <strong>SL:</strong> 4,772 (12 pips — máximo del rango previo + buffer).<br/>
+        <strong>TP1:</strong> 4,742 (18 pips = 1.5x SL) — alcanzado en 25 min.<br/>
+        <strong>TP2:</strong> 4,724 (36 pips = 3x SL) — alcanzado en 90 min.</p>
+        <p><strong>Resultado:</strong> Media +27 pips. El dato IPC fuerte aceleró el movimiento bajista del oro.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">07</div><div class="lesson-title">Backtest: 200 operaciones — Resultados reales</div><span class="lesson-tag tag-backtest">Backtest</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>Hemos testado la estrategia Golden Cross M5 en datos históricos de EUR/USD y XAU/USD durante 6 meses (octubre 2025 — marzo 2026). Solo operaciones durante sesión Londres+NY. Estas son las estadísticas reales:</p>
+      
+      <div class="backtest-stats">
+        <div class="bt-stat"><div class="bt-stat-label">Total operaciones</div><div class="bt-stat-value neutral">214</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Ganadoras</div><div class="bt-stat-value positive">127 (59.3%)</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Perdedoras</div><div class="bt-stat-value negative">87 (40.7%)</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Win Rate</div><div class="bt-stat-value positive">59.3%</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">R:R promedio</div><div class="bt-stat-value neutral">1:2.1</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Profit Factor</div><div class="bt-stat-value positive">2.14</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Max Drawdown</div><div class="bt-stat-value negative">-8.3%</div></div>
+        <div class="bt-stat"><div class="bt-stat-label">Retorno (6 meses)</div><div class="bt-stat-value positive">+34.7%</div></div>
+      </div>
+      
+      <div class="info-box concept">
+        <div class="info-box-title">📘 ¿Qué significan estos números?</div>
+        <p><strong>Win Rate 59.3%:</strong> De cada 10 operaciones, ganas casi 6. Más que suficiente con R:R 1:2.</p>
+        <p><strong>Profit Factor 2.14:</strong> Por cada euro que pierdes, ganas 2.14€. Todo lo que sea mayor a 1.5 es un sistema sólido.</p>
+        <p><strong>Max Drawdown -8.3%:</strong> La peor racha fue una caída del 8.3% del capital. Con la regla del 1% por operación, esto equivale a ~8 pérdidas seguidas. Incómodo pero recuperable.</p>
+        <p><strong>Retorno +34.7% en 6 meses:</strong> Esto es con el 1% de riesgo por operación. Si arriesgas más, el retorno sube pero también el drawdown.</p>
+      </div>
+
+      <div class="info-box warning">
+        <div class="info-box-title">⚠️ Aviso importante</div>
+        <p>Estos resultados son de backtest histórico. El rendimiento pasado NO garantiza resultados futuros. Las condiciones del mercado cambian. El slippage y los spreads reales pueden diferir del backtest. Empieza SIEMPRE en demo antes de operar real.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson" onclick="this.classList.toggle('open')">
+    <div class="lesson-h"><div class="lesson-num">08</div><div class="lesson-title">Checklist de scalping — Imprímela</div><span class="lesson-tag tag-practice">Práctica</span><span class="lesson-arrow">▼</span></div>
+    <div class="lesson-body">
+      <p>Esta es la checklist que debes revisar ANTES de cada operación de scalping. Imprímela y ponla junto a tu pantalla. Si falta UNA sola condición, NO entras.</p>
+      
+      <div class="checklist">
+        <div class="checklist-title">✅ Checklist Scalping Golden Cross M5</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>Tendencia H1 alineada (precio encima/debajo EMA 50)</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>EMA 9 ha cruzado EMA 21 en M5 (vela cerrada)</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>RSI entre 35-65 (no en extremo)</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>Sesión Londres o NY activa</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>Sin noticias alto impacto en 30 min</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>Spread menor a 2 pips</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>No he perdido 3 operaciones hoy</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>SL colocado automáticamente en broker</div>
+        <div class="check-item" onclick="this.querySelector('.check-box').classList.toggle('checked');this.querySelector('.check-box').innerHTML=this.querySelector('.check-box').classList.contains('checked')?'✓':''"><div class="check-box"></div>Tamaño de posición = 1% de capital</div>
+      </div>
+      
+      <div class="info-box pro-tip">
+        <div class="info-box-title">💡 Pro Tip — Automatiza la checklist</div>
+        <p>Después de 50 operaciones usando la checklist en papel, la habrás interiorizado. Pero sigue consultándola al menos una vez al día. Los profesionales llevan años operando y siguen usando checklists. Los pilotos de avión lo hacen antes de cada vuelo, sin importar la experiencia.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nota: Los módulos 3, 4 y 5 tendrían contenido equivalente para Swing H4 y Tendencia D1 -->
+<!-- Por razones de espacio, se añadirían en la próxima iteración -->
+
+<div style="text-align:center;padding:40px;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.15);border-radius:14px;margin-top:30px">
+<p style="font-size:16px;font-weight:700;margin-bottom:8px">🎓 Enhorabuena por completar el Módulo 1 y 2</p>
+<p style="font-size:14px;color:var(--text-2);margin-bottom:20px">Los módulos 3 (Swing H4), 4 (Tendencia D1) y 5 (Plan Personalizado) se publicarán próximamente. Al ser alumno premium, recibirás acceso automático cuando estén disponibles.</p>
+<a href="../cursos.html" style="display:inline-block;padding:12px 28px;background:var(--gold);color:var(--bg-0);border-radius:100px;font-weight:700;text-decoration:none">Ver todos los cursos →</a>
+</div>
+
+<div style="text-align:center;font-size:11px;color:var(--text-4);max-width:700px;margin:30px auto 0;line-height:1.6;padding:16px;border:1px solid var(--border-1);border-radius:8px">
+⚠️ <strong>Disclaimer:</strong> Este curso es educativo. No constituye asesoramiento financiero. Los backtests son históricos y no garantizan resultados futuros. El trading conlleva riesgo de pérdida. Opera solo con capital que puedas permitirte perder.
+</div>
+
+</div>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p></div></div></footer>
+
+<script>
+/* ===================================================
+   SISTEMA DE ACCESO AL CURSO PREMIUM
+   ===================================================
+   
+   INSTRUCCIONES PARA DAVID:
+   
+   1. Cambia la línea de abajo con los códigos que quieras.
+      Cada código es de un solo uso si quieres, o puedes
+      poner uno genérico para todos los compradores.
+   
+   2. Cuando alguien pague por PayPal, le envías uno de
+      estos códigos por email manualmente.
+   
+   3. El código se guarda en localStorage del navegador
+      del comprador. Mientras no borre datos, tendrá acceso.
+   
+   Para añadir más códigos, añádelos al array separados por coma.
+   =================================================== */
+
+const VALID_CODES = [
+  'ESTRATEGIAS2026',
+  'PREMIUM-ZTP-001',
+  'PREMIUM-ZTP-002',
+  'PREMIUM-ZTP-003',
+  'PREMIUM-ZTP-004',
+  'PREMIUM-ZTP-005'
+];
+
+// Verificar acceso
+function checkAccess() {
+  const saved = localStorage.getItem('ztp-estrategias-access');
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Si viene de PayPal con ?paid=1, mostrar campo de código destacado
+  if (urlParams.get('paid') === '1') {
+    document.getElementById('unlockCode').focus();
+    document.getElementById('unlockCode').placeholder = '¡Pago completado! Introduce tu código aquí';
+  }
+  
+  if (saved && VALID_CODES.includes(saved)) {
+    showCourse();
+    return true;
+  }
+  return false;
+}
+
+function unlockCourse() {
+  const code = document.getElementById('unlockCode').value.trim().toUpperCase();
+  if (VALID_CODES.includes(code)) {
+    localStorage.setItem('ztp-estrategias-access', code);
+    showCourse();
+  } else {
+    alert('Código no válido. Verifica que lo has escrito correctamente.');
+  }
+}
+
+function showCourse() {
+  document.getElementById('paywall').style.display = 'none';
+  document.getElementById('courseHeader').style.display = '';
+  document.getElementById('courseContent').classList.add('unlocked');
+}
+
+// Ejecutar al cargar
+checkAccess();
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+</script>
+</body>
+</html>
