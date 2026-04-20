@@ -70,7 +70,7 @@ const COURSES_CONFIG = [
     id: 'estrategias-trading',
     status: 'active',
     premium: true,
-    price: '49€',
+    price: '99€',
     icon: '⚡',
     level: 'advanced',
     levelLabel: 'Avanzado',
@@ -82,7 +82,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'psicologia-trading',
-    status: 'active',
+    status: 'hidden',
     icon: '🧠',
     level: 'intermediate',
     levelLabel: 'Intermedio',
@@ -94,7 +94,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'price-action',
-    status: 'active',
+    status: 'hidden',
     icon: '📊',
     level: 'intermediate',
     levelLabel: 'Intermedio',
@@ -106,7 +106,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'smart-money-concepts',
-    status: 'active',
+    status: 'hidden',
     icon: '💎',
     level: 'advanced',
     levelLabel: 'Avanzado',
@@ -118,7 +118,7 @@ const COURSES_CONFIG = [
   },
   {
     id: 'trading-noticias',
-    status: 'active',
+    status: 'hidden',
     icon: '📰',
     level: 'intermediate',
     levelLabel: 'Intermedio',
