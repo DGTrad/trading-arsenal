@@ -7,7 +7,7 @@
 const BROKERS_CONFIG = [
   {
     id: 'darwinex',
-    enabled: true,
+    enabled: false,
     name: 'Darwinex',
     affiliateUrl: 'https://www.darwinex.com/',
     featured: true,
@@ -36,7 +36,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'pepperstone',
-    enabled: true,
+    enabled: false,
     name: 'Pepperstone',
     affiliateUrl: 'https://pepperstone.com/es/',
     featured: true,
@@ -65,7 +65,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'icmarkets',
-    enabled: true,
+    enabled: false,
     name: 'IC Markets',
     affiliateUrl: 'https://www.icmarkets.eu/',
     featured: false,
@@ -94,7 +94,7 @@ const BROKERS_CONFIG = [
   },
   {
     id: 'xtb',
-    enabled: true,
+    enabled: false,
     name: 'XTB',
     affiliateUrl: 'https://www.xtb.com/es/',
     featured: false,
