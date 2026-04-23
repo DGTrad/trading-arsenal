@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Order blocks, liquidez, FVG y los conceptos institucionales que mueven realmente el mercado.">
+<title>Smart Money Concepts (SMC) — Curso Gratis | Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/main.css">
+<script src="../../js/brokers-config.js"></script>
+<script src="../../js/ads.js"></script>
+<style>
+.cp{padding:calc(var(--nav-height) + 50px) 24px 30px;text-align:center;position:relative;z-index:10}
+.cp-icon{font-size:48px;margin-bottom:12px}
+.cp-title{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-1.5px;margin-bottom:8px}
+.cp-desc{font-size:16px;color:var(--text-2);max-width:620px;margin:0 auto 14px}
+.cp-meta{display:inline-flex;gap:14px;font-size:12px;color:var(--text-3);padding:8px 18px;border:1px solid var(--border-2);border-radius:100px;flex-wrap:wrap}
+.cp-meta strong{color:var(--gold)}
+.cc{max-width:1100px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:10}
+.lesson{background:var(--bg-3);border:1px solid var(--border-1);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:all .2s}
+.lesson:hover{border-color:var(--border-2)}
+.lesson-h{padding:24px 32px;cursor:pointer;display:flex;align-items:center;gap:16px;transition:background .2s}
+.lesson-h:hover{background:var(--bg-4)}
+.lesson-num{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--bg-0);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-family:var(--font-mono);font-size:14px}
+.lesson-title{flex:1;font-size:16px;font-weight:700;line-height:1.3}
+.lesson-arrow{color:var(--text-3);transition:transform .3s}
+.lesson.open .lesson-arrow{transform:rotate(180deg)}
+.lesson-body{display:none;padding:0 32px 32px 32px;font-size:15px;color:var(--text-2);line-height:1.85}
+.lesson.open .lesson-body{display:block;border-top:1px solid var(--border-1);padding-top:22px}
+.lesson-body p{margin-bottom:14px}
+.lesson-body strong{color:var(--text-1)}
+@media(max-width:640px){.lesson-body{padding-left:20px;padding-right:20px}.lesson-h{padding:18px}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../../index.html" class="nav-logo"><img src="../../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="../analisis.html" class="nav-link">Análisis</a>
+      <a href="../mercados.html" class="nav-link">Mercados</a>
+      <a href="../cursos.html" class="nav-link active">Cursos</a>
+      <a href="../bots.html" class="nav-link">Bots</a>
+      <a href="../brokers.html" class="nav-link">Brokers</a>
+      <a href="../recursos.html" class="nav-link">Recursos</a>
+      <a href="../herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+<button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></div></nav>
+
+<header class="cp">
+<div class="cp-icon">💎</div>
+<h1 class="cp-title">Smart Money Concepts (SMC)</h1>
+<p class="cp-desc">Order blocks, liquidez, FVG y los conceptos institucionales que mueven realmente el mercado.</p>
+<div class="cp-meta"><span><strong>📚 8 lecciones</strong></span><span>⏱ ~4.8h</span><span>🎓 <strong>GRATIS</strong></span></div>
+</header>
+
+<section class="cc">
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">01</div><div class="lesson-title">¿Qué es Smart Money y por qué importa?</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>"Smart Money" se refiere al dinero institucional: bancos centrales, hedge funds, market makers y bancos de inversión. Mueven cantidades tan grandes que dejan huellas inevitables en el gráfico. SMC es el método para leer esas huellas.</p>
+<p><strong>La diferencia con el trading retail:</strong> El trader retail busca patrones bonitos. El smart money busca LIQUIDEZ. Necesitan que tú compres para ellos vender, y viceversa. Por eso el mercado parece "ir a por tus stops" - porque literalmente lo hace.</p>
+<p><strong>Por qué funciona SMC mejor que el análisis técnico clásico:</strong> El AT clásico funciona porque MUCHA gente lo usa, creando profecías autocumplidas. SMC funciona porque describe lo que las instituciones realmente hacen, independientemente de cuántos lo sepan.</p>
+<p><strong>Los 3 pilares del SMC:</strong> 1) Liquidez - dónde están los stops y órdenes pendientes. 2) Estructura - cómo se mueve el precio en olas. 3) Order Blocks - dónde las instituciones colocaron sus posiciones. Todo lo demás son detalles.</p>
+<p><strong>Aviso importante:</strong> SMC se ha vuelto muy popular y hay mucha información mala en YouTube. Aprende de fuentes serias y siempre verifica con datos reales en backtest.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">02</div><div class="lesson-title">Liquidez: el combustible del mercado</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>La liquidez es el concepto MÁS IMPORTANTE de SMC. Sin liquidez, las instituciones no pueden entrar ni salir del mercado. Por eso la cazan activamente.</p>
+<p><strong>¿Dónde está la liquidez?</strong> En las zonas donde hay muchos stops y órdenes pendientes. Concretamente:</p>
+<p>• <strong>Encima de máximos recientes</strong> (stops de cortos + buy stops de breakout traders)<br/>
+• <strong>Debajo de mínimos recientes</strong> (stops de largos + sell stops de breakout traders)<br/>
+• <strong>En soportes y resistencias muy obvios</strong><br/>
+• <strong>En niveles de Fibonacci populares</strong><br/>
+• <strong>En números redondos</strong> (1.1000, 1.2000)</p>
+<p><strong>Liquidity Sweep (barrido de liquidez):</strong> Es cuando el precio se mueve rápidamente hacia una zona de liquidez, la "barre" (activa los stops), y luego revierte violentamente. Es la firma de las instituciones tomando posición.</p>
+<p><strong>Cómo identificar un sweep válido:</strong> 1) Movimiento agresivo hacia el extremo. 2) Mecha larga superando el nivel. 3) Cierre de vela del lado contrario. 4) Reversión rápida que rompe estructura corta.</p>
+<p><strong>El cambio de mentalidad:</strong> En lugar de pensar "el soporte aguanta", piensa "¿hay liquidez debajo del soporte que las instituciones quieran cazar?". Si la respuesta es sí, espera el sweep antes de comprar.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">03</div><div class="lesson-title">Order Blocks: las zonas institucionales</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Un Order Block (OB) es la última vela en dirección opuesta al movimiento que sigue. Es decir, en una caída fuerte, el OB es la última vela alcista antes de la caída. Marca el lugar donde las instituciones colocaron órdenes grandes para iniciar el movimiento.</p>
+<p><strong>Por qué funciona:</strong> Las instituciones no pueden ejecutar sus órdenes de golpe (moverían el precio). Las dejan parcialmente sin ejecutar. Cuando el precio vuelve a esa zona, las órdenes restantes se activan, generando una nueva reacción en la dirección original.</p>
+<p><strong>Cómo identificar un OB válido:</strong></p>
+<p>1. <strong>Movimiento impulsivo después.</strong> Si la "última vela contraria" no fue seguida por un movimiento fuerte, no es OB.<br/>
+2. <strong>Rompe estructura.</strong> El movimiento que sigue al OB debe romper algún nivel relevante.<br/>
+3. <strong>Crea desequilibrio.</strong> Suele dejar un FVG después.<br/>
+4. <strong>Primer touch.</strong> Los OBs son más válidos en su primer retorno. Tras el segundo o tercer toque, pierden fuerza.</p>
+<p><strong>OB Bullish vs Bearish:</strong> OB bullish = última vela bajista antes de un impulso alcista. OB bearish = última vela alcista antes de un impulso bajista.</p>
+<p><strong>Cómo operarlos:</strong> Esperas que el precio vuelva al OB. Buscas confirmación (vela de rechazo, cambio de estructura corta). Entras con SL al otro lado del OB. TP en el siguiente nivel de liquidez.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">04</div><div class="lesson-title">Fair Value Gaps (FVG) o Imbalances</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Un FVG o "imbalance" es un hueco en el precio creado por un movimiento muy rápido donde los compradores y vendedores no llegaron a acordar precios intermedios. Visualmente, es un hueco entre la mecha de la primera vela y la mecha de la tercera vela en una secuencia de 3.</p>
+<p><strong>El concepto clave:</strong> El mercado tiene tendencia a "rellenar" estos huecos. Igual que la naturaleza odia el vacío, el precio tiende a volver a esas zonas para equilibrar la oferta y demanda.</p>
+<p><strong>Cómo identificar un FVG válido:</strong></p>
+<p>1. Vela 1 grande en una dirección.<br/>
+2. Vela 2 grande en la misma dirección.<br/>
+3. Vela 3 también en la misma dirección.<br/>
+4. La mecha de la vela 1 NO toca la mecha de la vela 3.<br/>
+5. El espacio entre ambas mechas es el FVG.</p>
+<p><strong>Tipos de FVG:</strong></p>
+<p>• <strong>FVG de continuación:</strong> Aparece a mitad de un movimiento. El precio puede o no rellenarlo antes de seguir.<br/>
+• <strong>FVG de cambio:</strong> Aparece tras un cambio de estructura. Suele ser el punto de entrada para operar el nuevo movimiento.</p>
+<p><strong>Cómo combinar FVG con Order Block:</strong> El setup más potente del SMC. Identificas un cambio de estructura, ves un FVG creado por el movimiento, y dentro o cerca del FVG hay un Order Block. Esa zona doble es de altísima probabilidad.</p>
+<p><strong>Regla práctica:</strong> Un FVG sin contexto es ruido. Un FVG en zona de descuento (en tendencia alcista) o en zona premium (en tendencia bajista), con order block cerca, es oro.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">05</div><div class="lesson-title">Break of Structure (BOS) vs Change of Character (CHoCH)</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Aquí está el corazón del SMC: aprender a leer si una tendencia continúa o si está cambiando. Las dos señales clave son BOS y CHoCH.</p>
+<p><strong>Break of Structure (BOS):</strong> Confirma CONTINUACIÓN de la tendencia actual. En una tendencia alcista, un BOS ocurre cuando el precio rompe el último máximo (HH). Te dice: "la fiesta sigue". En tendencia bajista, BOS = romper el último mínimo (LL).</p>
+<p><strong>Change of Character (CHoCH):</strong> Confirma CAMBIO de tendencia. En una tendencia alcista, un CHoCH ocurre cuando el precio rompe el último mínimo significativo (HL). Es la primera señal real de que la tendencia puede estar cambiando. En tendencia bajista, CHoCH = romper el último máximo (LH).</p>
+<p><strong>La secuencia profesional:</strong></p>
+<p>1. Tendencia alcista en marcha (HH y HL).<br/>
+2. Aparece un CHoCH (rompe el último HL). Primera señal de cambio.<br/>
+3. El precio forma un LH (máximo más bajo). Confirmación.<br/>
+4. Si rompe el siguiente mínimo, ya es BOS bajista. Tendencia bajista confirmada.<br/>
+5. Operas en el retroceso al order block del CHoCH original.</p>
+<p><strong>Error común:</strong> Confundir un retroceso normal con un CHoCH. Un retroceso no rompe estructura. Un CHoCH SÍ. La diferencia es exacta y técnica, no subjetiva.</p>
+<p><strong>El poder del CHoCH:</strong> Operar en CHoCH te permite entrar en cambios de tendencia EARLY, con SL ajustado y TP en el siguiente extremo. Es donde están los mejores R:R del trading.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">06</div><div class="lesson-title">Inducement: la trampa institucional</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>El "inducement" es un movimiento creado por las instituciones específicamente para engañar a los traders retail. Antes de hacer su movimiento real, crean un movimiento contrario para que los retail entren en la dirección equivocada y dejen su liquidez.</p>
+<p><strong>El patrón típico:</strong></p>
+<p>1. El precio está consolidando en un rango.<br/>
+2. Las instituciones quieren mover el precio HACIA ARRIBA (por ejemplo).<br/>
+3. Antes, hacen un movimiento brusco hacia abajo. Los retail vendedores entran pensando que va a bajar.<br/>
+4. El precio "barre" los stops de los compradores y revierte fuertemente al alza.<br/>
+5. Los vendedores que entraron están atrapados. Sus stops están arriba. Cuando el precio sube, sus stops se activan y aceleran la subida.<br/>
+6. Doble victoria para las instituciones: liquidez para entrar largos + liquidez de los stops cortos para impulsar.</p>
+<p><strong>Cómo identificar un inducement antes de que te atrape:</strong></p>
+<p>• Movimiento contrario a la tendencia macro.<br/>
+• Sin razón fundamental clara.<br/>
+• Velas grandes pero sin volumen sostenido.<br/>
+• Ocurre cerca de zonas de liquidez evidentes.<br/>
+• Reversión rápida tras el barrido.</p>
+<p><strong>Cómo operarlo:</strong> NO entres en el movimiento de inducement. Espera el sweep, espera la reversión, espera la confirmación de cambio de estructura corta, y ENTONCES entras en la dirección real. Estás operando con las instituciones, no contra ellas.</p>
+<p><strong>Esto cambia tu mentalidad:</strong> Cuando aceptas que el mercado está diseñado para engañar al retail, tus reacciones cambian. Ya no entras impulsivamente en cada movimiento. Esperas. Y la espera es donde está el dinero.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">07</div><div class="lesson-title">Premium vs Discount: el principio institucional</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Las instituciones tienen una regla simple: comprar en discount (barato) y vender en premium (caro). Para identificar qué es barato y qué es caro, usan el rango actual del precio.</p>
+<p><strong>Cómo identificar premium y discount:</strong></p>
+<p>1. Identifica un swing claro: del último mínimo significativo al último máximo significativo (en tendencia alcista) o viceversa.<br/>
+2. Divide ese swing por la mitad (50%).<br/>
+3. La mitad superior es <strong>PREMIUM</strong> (caro, zona de venta).<br/>
+4. La mitad inferior es <strong>DISCOUNT</strong> (barato, zona de compra).</p>
+<p><strong>La regla absoluta:</strong> En una tendencia alcista, solo compras cuando el precio está en discount (mitad inferior del último swing). En tendencia bajista, solo vendes cuando el precio está en premium (mitad superior).</p>
+<p><strong>Por qué funciona:</strong> Imita exactamente el comportamiento institucional. Si compras en premium en tendencia alcista, estás compitiendo con las instituciones que están vendiendo. Estás comprando lo que ellos venden. Pierdes.</p>
+<p><strong>Combinación con order blocks:</strong> Los mejores OBs están en discount (para comprar) o en premium (para vender). Un OB bullish en discount + FVG + cambio de estructura = setup A+.</p>
+<p><strong>Refinamiento avanzado:</strong> Algunos traders SMC dividen el discount en sub-zonas. El "deep discount" es la parte más baja (entre el 50% y el 70.5% Fibonacci) — es la zona donde más confiables son las entradas. Lo mismo con "deep premium" para ventas.</p>
+<p><strong>El cambio mental:</strong> Cuando interiorizas premium/discount, dejas de "comprar porque está cayendo y parece barato". Compras cuando técnicamente está en discount Y hay confluencia con OB/FVG/CHoCH. Es una disciplina, no una opinión.</p></div>
+</div>
+<div class="lesson" onclick="this.classList.toggle('open')">
+<div class="lesson-h"><div class="lesson-num">08</div><div class="lesson-title">Setup completo SMC: paso a paso</div><span class="lesson-arrow">▼</span></div>
+<div class="lesson-body"><p>Aquí está la integración de todo lo aprendido en un setup operativo completo. Este es el flujo de trabajo que sigue un trader SMC experimentado en cada operación.</p>
+<p><strong>PASO 1 - Contexto macro (D1 / H4):</strong> Identifica la tendencia macro. ¿El precio está en estructura alcista o bajista? ¿Dónde está el último HH, HL, LH, LL? Marca los niveles clave de liquidez (máximos y mínimos relevantes).</p>
+<p><strong>PASO 2 - Identifica liquidez (H4 / H1):</strong> ¿Dónde están los stops? ¿Hay un máximo obvio que los retail estén shortando? ¿Hay un soporte evidente con stops debajo? Esa liquidez será cazada antes del movimiento real.</p>
+<p><strong>PASO 3 - Espera el sweep:</strong> No entres ANTES del sweep. Espera a que el precio vaya a esa zona de liquidez, la barra y revierta. Si no revierte, no hay setup. Paciencia.</p>
+<p><strong>PASO 4 - Busca CHoCH (M15 / M5):</strong> Tras el sweep, busca un cambio de estructura en temporalidad menor. Si el sweep fue arriba, buscas que el precio rompa un mínimo corto. Eso confirma que las instituciones vendieron desde arriba.</p>
+<p><strong>PASO 5 - Identifica el Order Block del CHoCH:</strong> Marca el OB que originó el cambio de estructura. Esa es tu zona de entrada.</p>
+<p><strong>PASO 6 - Espera el retorno al OB:</strong> El precio retrocederá al OB. NO entras anticipadamente. Esperas que toque el OB.</p>
+<p><strong>PASO 7 - Confirmación final (M5 / M1):</strong> En el OB, busca rechazo: vela de rechazo, mini-CHoCH, agotamiento de impulso. ENTONCES entras.</p>
+<p><strong>PASO 8 - Gestión:</strong> SL al otro lado del OB (no del HH/LL). TP1 en el siguiente bloque de liquidez. TP2 en el extremo opuesto del rango.</p>
+<p><strong>Esto suena complejo, pero con práctica se vuelve automático.</strong> Los traders SMC profesionales hacen este flujo en minutos. Y operan solo cuando todo está alineado: 5-10 operaciones al mes, win rate 55-65%, R:R 1:3 o mejor.</p></div>
+</div>
+
+
+<div data-ad="affiliate" data-variant="exness"></div>
+
+<div style="text-align:center;padding:30px;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.15);border-radius:14px;margin-top:30px">
+<h3 style="font-size:20px;margin-bottom:8px">¿Quieres más cursos?</h3>
+<p style="font-size:14px;color:var(--text-2);margin-bottom:16px">Tenemos más cursos gratuitos esperándote.</p>
+<a href="../cursos.html" style="display:inline-block;padding:12px 28px;background:var(--gold);color:var(--bg-0);border-radius:100px;font-weight:700;text-decoration:none">Ver todos los cursos →</a>
+</div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p></div></div></footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>40)});</script>
+</body>
+</html>
