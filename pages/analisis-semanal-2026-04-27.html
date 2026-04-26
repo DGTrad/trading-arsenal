@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Semanal — Zona Trading Pro</title>
+    <meta name="description" content="Análisis semanal de mercados: XAU/USD, WTI, DXY, EUR/USD, GBP/USD, S&P 500. Niveles clave, setups y sesgo direccional. Semana 28 abril — 2 mayo 2026.">
+    <link rel="icon" href="https://zonatradingpro.com/assets/icons/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #22223a;
+            --text-primary: #e8e8f0;
+            --text-secondary: #9898b0;
+            --text-muted: #6868880;
+            --accent-gold: #f0b90b;
+            --accent-green: #00c896;
+            --accent-red: #ff4757;
+            --accent-blue: #5b8def;
+            --accent-orange: #ff9f43;
+            --accent-purple: #a855f7;
+            --border-color: rgba(255,255,255,0.06);
+            --border-radius: 12px;
+            --font-main: 'Inter', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: rgba(10,10,15,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-logo img { height: 28px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 60px 24px 40px;
+            background: linear-gradient(180deg, rgba(240,185,11,0.05) 0%, transparent 60%);
+        }
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { color: var(--text-secondary); font-size: 15px; max-width: 600px; margin: 0 auto; }
+
+        /* ===== SEMANA BADGE ===== */
+        .semana-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 28px;
+            margin: 28px auto 0;
+            font-size: 14px;
+        }
+        .semana-badge .icon { font-size: 20px; }
+        .semana-badge .label { color: var(--text-secondary); font-weight: 500; }
+        .semana-badge .fecha { color: var(--text-primary); font-weight: 700; }
+        .semana-badge .estado {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 12px;
+            padding: 4px 12px;
+            background: rgba(0,200,150,0.1);
+            border-radius: 20px;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== MACRO GRID ===== */
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .macro-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 18px;
+            transition: border-color 0.2s;
+        }
+        .macro-card:hover { border-color: rgba(255,255,255,0.12); }
+        .macro-card .mc-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .macro-card .mc-value {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .macro-card .mc-change {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .mc-change.up { color: var(--accent-green); }
+        .mc-change.down { color: var(--accent-red); }
+        .macro-card .mc-note {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ===== ALERTA ===== */
+        .alerta {
+            background: rgba(255,71,87,0.08);
+            border: 1px solid rgba(255,71,87,0.2);
+            border-radius: var(--border-radius);
+            padding: 18px 20px;
+            margin-bottom: 32px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+        .alerta strong { color: var(--accent-red); }
+        .alerta .highlight { color: var(--accent-gold); font-weight: 700; }
+
+        /* ===== INSTRUMENTO ===== */
+        .instrumento {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .inst-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .inst-header:hover { background: var(--bg-card-hover); }
+        .inst-left { display: flex; align-items: center; gap: 14px; }
+        .inst-icon { font-size: 24px; }
+        .inst-name { font-weight: 700; font-size: 15px; }
+        .inst-pair { color: var(--text-secondary); font-size: 12px; font-weight: 500; }
+        .inst-price { font-weight: 800; font-size: 18px; color: var(--accent-gold); }
+        .inst-bias {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .bias-alcista { background: rgba(0,200,150,0.12); color: var(--accent-green); }
+        .bias-bajista { background: rgba(255,71,87,0.12); color: var(--accent-red); }
+        .bias-neutral { background: rgba(255,159,67,0.12); color: var(--accent-orange); }
+
+        .inst-body { padding: 0 20px 20px; display: none; }
+        .instrumento.open .inst-body { display: block; }
+        .instrumento.open .inst-header { border-bottom: 1px solid var(--border-color); }
+
+        .inst-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 16px 0;
+        }
+
+        /* NIVELES */
+        .niveles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .niveles-col h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .nivel-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+        }
+        .nivel-label { color: var(--text-secondary); font-weight: 500; }
+        .nivel-value { font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+        .niveles-col.resistencias .nivel-value { color: var(--accent-red); }
+        .niveles-col.soportes .nivel-value { color: var(--accent-green); }
+
+        /* ESCENARIOS */
+        .escenario {
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .escenario.alcista {
+            background: rgba(0,200,150,0.06);
+            border-left: 3px solid var(--accent-green);
+        }
+        .escenario.bajista {
+            background: rgba(255,71,87,0.06);
+            border-left: 3px solid var(--accent-red);
+        }
+        .escenario.neutral {
+            background: rgba(255,159,67,0.06);
+            border-left: 3px solid var(--accent-orange);
+        }
+        .escenario strong { font-weight: 700; }
+
+        /* SETUP */
+        .setup {
+            background: rgba(240,185,11,0.05);
+            border: 1px solid rgba(240,185,11,0.15);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 12px;
+        }
+        .setup-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+        .setup-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        .setup-item {
+            text-align: center;
+        }
+        .setup-item .s-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .setup-item .s-value {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        /* ===== CALENDARIO ===== */
+        .calendario {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .cal-row {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+            align-items: flex-start;
+        }
+        .cal-row:last-child { border-bottom: none; }
+        .cal-dia {
+            min-width: 80px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 12px;
+        }
+        .cal-evento { color: var(--text-secondary); line-height: 1.5; }
+        .cal-evento strong { color: var(--text-primary); }
+        .cal-high { color: var(--accent-red); font-weight: 700; }
+
+        /* ===== CTA ===== */
+        .cta-box {
+            text-align: center;
+            padding: 40px 20px;
+            margin: 32px 0;
+            background: linear-gradient(135deg, rgba(240,185,11,0.08), rgba(168,85,247,0.05));
+            border: 1px solid rgba(240,185,11,0.15);
+            border-radius: var(--border-radius);
+        }
+        .cta-box h3 { font-size: 18px; margin-bottom: 10px; }
+        .cta-box p { color: var(--text-secondary); font-size: 13px; margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--accent-gold);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(240,185,11,0.3);
+        }
+
+        /* ===== DISCLAIMER ===== */
+        .disclaimer {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 26px; }
+            .macro-grid { grid-template-columns: 1fr 1fr; }
+            .setup-grid { grid-template-columns: repeat(2, 1fr); }
+            .niveles-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .macro-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Chevron */
+        .chevron {
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+            font-size: 14px;
+        }
+        .instrumento.open .chevron { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="https://zonatradingpro.com/index.html" class="nav-logo">
+        <img src="https://zonatradingpro.com/assets/icons/logo.svg" alt="Zona Trading Pro">
+        Zona Trading Pro
+    </a>
+    <div class="nav-links">
+        <a href="https://zonatradingpro.com/pages/analisis.html" class="active">Análisis</a>
+        <a href="https://zonatradingpro.com/pages/mercados.html">Mercados</a>
+        <a href="https://zonatradingpro.com/pages/cursos.html">Cursos</a>
+        <a href="https://zonatradingpro.com/pages/brokers.html">Brokers</a>
+        <a href="https://zonatradingpro.com/pages/recursos.html">Recursos</a>
+        <a href="https://zonatradingpro.com/pages/herramientas.html">Herramientas</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Análisis Semanal</h1>
+    <p>Análisis de 6 instrumentos clave: XAU/USD, WTI, DXY, EUR/USD, GBP/USD, S&P 500. Actualizado cada domingo.</p>
+    <div class="semana-badge">
+        <span class="icon">📅</span>
+        <span class="label">Semana actual</span>
+        <span class="fecha">28 Abril — 2 Mayo 2026</span>
+        <span class="estado">Análisis activo</span>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- ============================================ -->
+    <!-- CONTEXTO MACRO -->
+    <!-- ============================================ -->
+    <h2 class="section-title">🌍 Contexto Macro</h2>
+
+    <div class="macro-grid">
+        <div class="macro-card">
+            <div class="mc-label">DXY (Índice Dólar)</div>
+            <div class="mc-value">98.51</div>
+            <div class="mc-change up">▲ +0.7% semanal</div>
+            <div class="mc-note">Dólar sube por primera semana en tres. Ormuz sigue cerrado. Trump ordena a la Navy disparar a minadores. Fed mantiene tipos miércoles.</div>
+        </div>
+        <div class="macro-card">
+            <div class="mc-label">Sentimiento</div>
+            <div class="mc-value" style="font-size:16px;">Risk-On (frágil)</div>
+            <div class="mc-change up">▲ S&P 500 en máximos históricos</div>
+            <div class="mc-note">S&P 500 cierra en 7,165 (ATH). Nasdaq en récord. Mercado ignora guerra y mira earnings + AI. Pero petróleo +13% semanal genera tensión latente.</div>
+        </div>
+        <div class="macro-card">
+            <div class="mc-label">US 10Y Yield</div>
+            <div class="mc-value">4.31%</div>
+            <div class="mc-change up">▲ +7bps semanal</div>
+            <div class="mc-note">Yields suben 5 sesiones seguidas. Fed mantiene 3.50-3.75% el miércoles (99.5% prob.). Solo 26% de probabilidad de recorte en diciembre. Probe de Powell se archiva.</div>
+        </div>
+        <div class="macro-card">
+            <div class="mc-label">WTI Crudo</div>
+            <div class="mc-value">$94.40</div>
+            <div class="mc-change up">▲ +13% semanal</div>
+            <div class="mc-note">Rally brutal de $83→$97, cierra semana en $94 tras esperanzas de 2ª ronda de negociaciones en Islamabad. Ormuz sigue cerrado. Bloqueo naval USA continúa.</div>
+        </div>
+    </div>
+
+    <div class="alerta">
+        <strong>⚠️ Semana crítica — Fed + Negociaciones EEUU-Irán:</strong> Decisión de tipos de la Fed el miércoles 29 (mantiene sin cambios), GDP Q1 EEUU el jueves 30, y posible segunda ronda de negociaciones EEUU-Irán en Islamabad este fin de semana. El Estrecho de Ormuz permanece efectivamente cerrado — Irán controla el acceso y ha exigido coordinación con sus Fuerzas Armadas. Trump ha ordenado a la Navy "disparar y matar" a buques que minen el estrecho. <span class="highlight">Petróleo +13% semanal</span> pero cae el viernes con rumores de avance diplomático. <strong>Reduce tamaño de posición. Gap de apertura muy probable el lunes.</strong>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ANÁLISIS POR INSTRUMENTO -->
+    <!-- ============================================ -->
+    <h2 class="section-title">📊 Análisis por Instrumento</h2>
+    <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 16px;">Click para expandir</p>
+
+    <!-- ORO -->
+    <div class="instrumento open">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">🥇</span>
+                <div>
+                    <div class="inst-name">Oro</div>
+                    <div class="inst-pair">XAU/USD — $4,710</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-alcista">● Alcista moderado</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                Oro cierra la semana en torno a $4,710, consolidando entre $4,658 y $4,833. Rango estrecho respecto a semanas anteriores. Polymarket asigna 74% de probabilidad de que toque $4,700 esta semana y 69% de que alcance $4,750. Indicadores técnicos en diario marcan "Strong Sell" a corto plazo pero "Strong Buy" en semanal y mensual — señal de corrección dentro de tendencia mayor. JPMorgan y Goldman mantienen rango $4,000–$6,300 para 2026. Bancos centrales siguen acumulando (China en récord 2,309t). Semana clave: decisión Fed miércoles + GDP Q1 jueves.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R3 (fuerte)</span><span class="nivel-value">4,970</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">4,833</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1</span><span class="nivel-value">4,760</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1</span><span class="nivel-value">4,658</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2 (EMA50)</span><span class="nivel-value">4,555</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3 (fuerte)</span><span class="nivel-value">4,400</span></div>
+                </div>
+            </div>
+
+            <div class="escenario alcista">
+                <strong>🟢 Escenario alcista (55%):</strong> Fed dovish (mantiene + tono preocupado por crecimiento) debilita al dólar y el oro rompe $4,760 hacia $4,833-$4,970. Fracaso de las negociaciones Irán también impulsa refugio.
+            </div>
+            <div class="escenario bajista">
+                <strong>🔴 Escenario bajista (45%):</strong> Fed hawkish (centrada en inflación por petróleo) fortalece el dólar. Pérdida de $4,658 abre camino a $4,555. Acuerdo de paz sólido eliminaría prima de riesgo.
+            </div>
+
+            <div class="setup">
+                <div class="setup-title">📌 Setup de compra en retroceso</div>
+                <div class="setup-grid">
+                    <div class="setup-item"><div class="s-label">Entry</div><div class="s-value">4,660</div></div>
+                    <div class="setup-item"><div class="s-label">Stop Loss</div><div class="s-value">4,590</div></div>
+                    <div class="setup-item"><div class="s-label">Take Profit</div><div class="s-value">4,833</div></div>
+                    <div class="setup-item"><div class="s-label">R:R</div><div class="s-value">1:2.5</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PETRÓLEO WTI -->
+    <div class="instrumento">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">🛢️</span>
+                <div>
+                    <div class="inst-name">Petróleo WTI</div>
+                    <div class="inst-pair">XTI/USD — $94.40</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-neutral">● Volátil — Precaución</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                Semana explosiva: WTI subió +13% (de $83 a casi $98) al romperse la calma post-alto-el-fuego. Irán sigue controlando el paso por Ormuz, EEUU mantiene bloqueo naval de puertos iraníes, y Trump ordenó disparar a minadores. Viernes cae a $94 con rumores de que el canciller iraní viaja a Islamabad para una 2ª ronda de negociaciones. Goldman ve Brent $90 en Q2 si hay acuerdo; IEA advierte que la crisis podría superar los shocks de los '70s. JPMorgan estima caída de demanda de 4.3M b/d (80% en Asia). Rango especulativo: $75-$105.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">105.00</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1</span><span class="nivel-value">97.85</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1</span><span class="nivel-value">92.68</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2</span><span class="nivel-value">87.00</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3 (target Goldman)</span><span class="nivel-value">80.00</span></div>
+                </div>
+            </div>
+
+            <div class="escenario alcista">
+                <strong>🟢 Escenario alcista:</strong> Fracaso de negociaciones o nuevos ataques a buques. Vuelta a $100+ rápidamente, con potencial de $105-$110.
+            </div>
+            <div class="escenario bajista">
+                <strong>🔴 Escenario bajista:</strong> Acuerdo efectivo + reapertura de Ormuz. Caída brusca a $87-$80. Sobreproducción y destrucción de demanda acelerarían la bajada.
+            </div>
+
+            <div class="escenario neutral">
+                <strong>🟠 Precaución extrema:</strong> Volatilidad dominada 100% por titulares geopolíticos. Un tweet de Trump mueve el precio $5-10 en minutos. Solo operar con SL muy ajustado y tamaño reducido. Evitar posiciones grandes durante el fin de semana.
+            </div>
+        </div>
+    </div>
+
+    <!-- DXY -->
+    <div class="instrumento">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">💵</span>
+                <div>
+                    <div class="inst-name">Índice Dólar</div>
+                    <div class="inst-pair">DXY — 98.51</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-neutral">● Neutral</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                DXY sube +0.7% semanal (primera ganancia en 3 semanas). Soporte clave en 97.94 (Fibo) defendido con vigor la semana anterior. Resistencia en 99.00-99.10. Estructura de corto plazo con higher-highs y higher-lows, pero la tendencia mayor sigue bajista desde máximos de 101.98 (mayo 2025). Semana dominada por Fed (miércoles) — si el tono es dovish, DXY pierde 98 rápido. Si es hawkish por inflación, ataque a 99-100. Probe a Powell archivada — vía libre para Warsh.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">100.50</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1</span><span class="nivel-value">99.10</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1 (Fibo)</span><span class="nivel-value">97.94</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2</span><span class="nivel-value">96.00</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3 (mín 2026)</span><span class="nivel-value">95.55</span></div>
+                </div>
+            </div>
+
+            <div class="escenario neutral">
+                <strong>⏳ Esperar confirmación tras Fed:</strong> Evento binario el miércoles. Si Fed enfatiza riesgo de inflación por petróleo → DXY sube a 99+. Si enfatiza riesgo de crecimiento → caída a 97-96. No tomar posición antes del comunicado.
+            </div>
+        </div>
+    </div>
+
+    <!-- EUR/USD -->
+    <div class="instrumento">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">💶</span>
+                <div>
+                    <div class="inst-name">Euro/Dólar</div>
+                    <div class="inst-pair">EUR/USD — 1.1690</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-neutral">● Neutral</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                EUR/USD consolidó entre 1.1678 y 1.1791 esta semana, retrocediendo ligeramente. Soporte en falling wedge según análisis técnico. El par refleja de forma bastante limpia al DXY invertido. ECB decide el jueves 30 de abril — mercado descuenta hasta 3 subidas en 2026 por el shock energético, pero core CPI bajó a 2.3%. Rango medio plazo 1.14-1.18 mientras Ormuz siga cerrado. Deutsche Bank ve 1.25 a fin de año si hay desescalada.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R3</span><span class="nivel-value">1.2000</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">1.1870</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1</span><span class="nivel-value">1.1790</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1</span><span class="nivel-value">1.1685</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2</span><span class="nivel-value">1.1500</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3 (mín año)</span><span class="nivel-value">1.1435</span></div>
+                </div>
+            </div>
+
+            <div class="escenario alcista">
+                <strong>🟢 Escenario alcista:</strong> Fed dovish + ECB mantiene tono hawkish → ruptura de 1.1790 hacia 1.1870. Desescalada geopolítica favorece al euro por menor presión energética.
+            </div>
+            <div class="escenario bajista">
+                <strong>🔴 Escenario bajista:</strong> Fed hawkish + Ormuz sigue cerrado → euro vulnerable por dependencia energética de Europa. Pérdida de 1.1685 hacia 1.1500.
+            </div>
+
+            <div class="setup">
+                <div class="setup-title">📌 Setup de compra en soporte</div>
+                <div class="setup-grid">
+                    <div class="setup-item"><div class="s-label">Entry</div><div class="s-value">1.1690</div></div>
+                    <div class="setup-item"><div class="s-label">Stop Loss</div><div class="s-value">1.1600</div></div>
+                    <div class="setup-item"><div class="s-label">Take Profit</div><div class="s-value">1.1870</div></div>
+                    <div class="setup-item"><div class="s-label">R:R</div><div class="s-value">1:2.0</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GBP/USD -->
+    <div class="instrumento">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">💷</span>
+                <div>
+                    <div class="inst-name">Libra/Dólar</div>
+                    <div class="inst-pair">GBP/USD — 1.3484</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-alcista">● Alcista moderado</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                GBP/USD se mantiene en 1.3484 con soporte horizontal bien defendido. Falling wedge similar al patrón que generó el breakout alcista de principios de abril. BoE en 3.75% — mercado descuenta dos posibles subidas en 2026 por inflación UK elevada. La libra es opción "más limpia" que EUR para posiciones bajistas en dólar. Rango esperado 1.34-1.38 si tregua se mantiene. Target H2 2026: 1.36-1.40 según consenso.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">1.3744</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1</span><span class="nivel-value">1.3628</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1</span><span class="nivel-value">1.3484</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2 (SMA200)</span><span class="nivel-value">1.3340</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3</span><span class="nivel-value">1.3200</span></div>
+                </div>
+            </div>
+
+            <div class="setup">
+                <div class="setup-title">📌 Setup de compra en soporte de falling wedge</div>
+                <div class="setup-grid">
+                    <div class="setup-item"><div class="s-label">Entry</div><div class="s-value">1.3490</div></div>
+                    <div class="setup-item"><div class="s-label">Stop Loss</div><div class="s-value">1.3390</div></div>
+                    <div class="setup-item"><div class="s-label">Take Profit</div><div class="s-value">1.3744</div></div>
+                    <div class="setup-item"><div class="s-label">R:R</div><div class="s-value">1:2.5</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- S&P 500 -->
+    <div class="instrumento">
+        <div class="inst-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="inst-left">
+                <span class="inst-icon">📈</span>
+                <div>
+                    <div class="inst-name">S&P 500</div>
+                    <div class="inst-pair">US500 — 7,165</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span class="inst-bias bias-alcista">● Alcista fuerte</span>
+                <span class="chevron">▼</span>
+            </div>
+        </div>
+        <div class="inst-body">
+            <p class="inst-desc">
+                S&P 500 cierra el viernes en 7,165.08 — <strong>NUEVO MÁXIMO HISTÓRICO</strong>. Nasdaq también en récord (24,836). Semana mixta (+0.55% S&P, +1.5% Nasdaq), impulsada por earnings fuertes: Intel +23% tras resultados, Meta reestructura AI. IPO market en auge ($17.3B solo en abril). Flujos masivos a renta variable. FactSet estima crecimiento de beneficios del 17% en 2026 y 2027. Wall Street mantiene target mediano de 7,650 a fin de año (Oppenheimer 8,100, BofA 7,100). UBS recortó a 7,500. Russell 2000 +2.11%. VIX en 18.71 (-3.1%). El mercado ignora la guerra de Irán — pero el petróleo >$90 es el riesgo latente para márgenes.
+            </p>
+
+            <div class="niveles-grid">
+                <div class="niveles-col resistencias">
+                    <h4>Resistencias</h4>
+                    <div class="nivel-row"><span class="nivel-label">R2</span><span class="nivel-value">7,300</span></div>
+                    <div class="nivel-row"><span class="nivel-label">R1 (ATH)</span><span class="nivel-value">7,165</span></div>
+                </div>
+                <div class="niveles-col soportes">
+                    <h4>Soportes</h4>
+                    <div class="nivel-row"><span class="nivel-label">S1</span><span class="nivel-value">7,000</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S2 (MA50)</span><span class="nivel-value">6,771</span></div>
+                    <div class="nivel-row"><span class="nivel-label">S3 (MA200)</span><span class="nivel-value">6,655</span></div>
+                </div>
+            </div>
+
+            <div class="escenario alcista">
+                <strong>🟢 Escenario alcista (60%):</strong> Earnings siguen batiendo estimaciones + Fed acomodaticia = continuación hacia 7,300+. AI sigue siendo el motor principal. SpaceX IPO en junio podría ser catalizador adicional.
+            </div>
+            <div class="escenario bajista">
+                <strong>🔴 Escenario bajista (40%):</strong> Pérdida de 7,000 por petróleo disparado o Fed hawkish generaría toma de beneficios hacia 6,771 (MA50). Solo ruptura del alto el fuego con escalada militar rompería estructura mayor.
+            </div>
+
+            <div class="setup">
+                <div class="setup-title">📌 Setup de compra en retroceso</div>
+                <div class="setup-grid">
+                    <div class="setup-item"><div class="s-label">Entry</div><div class="s-value">7,020</div></div>
+                    <div class="setup-item"><div class="s-label">Stop Loss</div><div class="s-value">6,900</div></div>
+                    <div class="setup-item"><div class="s-label">Take Profit</div><div class="s-value">7,300</div></div>
+                    <div class="setup-item"><div class="s-label">R:R</div><div class="s-value">1:2.3</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CALENDARIO -->
+    <!-- ============================================ -->
+    <h2 class="section-title">📅 Calendario Económico Clave</h2>
+
+    <div class="calendario">
+        <div class="cal-row">
+            <div class="cal-dia">LUN 28</div>
+            <div class="cal-evento">BoJ decisión de tipos (Japón) — posible tono hawkish que mueva USD/JPY y afecte al DXY</div>
+        </div>
+        <div class="cal-row">
+            <div class="cal-dia">MAR 29</div>
+            <div class="cal-evento"><strong>⭐ Fed — Decisión de tipos FOMC</strong> <span class="cal-high">(ALTO IMPACTO)</span> — Mantiene 3.50-3.75% (99.5%). Clave: tono sobre inflación vs crecimiento</div>
+        </div>
+        <div class="cal-row">
+            <div class="cal-dia">MIÉ 30</div>
+            <div class="cal-evento"><strong>⭐ GDP Q1 EEUU preliminar</strong> <span class="cal-high">(ALTO IMPACTO)</span> + Jobless Claims · <strong>ECB decisión de tipos</strong> — ¿mantiene 2.00% o sube por shock energético?</div>
+        </div>
+        <div class="cal-row">
+            <div class="cal-dia">JUE 1 MAY</div>
+            <div class="cal-evento">Festivo en Europa (Día del Trabajador) — Mercados europeos cerrados. ISM Manufacturing PMI EEUU.</div>
+        </div>
+        <div class="cal-row">
+            <div class="cal-dia">VIE 2</div>
+            <div class="cal-evento"><strong>⭐ NFP — Nóminas no agrícolas EEUU</strong> <span class="cal-high">(ALTO IMPACTO)</span> + Tasa de desempleo abril</div>
+        </div>
+        <div class="cal-row">
+            <div class="cal-dia">FIN DE SEMANA</div>
+            <div class="cal-evento"><strong style="color:var(--accent-red);">🔴 Posible 2ª ronda negociaciones EEUU-Irán en Islamabad</strong> — Canciller iraní viaja a Pakistán. Gap de apertura lunes muy probable.</div>
+        </div>
+    </div>
+
+    <div class="alerta">
+        <strong>⚡ Contexto clave de la semana:</strong> Semana de máxima densidad de eventos. Fed (mar), GDP Q1 + ECB (mié), NFP (vie), más negociaciones Irán el fin de semana. El petróleo +13% esta semana presiona márgenes corporativos e inflación, pero el S&P 500 ignora todo y marca ATH en 7,165 impulsado por AI y earnings. <strong>La desconexión entre mercado y geopolítica es la mayor fuente de riesgo. Gestiona posición en consecuencia.</strong>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+        <h3>¿Listo para operar estos setups?</h3>
+        <p>Empieza con uno de nuestros brokers recomendados. Spreads desde 0.0 pips, regulación Tier-1 y ejecución rápida.</p>
+        <a href="https://zonatradingpro.com/pages/brokers.html" class="cta-btn">Ver brokers recomendados →</a>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+        ⚠️ <strong>Disclaimer:</strong> Este análisis es educativo e informativo. No constituye asesoramiento financiero. Los niveles y setups son orientativos. Opera con tu propia gestión de riesgo. El trading conlleva riesgo de pérdida de capital. Datos a cierre del viernes 25 de abril de 2026. Fuentes: Investing.com, TradingView, CNBC, Reuters, TradingEconomics, Yahoo Finance, Polymarket.
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal
+</footer>
+
+<script>
+// Auto-open first instrument
+document.addEventListener('DOMContentLoaded', function() {
+    // All instruments start closed except the first one (already has .open class)
+});
+</script>
+
+</body>
+</html>
