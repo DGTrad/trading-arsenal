@@ -7,7 +7,7 @@
 const BROKERS_CONFIG = [
   {
     id: 'darwinex',
-    enabled: true,
+    enabled: false,
     name: 'Darwinex',
     affiliateUrl: 'https://www.darwinex.com/',
     featured: true,
