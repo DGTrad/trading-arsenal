@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bots de trading automatizados: gratuitos y premium. Estrategias automatizadas probadas con backtest real.">
+<title>Bots de Trading — Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<script src="../js/bots-config.js"></script>
+<style>
+.page-hero{padding:calc(var(--nav-height) + 50px) 24px 32px;text-align:center;position:relative;z-index:10}
+.page-title{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-2px;margin-bottom:8px}
+.page-subtitle{font-size:16px;color:var(--text-2);font-weight:300;max-width:700px;margin:0 auto 20px}
+.bots-container{max-width:1200px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:10}
+.bots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+
+.bot-card{background:var(--bg-3);border:1px solid var(--border-1);border-radius:16px;overflow:hidden;transition:all .3s;position:relative}
+.bot-card:hover{border-color:var(--border-2);transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.bot-card.premium{border-color:rgba(212,168,67,0.3)}
+.bot-card.premium::before{content:'PREMIUM';position:absolute;top:14px;right:14px;padding:5px 14px;background:linear-gradient(135deg,#d4a843,#8a6508);color:#0a0a0f;font-size:10px;font-weight:900;letter-spacing:1.5px;border-radius:20px;z-index:2}
+.bot-card.coming-soon{opacity:0.7}
+.bot-card.coming-soon::before{content:'PROXIMAMENTE';position:absolute;top:14px;right:14px;padding:5px 14px;background:linear-gradient(135deg,#d4a843,#8a6508);color:#0a0a0f;font-size:10px;font-weight:900;letter-spacing:1.5px;border-radius:20px;z-index:2}
+
+.bot-header{padding:28px 24px 20px;position:relative}
+.bot-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:16px;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.15)}
+.bot-name{font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.bot-type{font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.bot-desc{font-size:13px;color:var(--text-2);line-height:1.7;padding:0 24px;margin-bottom:16px}
+
+.bot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 24px 16px}
+.bot-stat{padding:10px;background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;text-align:center}
+.bot-stat-label{font-size:9px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.bot-stat-value{font-family:var(--font-mono);font-size:15px;font-weight:800;margin-top:2px}
+.bot-stat-value.positive{color:var(--green)}
+.bot-stat-value.neutral{color:var(--gold)}
+
+.bot-footer{padding:16px 24px 24px;display:flex;gap:10px}
+.bot-btn{flex:1;padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:13px;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:var(--font-display)}
+.bot-btn-primary{background:var(--gold);color:var(--bg-0)}
+.bot-btn-primary:hover{background:var(--gold-bright);transform:translateY(-1px)}
+.bot-btn-secondary{background:transparent;color:var(--text-2);border:1px solid var(--border-2)}
+.bot-btn-disabled{background:var(--bg-4);color:var(--text-3);cursor:not-allowed;pointer-events:none}
+
+.bot-tags{display:flex;gap:6px;flex-wrap:wrap;padding:0 24px 16px}
+.bot-tag{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:0.5px}
+.bot-tag-mt4{background:rgba(52,152,219,0.1);color:var(--blue);border:1px solid rgba(52,152,219,0.2)}
+.bot-tag-mt5{background:rgba(155,89,182,0.1);color:var(--purple);border:1px solid rgba(155,89,182,0.2)}
+.bot-tag-forex{background:rgba(46,204,113,0.1);color:var(--green);border:1px solid rgba(46,204,113,0.2)}
+.bot-tag-gold{background:rgba(212,168,67,0.1);color:var(--gold);border:1px solid rgba(212,168,67,0.2)}
+
+.bot-features{padding:0 24px 12px}
+.bot-feature{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-2);padding:3px 0}
+.empty-state{text-align:center;padding:80px 20px;color:var(--text-3)}
+.empty-state h3{font-size:24px;color:var(--text-2);margin-bottom:10px}
+
+.info-banner{background:rgba(52,152,219,0.04);border:1px solid rgba(52,152,219,0.15);border-radius:14px;padding:24px;margin-bottom:30px;text-align:center}
+.info-banner h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.info-banner p{font-size:14px;color:var(--text-2);max-width:600px;margin:0 auto}
+
+@media(max-width:768px){.bots-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../index.html" class="nav-logo"><img src="../assets/icons/logo.svg" alt="Zona Trading Pro" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="analisis.html" class="nav-link">Análisis</a>
+      <a href="mercados.html" class="nav-link">Mercados</a>
+      <a href="cursos.html" class="nav-link">Cursos</a>
+      <a href="bots.html" class="nav-link active">Bots</a>
+      <a href="brokers.html" class="nav-link">Brokers</a>
+      <a href="recursos.html" class="nav-link">Recursos</a>
+      <a href="herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+<button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></div></nav>
+
+<header class="page-hero">
+<h1 class="page-title">Bots de <span class="text-gold">Trading</span></h1>
+<p class="page-subtitle">Estrategias automatizadas que operan por ti. Probadas con backtest real. Gratuitos y premium.</p>
+</header>
+
+<section class="bots-container">
+
+<div class="info-banner" style="background:rgba(46,204,113,0.04);border-color:rgba(46,204,113,0.15)">
+<h3>🤖 ¡Primer bot disponible!</h3>
+<p>SignalCommander Pro XAUUSD — Expert Advisor especializado en Oro para MT5. Backtest verificado de 16 meses con +67% de rentabilidad.</p>
+</div>
+
+<div class="bots-grid" id="botsGrid"></div>
+
+<div style="text-align:center;font-size:11px;color:var(--text-4);max-width:700px;margin:40px auto 0;line-height:1.6;padding:16px;border:1px solid var(--border-1);border-radius:8px">
+⚠️ <strong>Disclaimer:</strong> Los bots de trading son herramientas automatizadas que ejecutan operaciones según reglas predefinidas. El rendimiento pasado NO garantiza resultados futuros. Todo bot conlleva riesgo de pérdida. Usa solo capital que puedas permitirte perder. Supervisa siempre tus bots activos.
+</div>
+
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p></div></div></footer>
+
+<script>
+(function() {
+  var bots = window.BOTS_CONFIG ? window.getVisibleBots() : [];
+  var grid = document.getElementById('botsGrid');
+  if (!grid) return;
+  
+  if (bots.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><h3>Proximamente</h3><p>Los primeros bots estan en fase de testing. Vuelve pronto para ver los resultados.</p></div>';
+    return;
+  }
+  
+  grid.innerHTML = bots.map(function(bot) {
+    var isComingSoon = bot.status === 'coming_soon';
+    var isPremium = bot.premium === true;
+    var cardClass = isComingSoon ? 'bot-card coming-soon' : (isPremium ? 'bot-card premium' : 'bot-card');
+    var btnClass = isComingSoon ? 'bot-btn bot-btn-disabled' : (isPremium ? 'bot-btn bot-btn-primary' : 'bot-btn bot-btn-primary');
+    var btnText = isComingSoon ? 'Proximamente' : (isPremium ? 'Comprar ' + bot.price : 'Descargar gratis');
+    var rentText = (bot.rentPrice && !isComingSoon) ? '<a href="' + bot.url + '" target="_blank" rel="noopener" class="bot-btn bot-btn-secondary" style="margin-top:6px;display:block;text-align:center">Alquilar ' + bot.rentPrice + '</a>' : '';
+    var btnAction = isComingSoon ? '' : 'onclick="window.location.href=\'' + bot.url + '\'"';
+    
+    var tags = (bot.tags || []).map(function(t) {
+      return '<span class="bot-tag bot-tag-' + t.toLowerCase() + '">' + t + '</span>';
+    }).join('');
+    
+    return '<div class="' + cardClass + '">' +
+      '<div class="bot-header"><div class="bot-icon">' + bot.icon + '</div>' +
+      '<div class="bot-name">' + bot.name + '</div>' +
+      '<div class="bot-type">' + bot.type + '</div></div>' +
+      '<p class="bot-desc">' + bot.desc + '</p>' +
+      '<div class="bot-tags">' + tags + '</div>' +
+      '<div class="bot-stats">' +
+        '<div class="bot-stat"><div class="bot-stat-label">Win Rate</div><div class="bot-stat-value positive">' + bot.winRate + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">Retorno</div><div class="bot-stat-value positive">' + bot.returns + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">Drawdown</div><div class="bot-stat-value neutral">' + bot.drawdown + '</div></div>' +
+      '</div>' +
+      (bot.extraStats ? '<div class="bot-stats" style="margin-top:8px">' +
+        '<div class="bot-stat"><div class="bot-stat-label">Profit Factor</div><div class="bot-stat-value positive">' + bot.extraStats.profitFactor + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">Sharpe</div><div class="bot-stat-value positive">' + bot.extraStats.sharpe + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">Operaciones</div><div class="bot-stat-value neutral">' + bot.extraStats.trades + '</div></div>' +
+      '</div>' +
+      '<div class="bot-stats" style="margin-top:8px">' +
+        '<div class="bot-stat"><div class="bot-stat-label">Recovery Factor</div><div class="bot-stat-value positive">' + bot.extraStats.recoveryFactor + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">LR Correlation</div><div class="bot-stat-value positive">' + bot.extraStats.lrCorrelation + '</div></div>' +
+        '<div class="bot-stat"><div class="bot-stat-label">Periodo</div><div class="bot-stat-value neutral">' + bot.extraStats.period + '</div></div>' +
+      '</div>' : '') +
+      '<div class="bot-tags">' + (bot.features ? bot.features.slice(0,4).map(function(f){ return '<div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-2);padding:3px 0"><span style="color:var(--green);font-weight:700">✓</span> ' + f + '</div>'; }).join('') : '') + '</div>' +
+      '<div class="bot-footer" style="flex-direction:column"><a href="' + (bot.url || '#') + '" target="_blank" rel="noopener" class="' + btnClass + '" style="text-align:center;text-decoration:none;display:block">' + btnText + '</a>' + (rentText || '') + '</div>' +
+    '</div>';
+  }).join('');
+})();
+
+window.addEventListener('scroll', function() {
+  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+</script>
+</body>
+</html>
