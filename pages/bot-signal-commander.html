@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SignalCommander Pro XAUUSD — Expert Advisor para MetaTrader 5 especializado en Oro. Backtest verificado: +67.4% en 16 meses.">
+<title>SignalCommander Pro XAUUSD — Bot de Trading | Zona Trading Pro</title>
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.bot-page{max-width:1000px;margin:0 auto;padding:calc(var(--nav-height) + 40px) 24px 80px;position:relative;z-index:10}
+.bp-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:linear-gradient(135deg,rgba(212,168,67,0.15),rgba(212,168,67,0.05));border:1px solid rgba(212,168,67,0.3);border-radius:100px;font-size:11px;color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.bp-title{font-size:clamp(28px,5vw,48px);font-weight:900;letter-spacing:-2px;line-height:1.1;margin-bottom:12px}
+.bp-title-gold{background:linear-gradient(135deg,#f0c050,#8a6508);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bp-subtitle{font-size:16px;color:var(--text-2);line-height:1.7;margin-bottom:30px;max-width:700px}
+
+.bp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:30px}
+.bp-stat{padding:16px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;text-align:center}
+.bp-stat-label{font-size:9px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.bp-stat-value{font-family:var(--font-mono);font-size:18px;font-weight:800;margin-top:4px}
+.bp-stat-value.green{color:var(--green)}.bp-stat-value.gold{color:var(--gold)}.bp-stat-value.red{color:var(--red)}
+
+.bp-section{margin:36px 0}
+.bp-section-title{font-size:20px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+
+.bp-features{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bp-feat{display:flex;align-items:flex-start;gap:10px;padding:14px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px;font-size:13px;color:var(--text-2);line-height:1.5}
+.bp-feat::before{content:'✓';color:var(--green);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
+
+.bp-how{counter-reset:step}
+.bp-step{display:flex;gap:16px;padding:18px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:12px;margin-bottom:10px;counter-increment:step}
+.bp-step::before{content:counter(step);width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--bg-0);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--font-mono);flex-shrink:0}
+.bp-step-text{font-size:14px;color:var(--text-2);line-height:1.6}
+.bp-step-text strong{color:var(--text-1)}
+
+/* Pricing */
+.bp-pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:30px 0}
+.bp-price-card{background:var(--bg-3);border:1px solid var(--border-1);border-radius:16px;padding:30px;text-align:center;position:relative;transition:all .3s}
+.bp-price-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.bp-price-card.featured{border-color:rgba(212,168,67,0.4)}
+.bp-price-card.featured::before{content:'RECOMENDADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;background:var(--gold);color:var(--bg-0);font-size:10px;font-weight:800;letter-spacing:1.5px;border-radius:20px}
+.bp-price-type{font-size:13px;color:var(--text-3);text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px}
+.bp-price-amount{font-size:42px;font-weight:900;color:var(--gold);font-family:var(--font-mono);letter-spacing:-2px}
+.bp-price-amount span{font-size:14px;color:var(--text-3);font-weight:400}
+.bp-price-note{font-size:12px;color:var(--text-3);margin:6px 0 20px}
+.bp-price-features{text-align:left;margin-bottom:20px}
+.bp-price-feat{font-size:12px;color:var(--text-2);padding:4px 0;display:flex;align-items:center;gap:6px}
+.bp-price-feat::before{content:'✓';color:var(--green);font-weight:700}
+.bp-buy-btn{display:block;width:100%;padding:14px;background:var(--gold);color:var(--bg-0);border:none;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer;font-family:var(--font-display);transition:all .2s}
+.bp-buy-btn:hover{background:var(--gold-bright);transform:translateY(-1px)}
+.bp-buy-btn-sec{background:transparent;color:var(--text-1);border:1px solid var(--border-2)}
+
+.bp-requirements{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bp-req{padding:14px;background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px}
+.bp-req-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:4px}
+.bp-req-value{font-size:14px;font-weight:700}
+
+.bp-faq{margin-top:30px}
+.bp-faq-item{background:var(--bg-3);border:1px solid var(--border-1);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.bp-faq-q{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;transition:background .2s}
+.bp-faq-q:hover{background:var(--bg-4)}
+.bp-faq-a{display:none;padding:0 20px 16px;font-size:13px;color:var(--text-2);line-height:1.7}
+.bp-faq-item.open .bp-faq-a{display:block}
+
+@media(max-width:640px){.bp-features,.bp-pricing,.bp-requirements{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ambient-glow glow-1"></div><div class="ambient-glow glow-2"></div><div class="noise-overlay"></div>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="../index.html" class="nav-logo"><img src="../assets/icons/logo.svg" alt="ZTP" style="width:30px;height:30px"><span class="logo-text" style="font-weight:800">Zona Trading Pro</span></a>
+<div class="nav-links" id="navLinks">
+      <a href="analisis.html" class="nav-link">Análisis</a>
+      <a href="mercados.html" class="nav-link">Mercados</a>
+      <a href="cursos.html" class="nav-link">Cursos</a>
+      <a href="bots.html" class="nav-link active">Bots</a>
+      <a href="brokers.html" class="nav-link">Brokers</a>
+      <a href="recursos.html" class="nav-link">Recursos</a>
+      <a href="herramientas.html" class="nav-link">Herramientas</a>
+    </div>
+<button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button></div></nav>
+
+<div class="bot-page">
+
+  <div class="bp-badge">🤖 Expert Advisor · MT5</div>
+  <h1 class="bp-title">SignalCommander Pro<br><span class="bp-title-gold">XAUUSD Edition</span></h1>
+  <p class="bp-subtitle">Expert Advisor dedicado exclusivamente a XAUUSD H1. Sistema de 5 confluencias con doble posición, filtro estacional y techo mensual. Sin martingala, sin grid, sin promediado. Cada operación tiene Stop Loss fijo.</p>
+
+  <!-- Stats principales -->
+  <div class="bp-stats">
+    <div class="bp-stat"><div class="bp-stat-label">Profit Factor</div><div class="bp-stat-value green">1.88</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Win Rate</div><div class="bp-stat-value green">52.4%</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Retorno</div><div class="bp-stat-value green">+67.4%</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Drawdown</div><div class="bp-stat-value red">-7.9%</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Sharpe</div><div class="bp-stat-value gold">8.38</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Recovery</div><div class="bp-stat-value green">4.66</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">LR Corr.</div><div class="bp-stat-value green">0.97</div></div>
+    <div class="bp-stat"><div class="bp-stat-label">Operaciones</div><div class="bp-stat-value gold">170</div></div>
+  </div>
+
+  <!-- Cómo funciona -->
+  <div class="bp-section">
+    <div class="bp-section-title">⚙️ Cómo Funciona</div>
+    <p style="font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:16px">El EA analiza XAUUSD H1 en cada vela cerrada usando 5 factores de confluencia. Se requiere un mínimo de 4 de 5 confirmando la misma dirección:</p>
+    <div class="bp-features">
+      <div class="bp-feat">EMA 20 vs EMA 50 — dirección de tendencia a corto plazo (H1)</div>
+      <div class="bp-feat">Precio vs EMA 200 — confirmación de tendencia macro</div>
+      <div class="bp-feat">RSI (14) — momentum en zona correcta (50-70 BUY / 30-50 SELL)</div>
+      <div class="bp-feat">Histograma MACD — aceleración y dirección del momentum</div>
+      <div class="bp-feat">Patrón de vela — Hammer, Engulfing o Pin Bar alineado</div>
+      <div class="bp-feat">Filtro ADX obligatorio: sin operaciones si ADX menor a 22</div>
+      <div class="bp-feat">Doble posición: TP1 (1:1) + TP2 (1:2) con break-even automático</div>
+      <div class="bp-feat">Filtro estacional: pausa en julio-agosto y Navidad</div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="bp-section">
+    <div class="bp-section-title">💰 Precios</div>
+    <p style="font-size:12px;color:var(--text-3);margin-bottom:16px">Todos los precios incluyen IVA (21%). El precio sube automáticamente cada 10 ventas.</p>
+    
+    <div class="bp-pricing">
+      <!-- Compra -->
+      <div class="bp-price-card featured">
+        <div class="bp-price-type">Compra Permanente</div>
+        <div class="bp-price-amount" id="buyPrice">217€ <span>IVA incl.</span></div>
+        <div class="bp-price-note">Pago único · Acceso de por vida · Actualizaciones incluidas</div>
+        <div class="bp-price-features">
+          <div class="bp-price-feat">Archivo .ex5 descargable</div>
+          <div class="bp-price-feat">PDF de instalación incluido</div>
+          <div class="bp-price-feat">Actualizaciones gratuitas de por vida</div>
+          <div class="bp-price-feat">Soporte por email</div>
+          <div class="bp-price-feat">5 activaciones (instalaciones)</div>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="TU_EMAIL_PAYPAL_AQUI">
+          <input type="hidden" name="item_name" value="SignalCommander Pro XAUUSD - Compra permanente">
+          <input type="hidden" name="amount" value="217.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="hidden" name="return" value="https://zonatradingpro.com/pages/bot-signal-commander.html?purchased=buy">
+          <button type="submit" class="bp-buy-btn">Comprar — 217€</button>
+        </form>
+      </div>
+      
+      <!-- Alquiler -->
+      <div class="bp-price-card">
+        <div class="bp-price-type">Alquiler Mensual</div>
+        <div class="bp-price-amount" id="rentPrice">47€ <span>/mes · IVA incl.</span></div>
+        <div class="bp-price-note">Renovable · Acumulativo · Cancela cuando quieras</div>
+        <div class="bp-price-features">
+          <div class="bp-price-feat">Archivo .ex5 descargable</div>
+          <div class="bp-price-feat">PDF de instalación incluido</div>
+          <div class="bp-price-feat">30 días de uso por pago</div>
+          <div class="bp-price-feat">Renovación acumulativa</div>
+          <div class="bp-price-feat">Si renuevas antes de caducar, los días se suman</div>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="TU_EMAIL_PAYPAL_AQUI">
+          <input type="hidden" name="item_name" value="SignalCommander Pro XAUUSD - Alquiler 1 mes">
+          <input type="hidden" name="amount" value="47.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <input type="hidden" name="return" value="https://zonatradingpro.com/pages/bot-signal-commander.html?purchased=rent">
+          <button type="submit" class="bp-buy-btn bp-buy-btn-sec">Alquilar — 47€/mes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proceso de compra -->
+  <div class="bp-section">
+    <div class="bp-section-title">📥 Proceso de Compra</div>
+    <div class="bp-how">
+      <div class="bp-step"><div class="bp-step-text"><strong>Elige compra permanente o alquiler</strong> y completa el pago con PayPal.</div></div>
+      <div class="bp-step"><div class="bp-step-text"><strong>Recibirás un email</strong> en menos de 24 horas con el archivo .ex5 y el PDF de instrucciones de instalación.</div></div>
+      <div class="bp-step"><div class="bp-step-text"><strong>Descarga e instala</strong> el archivo en tu MetaTrader 5 siguiendo las instrucciones del PDF.</div></div>
+      <div class="bp-step"><div class="bp-step-text"><strong>Configura los parámetros</strong> (recomendamos empezar con 0.25% de riesgo por leg en cuenta demo).</div></div>
+      <div class="bp-step"><div class="bp-step-text"><strong>Adjunta el EA</strong> al gráfico XAUUSD H1 y déjalo operar.</div></div>
+    </div>
+  </div>
+
+  <!-- Requisitos -->
+  <div class="bp-section">
+    <div class="bp-section-title">📋 Requisitos</div>
+    <div class="bp-requirements">
+      <div class="bp-req"><div class="bp-req-label">Plataforma</div><div class="bp-req-value">MetaTrader 5</div></div>
+      <div class="bp-req"><div class="bp-req-label">Gráfico</div><div class="bp-req-value">XAUUSD H1</div></div>
+      <div class="bp-req"><div class="bp-req-label">Cuenta mínima</div><div class="bp-req-value">5.000€</div></div>
+      <div class="bp-req"><div class="bp-req-label">Cuenta óptima</div><div class="bp-req-value">10.000 — 30.000€</div></div>
+      <div class="bp-req"><div class="bp-req-label">Broker</div><div class="bp-req-value">Cualquier broker MT5 con XAUUSD</div></div>
+      <div class="bp-req"><div class="bp-req-label">VPS</div><div class="bp-req-value">Recomendado (no obligatorio)</div></div>
+    </div>
+  </div>
+
+  <!-- Configuración recomendada -->
+  <div class="bp-section">
+    <div class="bp-section-title">⚡ Configuración Recomendada para Trading Real</div>
+    <div class="bp-features">
+      <div class="bp-feat">RiskPercentPerLeg = 0.25 (empezar conservador)</div>
+      <div class="bp-feat">UseDualPosition = true</div>
+      <div class="bp-feat">BE_OnTP1 = true (break-even automático)</div>
+      <div class="bp-feat">UseSeasonalFilter = true (pausa en julio-agosto y Navidad, configurable on/off)</div>
+      <div class="bp-feat">ADX_Min = 22 (solo mercado direccional)</div>
+      <div class="bp-feat">SL_ATR_Mult = 1.2 (Stop Loss = ATR x 1.2)</div>
+      <div class="bp-feat">MonthlyCapEUR = 1500 (techo con trailing)</div>
+    </div>
+
+    <div style="margin-top:18px;padding:20px;background:var(--bg-3);border:1px solid rgba(212,168,67,0.2);border-radius:12px">
+      <div style="font-size:14px;font-weight:800;margin-bottom:10px">📅 Filtro Estacional — ¿Qué es y cuándo activarlo?</div>
+      <p style="font-size:13px;color:var(--text-2);line-height:1.7;margin-bottom:14px">El filtro estacional pausa el EA automáticamente en periodos donde el oro tiene menor volumen institucional y más movimientos erráticos. Se puede <strong>conectar o desconectar</strong> según tu preferencia:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="padding:14px;background:var(--bg-2);border:1px solid rgba(46,204,113,0.2);border-radius:10px">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:6px">✅ UseSeasonalFilter = true (recomendado)</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.6">El EA se pausa automáticamente en:<br>• <strong>Julio y agosto</strong> (verano, bajo volumen)<br>• <strong>15 dic — 10 ene</strong> (Navidad, spreads amplios)<br><br>Resultado en backtest: mayor win rate y menor drawdown. Las fechas son configurables si quieres ajustarlas.</div>
+        </div>
+        <div style="padding:14px;background:var(--bg-2);border:1px solid rgba(231,76,60,0.2);border-radius:10px">
+          <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px">⚠️ UseSeasonalFilter = false</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.6">El EA opera los 12 meses sin pausa. Puede generar señales en periodos de baja liquidez, donde históricamente el rendimiento es inferior.<br><br>Solo recomendado si tu broker mantiene spreads bajos en oro durante verano y Navidad.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bp-section bp-faq">
+    <div class="bp-section-title">❓ Preguntas Frecuentes</div>
+    
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿Qué diferencia hay entre compra y alquiler?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a">La <strong>compra</strong> te da acceso permanente al EA: pagas una vez y es tuyo para siempre, incluyendo actualizaciones futuras. El <strong>alquiler</strong> te da acceso por 30 días por pago. Si renuevas antes de que caduque, los días restantes se acumulan al nuevo periodo. Si no renuevas, el EA deja de operar automáticamente.</div>
+    </div>
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿Usa martingala, grid o promediado?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a"><strong>NO.</strong> Este EA NO usa martingala, grid ni promediado de posiciones. Cada operación tiene un Stop Loss fijo basado en ATR. El riesgo siempre está controlado y es predecible.</div>
+    </div>
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿En qué broker funciona?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a">En cualquier broker que ofrezca MetaTrader 5 con XAUUSD. Recomendamos brokers con spread bajo en oro. De los que tenemos en la web: <strong>Pepperstone</strong>, <strong>IC Markets</strong> o <strong>Darwinex</strong> funcionan perfecto.</div>
+    </div>
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿Necesito VPS?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a">Recomendado pero no obligatorio. El EA necesita que MT5 esté abierto para operar. Si apagas el PC, el EA no puede abrir/cerrar operaciones. Un VPS (~5-10€/mes) mantiene MT5 funcionando 24/7.</div>
+    </div>
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿Garantiza beneficios?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a"><strong>NO.</strong> Ningún sistema de trading garantiza beneficios. Los resultados mostrados son de backtest histórico con datos reales al 100% de calidad. El rendimiento pasado no garantiza resultados futuros. Recomendamos empezar en cuenta demo y con riesgo conservador (0.25% por leg).</div>
+    </div>
+    <div class="bp-faq-item" onclick="this.classList.toggle('open')">
+      <div class="bp-faq-q"><span>¿Puedo ver el código fuente?</span><span style="color:var(--text-3)">▼</span></div>
+      <div class="bp-faq-a">No. Recibes el archivo compilado (.ex5), que es ejecutable pero no editable. El código fuente (.mq5) es propiedad intelectual de Zona Trading Pro.</div>
+    </div>
+  </div>
+
+  <!-- Disclaimers -->
+  <div style="text-align:center;font-size:11px;color:var(--text-4);max-width:700px;margin:40px auto 0;line-height:1.7;padding:20px;border:1px solid var(--border-1);border-radius:10px">
+    ⚠️ <strong>Aviso de riesgo:</strong> El trading de CFDs y Forex implica un alto nivel de riesgo. Los productos apalancados pueden generar pérdidas superiores al depósito. Los resultados de backtest no garantizan resultados futuros. Este EA es una herramienta automatizada, no un asesoramiento financiero. Usa solo capital que puedas permitirte perder. Precios incluyen IVA 21%.
+  </div>
+
+</div>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-bottom"><p class="footer-copy">© 2026 Zona Trading Pro — zonatradingpro.com · Powered by Trading Arsenal</p></div></div></footer>
+<script>window.addEventListener('scroll',function(){document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>40)});</script>
+</body>
+</html>
